@@ -20,13 +20,13 @@
 - 2018年4月 辽宁省优秀毕业生
 
 ### 发表论文
-1. Meiling Xu, **Guohui Zhan**, et al. PT -symmetry-protected Dirac states in strain-induced hidden MoS2 monolayer[J]. Phys. Rev. B 100,235435(2020). [pdf](files/pubs/PhysRevB.100.235435.pdf)
+1. Meiling Xu, **Guohui Zhan**, et al. PT -symmetry-protected Dirac states in strain-induced hidden MoS2 monolayer[J]. *Phys. Rev. B* 100,235435(2020). [pdf](files/pubs/PhysRevB.100.235435.pdf)
 
-2. L.-L. Zhang, Z.-Z. Li, **Guo-Hui Zhan** et al. Eigenenergies and quantum transport properties in a non-Hermitian quantum-dot chain with side-coupled dots[J]. Phys. Rev. A 99,032119(2019). [pdf](files/pubs/PhysRevA.99.032119.pdf) 
+2. L.-L. Zhang, Z.-Z. Li, **Guo-Hui Zhan** et al. Eigenenergies and quantum transport properties in a non-Hermitian quantum-dot chain with side-coupled dots[J]. *Phys. Rev. A* 99,032119(2019). [pdf](files/pubs/PhysRevA.99.032119.pdf) 
 
-3. **占国慧**, 于殿强, 王郅臻, et al. PT 对称的非厄米体系的能谱性质[J]. 大学物理, 2018, 37(3). [pdf](files/pubs/PT对称的非厄米体系的能谱性质_占国慧.pdf)
+3. **占国慧**, 于殿强, 王郅臻, et al. PT 对称的非厄米体系的能谱性质[J]. *大学物理*, 2018, 37(3). [pdf](files/pubs/PT对称的非厄米体系的能谱性质_占国慧.pdf)
 
-4. Lian-Lian Zhang, **Guo-Hui Zhan**, Li Z Z, et al. Effect of PT symmetry in a parallel double-quantum-dot structure[J]. Phys. Rev. A 96,062133(2017). [pdf](files/pubs/PhysRevA.96.062133.pdf)
+4. Lian-Lian Zhang, **Guo-Hui Zhan**, Li Z Z, et al. Effect of PT symmetry in a parallel double-quantum-dot structure[J]. *Phys. Rev. A* 96,062133(2017). [pdf](files/pubs/PhysRevA.96.062133.pdf)
 
 ### 实习经历
 更新中。。。
