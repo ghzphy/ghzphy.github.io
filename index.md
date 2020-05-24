@@ -1,4 +1,4 @@
-#<center>占国慧/Guohui Zhan</center> 
+# <center>占国慧/Guohui Zhan</center> 
 > 邮箱: ghzphysics@163.com
 
 > 网页: https://ghzphy.github.io/ 
@@ -29,7 +29,7 @@
 
 - 2018年4月 辽宁省优秀毕业生
 
-###发表论文
+### 发表论文
 更新中。。。
 
 ### 实习经历
@@ -38,7 +38,7 @@
 ### 社团组织经历
 更新中。。。
 
-###技能/证书
+### 技能/证书
 
 
 - 技能：Python/C++/Fortran/Matlab/Latex
