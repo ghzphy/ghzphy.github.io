@@ -1,7 +1,7 @@
 # <center>占国慧/Guohui Zhan</center> 
 > 邮箱: ghzphysics@163.com
 
-> 网页: https://ghzphy.github.io/ 
+> 个人网页: https://ghzphy.github.io/ 
 
 ### 教育经历
 1. 2018.09-至今 南京大学 **硕士** 凝聚态物理
@@ -30,16 +30,10 @@
 更新中。。。
 
 ### 技能/证书
-
-
 - 技能：Python/C++/Fortran/Matlab/Latex
-
-
 - 英语：CET-6
-
-
 - 证书：计算机二级考试优秀
 
 
 [测试页面](test.html)
-[计算机学习](四月份计算机学习.html)
+[计算机学习笔记](四月份计算机学习.html)
