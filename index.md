@@ -40,5 +40,6 @@
 - 证书：计算机二级考试优秀
 
 **[相关链接](total.html):**
-[CS学习笔记](四月份计算机学习.html)
+[计算机网络](total/computer_network.html)
+[数据结构](total/data_structure.html)
 [音乐DIY](music.html)
