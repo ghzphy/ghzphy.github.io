@@ -39,7 +39,7 @@
 - 英语：CET-6
 - 证书：计算机二级考试优秀
 
-**[相关链接](total.html):**
-[计算机网络](total/computer_network.html)
-[数据结构](total/data_structure.html)
+**[相关链接](home.html):**
+[计算机网络](home/computer_network.html)
+[数据结构](home/data_structure.html)
 [音乐DIY](music.html)
