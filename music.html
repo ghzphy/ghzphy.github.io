@@ -3,26 +3,39 @@
 	<head>
 		<meta charset='UTF-8'>
 		<title>music</title> 
-		<!-- <embed src='test.mp3' autostart='true'> </audio> -->
 		<style type="text/css">
 			body{
-				background-image: url(files/images/music_bg.jpg);
-				background-size: 100%
+				background-image: url(files/images/bg.jpg);
+				background-size: 100%;
+				background-attachment: fixed;
+			}
+
+			.div1 {
+				text-align: center;
+				font-family: Bradley Hand ITC;
+				color: #00ff00;
+				margin-top: 5%;
+				margin-bottom: 5%;
+			}
+			.div2 {
+				font-family: 宋体;
 			}
 		</style>
 	</head>
 
 	<body>
+		<div class="div1">
+				<h1 >Welcome to my Music</h1>
+		</div>
 		<div>
 			<center>
-				<h1 style="color:#00ff00">Welcome to <em>Music</em> !</h1>
 				<audio controls="controls" autoplay>
 					<source src="files/musics/献给爱丽丝.mp3" type="audio/mp3" />
 				</audio>
 			</center>
 		</div>
 
-		<div>
+		<div class="div2">
 			<h3>1. 单首(<em>更新中</em>)</h3>
 
 			<table>
@@ -132,7 +145,7 @@
 			</table>
 		</div>
 
-		<div>
+		<div class="div2">
 			<h3>2. MV</h3>
 			<!-- <video src='test.mp4' height="500px" controls> </video> -->
 			<!-- <audio> <source src='test.mp3' type='mp3' autoplay="autoplay"></audio> -->
