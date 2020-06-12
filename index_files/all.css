@@ -186,9 +186,8 @@ sub,sup{
     top:0%;
     left:0%;
     right:0%;
+    bottom: 0%;
     margin:0 auto;
-/*    -webkit-transform:translate(0%,0%);
-    transform:translate(0%,0%)*/
 }
 .header .site-title{
     font-size:50px;
@@ -203,7 +202,7 @@ sub,sup{
     }
 }
 .header .site-description{
-    font-family: Edwardian Script ITC;
+    font-family: Edwardian Script ITC, Freestyle Script, Freestyle Script MT, Pristina, Times New Roman;
     font-size:35px;
     display:block;
     line-height:1;
@@ -346,13 +345,14 @@ sub,sup{
     padding: 0;
 }
 .header_center{
-    margin-top: 23%;
+    position: absolute;
+    top: 45%;
+    bottom: 50%;
+    left: 10%;
+    right: 10%;
     font-family: Times New Roman;
 }
-
-
-
-
+/*
 
 footer {
     display:block;
@@ -370,4 +370,4 @@ footer {
 footer a {
     color: #42b983;
     font-weight: 600;
-} 
+} */
