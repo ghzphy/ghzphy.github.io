@@ -1,2 +1,2 @@
-# 个人主页
-https://ghzphy.github.io
+- 主页: https://ghzphy.github.io
+- 邮箱: ghzphysics@163.com
