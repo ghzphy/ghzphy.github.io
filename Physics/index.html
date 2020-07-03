@@ -2,55 +2,86 @@
 <html lang='en'>
 	<head>
 		<meta charset="utf-8">
-		<title>CS</title>
+		<title> Physics</title>
 		<style type="text/css">
-					body {
-						background-image: url(../global_files/images/Moon.png);
-						background-size: 20%;
-						background-repeat: no-repeat;
-						background-position: 80% 20%;
-						background-color: rgb(26,34,44);
-						background-attachment: fixed;
+			body {
+				background-image: url(../global_files/images/Moon.png);
+				background-size: 20%;
+				background-repeat: no-repeat;
+				background-position: 80% 20%;
+				background-color: rgb(26,34,44);
+				background-attachment: fixed;
+				}
 
-					}
-					.div0 {
-						text-align: right;
-						font-family: 宋体;
-						color:grey;
-					}
-					.div1 {
-						/*border:1px solid grey;*/
-						/*text-align: right;*/
-						/*font-family: 宋体;*/
-						font-size: 20px;
-						font-style: italic;
-						text-decoration: line-through;
-						/*color: grey;*/
-					}	
-					.div2 {
+			.main {
+				/*border:1px solid red;*/
+				z-index:2;
+				text-align:center;
+				color:white;
+				position:absolute;
+				top:0%;
+				left:0%;
+				right:0%;
+				bottom: 0%;
+				margin:0 auto;
+				}
 
-						position: absolute;
-						width: 500px;
-						height:350px;
-						border: 2px solid grey;
-						border-radius: 20px/20px;
-						margin-right: 35%;
-						margin-top: 8%;
-						margin-left:34%;
-						text-align: center;
-						font-family: Times New Roman;
-						color: white;
-					}
-				</style>
+			.head {
+				/*border:2px solid red;*/
+				text-align: right;
+				font-family: 宋体;
+				color:grey;
+				margin-top: 1em;
+			}
+
+			.nav {	
+			        height: 5em;
+			        width: 100%;
+			        /*margin: 0 auto;*/
+			        margin-top:8%;
+			        /*margin-bottom: 10%;*/
+			        text-align: center;
+					font-family: Times New Roman;
+					font-size: 20px;
+
+			    }
+
+			.nav ul {
+			    margin: 0;
+			    padding: 0;
+			    list-style-type: none; 
+			    display: inline-block;
+			}
+
+			.nav a {
+			    display:block;
+			    width: 20em;
+			    height: 2.5em;
+			    line-height: 2.5em;
+			    text-decoration: none;
+			    text-align: center;
+			    color: #42b983;
+			    font-weight: 800;
+			}
+
+			.nav a:hover {
+			    background-color: #E6E6FA;
+			}
+			</style>
 	</head>
 
 	<body>
-		<div class="div0">
-			<a style="color:grey" href="https://ghzphy.github.io">主页</a> <a class="div1">物理版块更新中。。。)</a>
-		</div>
+		<div class="main">
+			<div class="head">
+				<a style="color:white" href="../index.html">主页</a> <a class="div1">物理版块待更新。。。)</a>
+			</div>
 
-		<div class="div2">
-				<h2><a href="./第一性计算/VASP/计算笔记.pdf"> VASP笔记</a></h2>
+			<div class="nav">
+				<ul>
+					<li><a href="./第一性计算/VASP/计算笔记.pdf"> VASP笔记</a></li>
+				</ul>
+			</div>
+
 		</div>
 	</body>
 </html>
