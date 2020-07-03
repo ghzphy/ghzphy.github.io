@@ -328,22 +328,7 @@ sub,sup{
 }
 
 
-.list-item {
-    display: inline-block;
-    margin: 0 20px;
-}
 
-.list-item a {
-    color: #42b983;
-    font-weight: 600;
-}
-
-.right-list {
-    text-align: right;
-    list-style: none;
-    float: right;
-    padding: 0;
-}
 .header_center{
     position: absolute;
     top: 45%;
@@ -352,6 +337,42 @@ sub,sup{
     right: 10%;
     font-family: Times New Roman;
 }
+
+
+/*nav CSS*/
+.nav {
+        height: 5em;
+        width: 100%;
+        margin: 0 auto;
+        text-align: right;
+    }
+
+    .nav ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none; 
+        display: inline-block;
+    }
+
+    .nav ul li {
+        float:left;
+    }
+
+    .nav a {
+        display:block;
+        width: 6em;
+        height: 3em;
+        line-height: 3em;
+        text-decoration: none;
+        text-align: center;
+        color: #42b983;
+        font-weight: 600;
+    }
+
+    .nav a:hover {
+        background-color: #E6E6FA;
+    }
+
 /*
 
 footer {
