@@ -1,2 +1,3 @@
-- 主页: https://ghzphy.github.io
+- Github主页: https://ghzphy.github.io
+- Gitee 主页: https://ghzphy.gitee.io
 - 邮箱: ghzphysics@163.com
