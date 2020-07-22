@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>递归 | 数据结构与算法</title>
+        <title>438 找到字符串中的所有字母异位词 | 数据结构与算法</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,8 @@
         
     
     
-    <link rel="next" href="../chapter5/chapter5_2.html" />
     
-    
-    <link rel="prev" href="../chapter5/index.html" />
+    <link rel="prev" href="../chapter6/chapter6_3.html" />
     
 
         
@@ -49,9 +47,9 @@
         
         
     <div class="book"
-        data-level="5.1"
-        data-chapter-title="递归"
-        data-filepath="chapter5/chapter5_1.md"
+        data-level="6.3.3"
+        data-chapter-title="438 找到字符串中的所有字母异位词"
+        data-filepath="chapter6/chapter6_438.md"
         data-basepath=".."
         data-revision="Thu Jul 23 2020 07:36:34 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
@@ -269,7 +267,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="5.1" data-path="chapter5/chapter5_1.html">
+        <li class="chapter " data-level="5.1" data-path="chapter5/chapter5_1.html">
             
                 
                     <a href="../chapter5/chapter5_1.html">
@@ -581,7 +579,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.3.3" data-path="chapter6/chapter6_438.html">
+        <li class="chapter active" data-level="6.3.3" data-path="chapter6/chapter6_438.html">
             
                 
                     <a href="../chapter6/chapter6_438.html">
@@ -639,7 +637,65 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x9012;&#x5F52;">&#x9012;&#x5F52;</h1>
+                        <h1 id="438-&#x627E;&#x5230;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;">438 &#x627E;&#x5230;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;</h1>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32; s &#x548C;&#x4E00;&#x4E2A;&#x975E;&#x7A7A;&#x5B57;&#x7B26;&#x4E32; p&#xFF0C;&#x627E;&#x5230; s &#x4E2D;&#x6240;&#x6709;&#x662F; p &#x7684;&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x7684;&#x5B50;&#x4E32;&#xFF0C;&#x8FD4;&#x56DE;&#x8FD9;&#x4E9B;&#x5B50;&#x4E32;&#x7684;&#x8D77;&#x59CB;&#x7D22;&#x5F15;&#x3002;</p>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x53EA;&#x5305;&#x542B;&#x5C0F;&#x5199;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#xFF0C;&#x5E76;&#x4E14;&#x5B57;&#x7B26;&#x4E32; s &#x548C; p &#x7684;&#x957F;&#x5EA6;&#x90FD;&#x4E0D;&#x8D85;&#x8FC7; 20100&#x3002;</p>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x6307;&#x5B57;&#x6BCD;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x6392;&#x5217;&#x4E0D;&#x540C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>&#x4E0D;&#x8003;&#x8651;&#x7B54;&#x6848;&#x8F93;&#x51FA;&#x7684;&#x987A;&#x5E8F;&#x3002;</li>
+</ul>
+<p>&#x793A;&#x4F8B; 1:</p>
+<pre><code>&#x8F93;&#x5165;:
+s: &quot;cbaebabacd&quot; p: &quot;abc&quot;
+
+&#x8F93;&#x51FA;:
+[0, 6]
+
+&#x89E3;&#x91CA;:
+&#x8D77;&#x59CB;&#x7D22;&#x5F15;&#x7B49;&#x4E8E; 0 &#x7684;&#x5B50;&#x4E32;&#x662F; &quot;cba&quot;, &#x5B83;&#x662F; &quot;abc&quot; &#x7684;&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x3002;
+&#x8D77;&#x59CB;&#x7D22;&#x5F15;&#x7B49;&#x4E8E; 6 &#x7684;&#x5B50;&#x4E32;&#x662F; &quot;bac&quot;, &#x5B83;&#x662F; &quot;abc&quot; &#x7684;&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x3002;
+</code></pre><p> &#x793A;&#x4F8B; 2:</p>
+<pre><code>&#x8F93;&#x5165;:
+s: &quot;abab&quot; p: &quot;ab&quot;
+
+&#x8F93;&#x51FA;:
+[0, 1, 2]
+
+&#x89E3;&#x91CA;:
+&#x8D77;&#x59CB;&#x7D22;&#x5F15;&#x7B49;&#x4E8E; 0 &#x7684;&#x5B50;&#x4E32;&#x662F; &quot;ab&quot;, &#x5B83;&#x662F; &quot;ab&quot; &#x7684;&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x3002;
+&#x8D77;&#x59CB;&#x7D22;&#x5F15;&#x7B49;&#x4E8E; 1 &#x7684;&#x5B50;&#x4E32;&#x662F; &quot;ba&quot;, &#x5B83;&#x662F; &quot;ab&quot; &#x7684;&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x3002;
+&#x8D77;&#x59CB;&#x7D22;&#x5F15;&#x7B49;&#x4E8E; 2 &#x7684;&#x5B50;&#x4E32;&#x662F; &quot;ab&quot;, &#x5B83;&#x662F; &quot;ab&quot; &#x7684;&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x3002;
+</code></pre><h3 id="&#x89E3;&#x6CD5;">&#x89E3;&#x6CD5;</h3>
+<ul>
+<li>&#x82E5;p&#x4E2D;&#x4E0D;&#x542B;&#x91CD;&#x590D;&#x5B57;&#x7B26;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">findAnagrams</span><span class="hljs-params">(s,p)</span>:</span>
+    freq = [<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">128</span>)]
+    left,right = <span class="hljs-number">0</span>,-<span class="hljs-number">1</span>
+    res,count = [],<span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> p:
+        freq[ord(i)] = <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">while</span> left &lt; len(s):
+        <span class="hljs-keyword">if</span> right+<span class="hljs-number">1</span> &lt; len(s) <span class="hljs-keyword">and</span> freq[ord(s[right+<span class="hljs-number">1</span>])] == <span class="hljs-number">1</span>:
+            right += <span class="hljs-number">1</span>
+            freq[ord(s[right])] += <span class="hljs-number">1</span>
+            count += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">elif</span> right+<span class="hljs-number">1</span> &lt; len(s) <span class="hljs-keyword">and</span> freq[ord(s[right+<span class="hljs-number">1</span>])] == <span class="hljs-number">0</span>:
+            right += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">if</span> freq[ord(s[left])] &gt;= <span class="hljs-number">1</span>:
+                count -= <span class="hljs-number">1</span>
+                freq[ord(s[left])] -= <span class="hljs-number">1</span>
+            left += <span class="hljs-number">1</span>    
+        <span class="hljs-keyword">if</span> count == len(p) <span class="hljs-keyword">and</span> count == right-left+<span class="hljs-number">1</span>:
+            res.append(left)
+    <span class="hljs-keyword">return</span> res
+</code></pre>
+<ul>
+<li>&#x82E5;&#x542B;&#x6709;&#x91CD;&#x590D;&#x5B57;&#x7B26;</li>
+</ul>
 
                     
                     </section>
@@ -650,10 +706,8 @@
         </div>
 
         
-        <a href="../chapter5/index.html" class="navigation navigation-prev " aria-label="Previous page: 算法"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter6/chapter6_3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 3 无重复字符的最长字串"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../chapter5/chapter5_2.html" class="navigation navigation-next " aria-label="Next page: 贪心算法"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

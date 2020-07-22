@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>递归 | 数据结构与算法</title>
+        <title>344 反转字符串 | 数据结构与算法</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter5/chapter5_2.html" />
+    <link rel="next" href="../chapter6/chapter6_11.html" />
     
     
-    <link rel="prev" href="../chapter5/index.html" />
+    <link rel="prev" href="../chapter6/chapter6_125.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="5.1"
-        data-chapter-title="递归"
-        data-filepath="chapter5/chapter5_1.md"
+        data-level="6.2.10"
+        data-chapter-title="344 反转字符串"
+        data-filepath="chapter6/chapter6_344.md"
         data-basepath=".."
         data-revision="Thu Jul 23 2020 07:36:34 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
@@ -269,7 +269,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="5.1" data-path="chapter5/chapter5_1.html">
+        <li class="chapter " data-level="5.1" data-path="chapter5/chapter5_1.html">
             
                 
                     <a href="../chapter5/chapter5_1.html">
@@ -508,7 +508,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2.10" data-path="chapter6/chapter6_344.html">
+        <li class="chapter active" data-level="6.2.10" data-path="chapter6/chapter6_344.html">
             
                 
                     <a href="../chapter6/chapter6_344.html">
@@ -639,7 +639,21 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x9012;&#x5F52;">&#x9012;&#x5F52;</h1>
+                        <h1 id="344-&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;">344 &#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;</h1>
+<p>&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x4F5C;&#x7528;&#x662F;&#x5C06;&#x8F93;&#x5165;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x53CD;&#x8F6C;&#x8FC7;&#x6765;&#x3002;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x4EE5;&#x5B57;&#x7B26;&#x6570;&#x7EC4; char[] &#x7684;&#x5F62;&#x5F0F;&#x7ED9;&#x51FA;&#x3002;</p>
+<p>&#x4E0D;&#x8981;&#x7ED9;&#x53E6;&#x5916;&#x7684;&#x6570;&#x7EC4;&#x5206;&#x914D;&#x989D;&#x5916;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x539F;&#x5730;&#x4FEE;&#x6539;&#x8F93;&#x5165;&#x6570;&#x7EC4;&#x3001;&#x4F7F;&#x7528; O(1) &#x7684;&#x989D;&#x5916;&#x7A7A;&#x95F4;&#x89E3;&#x51B3;&#x8FD9;&#x4E00;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5047;&#x8BBE;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x90FD;&#x662F; ASCII &#x7801;&#x8868;&#x4E2D;&#x7684;&#x53EF;&#x6253;&#x5370;&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x793A;&#x4F8B; 1&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;[&quot;h&quot;,&quot;e&quot;,&quot;l&quot;,&quot;l&quot;,&quot;o&quot;]
+&#x8F93;&#x51FA;&#xFF1A;[&quot;o&quot;,&quot;l&quot;,&quot;l&quot;,&quot;e&quot;,&quot;h&quot;]
+</code></pre><p>&#x793A;&#x4F8B; 2&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;[&quot;H&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;h&quot;]
+&#x8F93;&#x51FA;&#xFF1A;[&quot;h&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;H&quot;]
+</code></pre><h3 id="&#x89E3;&#x6CD5;">&#x89E3;&#x6CD5;</h3>
+<ul>
+<li>&#x5229;&#x7528;Reverse&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x65F6;&#x95F4;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x90FD;&#x4E3A;O(N).</li>
+<li>&#x5229;&#x7528;&#x53CC;&#x6307;&#x9488;&#xFF0C;&#x53EF;&#x5B9E;&#x73B0;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(1).</li>
+</ul>
 
                     
                     </section>
@@ -650,10 +664,10 @@
         </div>
 
         
-        <a href="../chapter5/index.html" class="navigation navigation-prev " aria-label="Previous page: 算法"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter6/chapter6_125.html" class="navigation navigation-prev " aria-label="Previous page: 125 验证回文串"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter5/chapter5_2.html" class="navigation navigation-next " aria-label="Next page: 贪心算法"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter6/chapter6_11.html" class="navigation navigation-next " aria-label="Next page: 11 盛最多的水的容器"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>递归 | 数据结构与算法</title>
+        <title>125 验证回文串 | 数据结构与算法</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter5/chapter5_2.html" />
+    <link rel="next" href="../chapter6/chapter6_344.html" />
     
     
-    <link rel="prev" href="../chapter5/index.html" />
+    <link rel="prev" href="../chapter6/chapter6_167.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="5.1"
-        data-chapter-title="递归"
-        data-filepath="chapter5/chapter5_1.md"
+        data-level="6.2.9"
+        data-chapter-title="125 验证回文串"
+        data-filepath="chapter6/chapter6_125.md"
         data-basepath=".."
         data-revision="Thu Jul 23 2020 07:36:34 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
@@ -269,7 +269,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="5.1" data-path="chapter5/chapter5_1.html">
+        <li class="chapter " data-level="5.1" data-path="chapter5/chapter5_1.html">
             
                 
                     <a href="../chapter5/chapter5_1.html">
@@ -493,7 +493,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2.9" data-path="chapter6/chapter6_125.html">
+        <li class="chapter active" data-level="6.2.9" data-path="chapter6/chapter6_125.html">
             
                 
                     <a href="../chapter6/chapter6_125.html">
@@ -639,7 +639,43 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x9012;&#x5F52;">&#x9012;&#x5F52;</h1>
+                        <h1 id="125-&#x9A8C;&#x8BC1;&#x56DE;&#x6587;&#x4E32;">125 &#x9A8C;&#x8BC1;&#x56DE;&#x6587;&#x4E32;</h1>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x9A8C;&#x8BC1;&#x5B83;&#x662F;&#x5426;&#x662F;&#x56DE;&#x6587;&#x4E32;&#xFF0C;&#x53EA;&#x8003;&#x8651;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#xFF0C;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x5B57;&#x6BCD;&#x7684;&#x5927;&#x5C0F;&#x5199;&#x3002;</p>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x672C;&#x9898;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x5B9A;&#x4E49;&#x4E3A;&#x6709;&#x6548;&#x7684;&#x56DE;&#x6587;&#x4E32;&#x3002;</p>
+<p>&#x793A;&#x4F8B; 1:</p>
+<pre><code>&#x8F93;&#x5165;: &quot;A man, a plan, a canal: Panama&quot;
+&#x8F93;&#x51FA;: true
+</code></pre><p>&#x793A;&#x4F8B; 2:</p>
+<pre><code>&#x8F93;&#x5165;: &quot;race a car&quot;
+&#x8F93;&#x51FA;: false
+</code></pre><h3 id="&#x89E3;&#x6CD5;">&#x89E3;&#x6CD5;</h3>
+<ul>
+<li>&#x5148;&#x6E05;&#x6D17;&#x6570;&#x636E;&#xFF0C;&#x518D;&#x53CD;&#x8F6C;&#x6570;&#x636E;&#x548C;&#x539F;&#x6570;&#x636E;&#x662F;&#x5426;&#x4E00;&#x81F4;&#x3002;</li>
+<li>&#x53CC;&#x6307;&#x9488;&#x6CD5;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_numstr</span><span class="hljs-params">(str)</span>:</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-string">&apos;a&apos;</span>&lt;= str &lt;= <span class="hljs-string">&apos;z&apos;</span>) <span class="hljs-keyword">or</span> (<span class="hljs-string">&apos;1&apos;</span> &lt;= str &lt;= <span class="hljs-string">&apos;9&apos;</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isPalindrome</span><span class="hljs-params">(string)</span>:</span>
+    left,right = <span class="hljs-number">0</span>,len(string)-<span class="hljs-number">1</span>
+    <span class="hljs-keyword">while</span> left&lt;right:
+        <span class="hljs-keyword">while</span> (left&lt;right) <span class="hljs-keyword">and</span> is_numstr(string[left]):
+            left += <span class="hljs-number">1</span>
+
+        <span class="hljs-keyword">while</span> (left&lt;right) <span class="hljs-keyword">and</span> is_numstr(string[right]):
+            right -= <span class="hljs-number">1</span>
+
+        <span class="hljs-keyword">if</span> left &lt; right:
+            <span class="hljs-keyword">if</span> string[left].lower() != string[right].lower():
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+            <span class="hljs-keyword">else</span>:
+                left += <span class="hljs-number">1</span>
+                right -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+</code></pre>
 
                     
                     </section>
@@ -650,10 +686,10 @@
         </div>
 
         
-        <a href="../chapter5/index.html" class="navigation navigation-prev " aria-label="Previous page: 算法"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter6/chapter6_167.html" class="navigation navigation-prev " aria-label="Previous page: 167 两数之和II"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter5/chapter5_2.html" class="navigation navigation-next " aria-label="Next page: 贪心算法"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter6/chapter6_344.html" class="navigation navigation-next " aria-label="Next page: 344 反转字符串"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

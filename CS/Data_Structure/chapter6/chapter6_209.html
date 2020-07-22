@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>递归 | 数据结构与算法</title>
+        <title>209 长度最小的子数组 | 数据结构与算法</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter5/chapter5_2.html" />
+    <link rel="next" href="../chapter6/chapter6_3.html" />
     
     
-    <link rel="prev" href="../chapter5/index.html" />
+    <link rel="prev" href="../chapter6/chapter6_11.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="5.1"
-        data-chapter-title="递归"
-        data-filepath="chapter5/chapter5_1.md"
+        data-level="6.3.1"
+        data-chapter-title="209 长度最小的子数组"
+        data-filepath="chapter6/chapter6_209.md"
         data-basepath=".."
         data-revision="Thu Jul 23 2020 07:36:34 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
@@ -269,7 +269,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="5.1" data-path="chapter5/chapter5_1.html">
+        <li class="chapter " data-level="5.1" data-path="chapter5/chapter5_1.html">
             
                 
                     <a href="../chapter5/chapter5_1.html">
@@ -551,7 +551,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="6.3.1" data-path="chapter6/chapter6_209.html">
+        <li class="chapter active" data-level="6.3.1" data-path="chapter6/chapter6_209.html">
             
                 
                     <a href="../chapter6/chapter6_209.html">
@@ -639,7 +639,62 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x9012;&#x5F52;">&#x9012;&#x5F52;</h1>
+                        <h1 id="209-&#x957F;&#x5EA6;&#x6700;&#x5C0F;&#x7684;&#x5B50;&#x6570;&#x7EC4;">209 &#x957F;&#x5EA6;&#x6700;&#x5C0F;&#x7684;&#x5B50;&#x6570;&#x7EC4;</h1>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x542B;&#x6709; n &#x4E2A;&#x6B63;&#x6574;&#x6570;&#x7684;&#x6570;&#x7EC4;&#x548C;&#x4E00;&#x4E2A;&#x6B63;&#x6574;&#x6570; s &#xFF0C;&#x627E;&#x51FA;&#x8BE5;&#x6570;&#x7EC4;&#x4E2D;&#x6EE1;&#x8DB3;&#x5176;&#x548C; &#x2265; s &#x7684;&#x957F;&#x5EA6;&#x6700;&#x5C0F;&#x7684; &#x8FDE;&#x7EED; &#x5B50;&#x6570;&#x7EC4;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5176;&#x957F;&#x5EA6;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x5B50;&#x6570;&#x7EC4;&#xFF0C;&#x8FD4;&#x56DE; 0&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;s = 7, nums = [2,3,1,2,4,3]
+&#x8F93;&#x51FA;&#xFF1A;2
+&#x89E3;&#x91CA;&#xFF1A;&#x5B50;&#x6570;&#x7EC4; [4,3] &#x662F;&#x8BE5;&#x6761;&#x4EF6;&#x4E0B;&#x7684;&#x957F;&#x5EA6;&#x6700;&#x5C0F;&#x7684;&#x5B50;&#x6570;&#x7EC4;&#x3002;
+</code></pre><p>&#x8FDB;&#x9636;&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86; O(n) &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x89E3;&#x6CD5;, &#x8BF7;&#x5C1D;&#x8BD5; O(nlogn) &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x89E3;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">minSubArrayLen</span><span class="hljs-params">(self, s: int, nums: List[int])</span> -&gt; <span class="hljs-title">int</span>:</span>
+        left,right = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>
+        res = <span class="hljs-number">0</span>
+        minlen = len(nums)+<span class="hljs-number">1</span>
+
+        <span class="hljs-keyword">while</span> left &lt; len(nums):
+            <span class="hljs-comment"># print(&apos;left,right,res,minlen:&apos;,&apos;[&apos;,left,right,&apos;]&apos;,res,minlen)</span>
+            <span class="hljs-keyword">if</span> res &lt; s <span class="hljs-keyword">and</span> right&lt;len(nums):
+                res += nums[right]
+                right += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">elif</span> res &gt;= s:
+                minlen = min(minlen,right-left)
+                res -= nums[left]
+                left += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                left += <span class="hljs-number">1</span> 
+        <span class="hljs-keyword">if</span> minlen == len(nums)+<span class="hljs-number">1</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+        <span class="hljs-keyword">return</span> minlen
+</code></pre>
+<ul>
+<li>&#x82E5;&#x6539;&#x4E3A;&#x6EE1;&#x8DB3;&#x5176;&#x548C;=s&#x7684;&#x957F;&#x5EA6;&#x6700;&#x5C0F;&#x7684;&#x8FDE;&#x7EED;&#x5B50;&#x6570;&#x7EC4;&#x3002;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">minSubArrayLen</span><span class="hljs-params">(s,nums)</span>:</span>
+    left,right = <span class="hljs-number">0</span>,-<span class="hljs-number">1</span>
+    res = <span class="hljs-number">0</span>
+    minlen = len(nums)
+
+    <span class="hljs-keyword">while</span> left &lt; len(nums):
+        <span class="hljs-keyword">if</span> right == len(nums) - <span class="hljs-number">1</span>:
+            res -= nums[left]
+            left += <span class="hljs-number">1</span>
+
+        <span class="hljs-keyword">if</span> res &lt; s <span class="hljs-keyword">and</span> right &lt; len(nums)-<span class="hljs-number">1</span>:
+            right += <span class="hljs-number">1</span>
+            res += nums[right]
+
+        <span class="hljs-keyword">if</span> res &gt; s:
+            res -= nums[left] 
+            left += <span class="hljs-number">1</span>
+
+        <span class="hljs-keyword">if</span> res == s:
+            minlen = min(minlen,right-left+<span class="hljs-number">1</span>)
+            res -= nums[left]
+            left += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">if</span> minlen == len(nums): <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+    <span class="hljs-keyword">return</span> minlen
+</code></pre>
 
                     
                     </section>
@@ -650,10 +705,10 @@
         </div>
 
         
-        <a href="../chapter5/index.html" class="navigation navigation-prev " aria-label="Previous page: 算法"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter6/chapter6_11.html" class="navigation navigation-prev " aria-label="Previous page: 11 盛最多的水的容器"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter5/chapter5_2.html" class="navigation navigation-next " aria-label="Next page: 贪心算法"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter6/chapter6_3.html" class="navigation navigation-next " aria-label="Next page: 3 无重复字符的最长字串"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

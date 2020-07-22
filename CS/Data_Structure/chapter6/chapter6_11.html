@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>递归 | 数据结构与算法</title>
+        <title>11 盛最多的水的容器 | 数据结构与算法</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter5/chapter5_2.html" />
+    <link rel="next" href="../chapter6/chapter6_209.html" />
     
     
-    <link rel="prev" href="../chapter5/index.html" />
+    <link rel="prev" href="../chapter6/chapter6_344.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="5.1"
-        data-chapter-title="递归"
-        data-filepath="chapter5/chapter5_1.md"
+        data-level="6.2.11"
+        data-chapter-title="11 盛最多的水的容器"
+        data-filepath="chapter6/chapter6_11.md"
         data-basepath=".."
         data-revision="Thu Jul 23 2020 07:36:34 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
@@ -269,7 +269,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="5.1" data-path="chapter5/chapter5_1.html">
+        <li class="chapter " data-level="5.1" data-path="chapter5/chapter5_1.html">
             
                 
                     <a href="../chapter5/chapter5_1.html">
@@ -523,7 +523,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2.11" data-path="chapter6/chapter6_11.html">
+        <li class="chapter active" data-level="6.2.11" data-path="chapter6/chapter6_11.html">
             
                 
                     <a href="../chapter6/chapter6_11.html">
@@ -639,7 +639,26 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x9012;&#x5F52;">&#x9012;&#x5F52;</h1>
+                        <h1 id="11-&#x76DB;&#x6700;&#x591A;&#x7684;&#x6C34;&#x7684;&#x5BB9;&#x5668;">11 &#x76DB;&#x6700;&#x591A;&#x7684;&#x6C34;&#x7684;&#x5BB9;&#x5668;</h1>
+<p>&#x7ED9;&#x4F60; n &#x4E2A;&#x975E;&#x8D1F;&#x6574;&#x6570; a1&#xFF0C;a2&#xFF0C;...&#xFF0C;an&#xFF0C;&#x6BCF;&#x4E2A;&#x6570;&#x4EE3;&#x8868;&#x5750;&#x6807;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x70B9; (i, ai) &#x3002;&#x5728;&#x5750;&#x6807;&#x5185;&#x753B; n &#x6761;&#x5782;&#x76F4;&#x7EBF;&#xFF0C;&#x5782;&#x76F4;&#x7EBF; i &#x7684;&#x4E24;&#x4E2A;&#x7AEF;&#x70B9;&#x5206;&#x522B;&#x4E3A; (i, ai) &#x548C; (i, 0)&#x3002;&#x627E;&#x51FA;&#x5176;&#x4E2D;&#x7684;&#x4E24;&#x6761;&#x7EBF;&#xFF0C;&#x4F7F;&#x5F97;&#x5B83;&#x4EEC;&#x4E0E; x &#x8F74;&#x5171;&#x540C;&#x6784;&#x6210;&#x7684;&#x5BB9;&#x5668;&#x53EF;&#x4EE5;&#x5BB9;&#x7EB3;&#x6700;&#x591A;&#x7684;&#x6C34;&#x3002;</p>
+<p><strong>&#x8BF4;&#x660E;</strong>&#xFF1A;&#x4F60;&#x4E0D;&#x80FD;&#x503E;&#x659C;&#x5BB9;&#x5668;&#xFF0C;&#x4E14; n &#x7684;&#x503C;&#x81F3;&#x5C11;&#x4E3A; 2&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;[1,8,6,2,5,4,8,3,7]
+&#x8F93;&#x51FA;&#xFF1A;49
+</code></pre><h3 id="&#x89E3;&#x6CD5;">&#x89E3;&#x6CD5;</h3>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maxArea</span><span class="hljs-params">(self, height: List[int])</span> -&gt; <span class="hljs-title">int</span>:</span>
+        left, right = <span class="hljs-number">0</span>, len(height) - <span class="hljs-number">1</span>
+        ans = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">while</span> left &lt; right:
+            area = min(height[left], height[right]) * (right - left)
+            ans = max(ans, area)
+            <span class="hljs-keyword">if</span> height[left] &lt;= height[right]:
+                left += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                right -= <span class="hljs-number">1</span>
+        <span class="hljs-keyword">return</span> ans
+</code></pre>
 
                     
                     </section>
@@ -650,10 +669,10 @@
         </div>
 
         
-        <a href="../chapter5/index.html" class="navigation navigation-prev " aria-label="Previous page: 算法"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter6/chapter6_344.html" class="navigation navigation-prev " aria-label="Previous page: 344 反转字符串"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter5/chapter5_2.html" class="navigation navigation-next " aria-label="Next page: 贪心算法"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter6/chapter6_209.html" class="navigation navigation-next " aria-label="Next page: 209 长度最小的子数组"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
