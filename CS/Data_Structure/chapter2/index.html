@@ -40,7 +40,7 @@
     <link rel="next" href="../chapter3/index.html" />
     
     
-    <link rel="prev" href="../chapter1/chapter1_7.html" />
+    <link rel="prev" href="../chapter1/chapter1_compare.html" />
     
 
         
@@ -53,7 +53,7 @@
         data-chapter-title="链表"
         data-filepath="chapter2/index.md"
         data-basepath=".."
-        data-revision="Thu Jul 23 2020 07:36:34 GMT+0800 (中国标准时间)"
+        data-revision="Thu Jul 30 2020 20:40:18 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
     
 
@@ -98,10 +98,10 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1" data-path="chapter1/chapter1_1.html">
+        <li class="chapter " data-level="1.1" data-path="chapter1/chapter1_bubble.html">
             
                 
-                    <a href="../chapter1/chapter1_1.html">
+                    <a href="../chapter1/chapter1_bubble.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -113,10 +113,10 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="chapter1/chapter1_2.html">
+        <li class="chapter " data-level="1.2" data-path="chapter1/chapter1_select.html">
             
                 
-                    <a href="../chapter1/chapter1_2.html">
+                    <a href="../chapter1/chapter1_select.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -128,10 +128,10 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="chapter1/chapter1_3.html">
+        <li class="chapter " data-level="1.3" data-path="chapter1/chapter1_insert.html">
             
                 
-                    <a href="../chapter1/chapter1_3.html">
+                    <a href="../chapter1/chapter1_insert.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -143,10 +143,10 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="chapter1/chapter1_4.html">
+        <li class="chapter " data-level="1.4" data-path="chapter1/chapter1_shell.html">
             
                 
-                    <a href="../chapter1/chapter1_4.html">
+                    <a href="../chapter1/chapter1_shell.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -158,10 +158,10 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="chapter1/chapter1_5.html">
+        <li class="chapter " data-level="1.5" data-path="chapter1/chapter1_quick.html">
             
                 
-                    <a href="../chapter1/chapter1_5.html">
+                    <a href="../chapter1/chapter1_quick.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -173,10 +173,10 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="chapter1/chapter1_6.html">
+        <li class="chapter " data-level="1.6" data-path="chapter1/chapter1_merge.html">
             
                 
-                    <a href="../chapter1/chapter1_6.html">
+                    <a href="../chapter1/chapter1_merge.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -188,10 +188,10 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="chapter1/chapter1_7.html">
+        <li class="chapter " data-level="1.7" data-path="chapter1/chapter1_compare.html">
             
                 
-                    <a href="../chapter1/chapter1_7.html">
+                    <a href="../chapter1/chapter1_compare.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -640,6 +640,107 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#x94FE;&#x8868;">&#x94FE;&#x8868;</h1>
+<h2 id="&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;">&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;</h2>
+<pre><code class="lang-python"><span class="hljs-comment">### &#x5B9E;&#x73B0;&#x94FE;&#x8868;&#x529F;&#x80FD;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,val)</span>:</span>
+        self.val = val
+        self.next = <span class="hljs-keyword">None</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleLink</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.__head = <span class="hljs-keyword">None</span>
+
+    <span class="hljs-comment"># &#x662F;&#x5426;&#x4E3A;&#x7A7A;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_empty</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.__head == <span class="hljs-keyword">None</span>
+
+    <span class="hljs-comment"># &#x94FE;&#x8868;&#x957F;&#x5EA6;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">length</span><span class="hljs-params">(self)</span>:</span>
+        cur = self.__head
+        count = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
+            cur = cur.next
+            count += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">return</span> count
+
+    <span class="hljs-comment"># &#x904D;&#x5386;&#x94FE;&#x8868;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">travel</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>:
+            <span class="hljs-keyword">return</span>
+        cur = self.__head
+        <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
+            print(cur.val,end=<span class="hljs-string">&apos;,&apos;</span>)
+            cur = cur.next
+        <span class="hljs-keyword">return</span>
+
+    <span class="hljs-comment"># &#x5934;&#x90E8;&#x63D2;&#x5165;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(self,val)</span>:</span>
+        node = Node(val)
+        node.next = self.__head
+        self.__head = node
+        <span class="hljs-keyword">return</span>
+
+    <span class="hljs-comment"># &#x5C3E;&#x90E8;&#x63D2;&#x5165;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">append</span><span class="hljs-params">(self,val)</span>:</span>
+        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>:
+            self.__head = Node(val)
+            <span class="hljs-keyword">return</span>
+        cur = self.__head
+        <span class="hljs-keyword">while</span> cur.next != <span class="hljs-keyword">None</span>:
+            cur = cur.next
+        cur.next = Node(val)
+        <span class="hljs-keyword">return</span>
+
+    <span class="hljs-comment"># &#x67E5;&#x627E;&#x5143;&#x7D20;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">search</span><span class="hljs-params">(self,val)</span>:</span>
+        cur = self.__head
+        <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
+            <span class="hljs-keyword">if</span> cur.val == val:
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+            cur = cur.next
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+    <span class="hljs-comment"># &#x5220;&#x9664; val &#x5143;&#x7D20;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove</span><span class="hljs-params">(self,val)</span>:</span>
+        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>: <span class="hljs-keyword">return</span> 
+        cur = self.__head
+        pre = self.__head
+
+        <span class="hljs-keyword">if</span> cur.val == val:
+            self.__head = cur.next
+            <span class="hljs-keyword">return</span>
+        <span class="hljs-keyword">while</span> cur.val != val <span class="hljs-keyword">and</span> cur.next != <span class="hljs-keyword">None</span>:
+            pre = cur
+            cur = cur.next
+        pre.next = cur.next
+        <span class="hljs-keyword">return</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove_new</span><span class="hljs-params">(self,val)</span>:</span>
+        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>: <span class="hljs-keyword">return</span>
+        cur = self.__head
+        <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
+            <span class="hljs-keyword">if</span> cur.val == val:
+                <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-comment"># &#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert</span><span class="hljs-params">(self,pos,val)</span>:</span>
+        <span class="hljs-keyword">if</span> pos &lt;= <span class="hljs-number">0</span>:
+            self.add(val)
+        <span class="hljs-keyword">elif</span> pos &gt; self.length()-<span class="hljs-number">1</span>:
+            self.append(val)
+        <span class="hljs-keyword">else</span>:
+            node = Node(val)
+            count = <span class="hljs-number">0</span>
+            pre = self.__head
+            <span class="hljs-keyword">while</span> count &lt; pos-<span class="hljs-number">1</span>:
+                count += <span class="hljs-number">1</span>
+                pre = pre.next
+
+            node.next = pre.next
+            pre.next = node
+        <span class="hljs-keyword">return</span>
+</code></pre>
 
                     
                     </section>
@@ -650,7 +751,7 @@
         </div>
 
         
-        <a href="../chapter1/chapter1_7.html" class="navigation navigation-prev " aria-label="Previous page: 比较"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter1/chapter1_compare.html" class="navigation navigation-prev " aria-label="Previous page: 比较"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../chapter3/index.html" class="navigation navigation-next " aria-label="Next page: 堆栈"><i class="fa fa-angle-right"></i></a>

@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>LeeCode | 数据结构与算法</title>
+        <title>归并排序 | 数据结构与算法</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter6/chapter6_1.html" />
+    <link rel="next" href="../chapter1/chapter1_compare.html" />
     
     
-    <link rel="prev" href="../chapter5/chapter5_4.html" />
+    <link rel="prev" href="../chapter1/chapter1_quick.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="6"
-        data-chapter-title="LeeCode"
-        data-filepath="chapter6/index.md"
+        data-level="1.6"
+        data-chapter-title="归并排序"
+        data-filepath="chapter1/chapter1_merge.md"
         data-basepath=".."
         data-revision="Thu Jul 30 2020 20:40:18 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
@@ -173,7 +173,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="chapter1/chapter1_merge.html">
+        <li class="chapter active" data-level="1.6" data-path="chapter1/chapter1_merge.html">
             
                 
                     <a href="../chapter1/chapter1_merge.html">
@@ -334,7 +334,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="chapter6/index.html">
+        <li class="chapter " data-level="6" data-path="chapter6/index.html">
             
                 
                     <a href="../chapter6/index.html">
@@ -639,7 +639,96 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="leecode">LeeCode</h1>
+                        <h1 id="&#x5F52;&#x5E76;&#x6392;&#x5E8F;">&#x5F52;&#x5E76;&#x6392;&#x5E8F;</h1>
+<p>&#x5F52;&#x5E76;&#x662F;&#x4E00;&#x79CD;&#x5178;&#x578B;&#x7684;&#x5E8F;&#x5217;&#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x5DE5;&#x4F5C;&#x662F;&#x628A;&#x4E24;&#x4E2A;&#x6216;&#x66F4;&#x591A;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#x3002;&#x57FA;&#x4E8E;&#x5F52;&#x5E76;&#x7684;&#x601D;&#x60F3;&#x4E5F;&#x53EF;&#x4E5F;&#x5B9E;&#x73B0;&#x6392;&#x5E8F;&#xFF0C;&#x79F0;&#x4E3A;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#x3002;&#x5176;&#x6392;&#x5E8F;&#x601D;&#x60F3;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x521D;&#x59CB;&#x65F6;&#xFF0C;&#x628A;&#x5F85;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x4E2D;&#x7684; n &#x4E2A;&#x8BB0;&#x5F55;&#x770B;&#x6210; n &#x4E2A;&#x6709;&#x5E8F;&#x5B50;&#x5E8F;&#x5217;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B50;&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#x5747;&#x4E3A;1&#x3002;</li>
+<li>&#x628A;&#x5F53;&#x65F6;&#x5E8F;&#x5217;&#x7EC4;&#x91CC;&#x7684;&#x6709;&#x5E8F;&#x5B50;&#x5E8F;&#x5217;&#x4E24;&#x4E24;&#x5F52;&#x5E76;&#xFF0C;&#x5B8C;&#x6210;&#x4E00;&#x904D;&#x540E;&#x5E8F;&#x5217;&#x7EC4;&#x91CC;&#x7684;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x4E2A;&#x6570;&#x51CF;&#x534A;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B50;&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#x52A0;&#x500D;&#x3002;</li>
+<li>&#x5BF9;&#x52A0;&#x957F;&#x7684;&#x6709;&#x5E8F;&#x5B50;&#x5E8F;&#x5217;&#x91CD;&#x590D;&#x4E0A;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A; n &#x7684;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#x3002;</li>
+</ul>
+<p>&#x8FD9;&#x79CD;&#x5F52;&#x5E76;&#x65B9;&#x6CD5;&#x79F0;&#x4E3A;&#x7B80;&#x5355;&#x7684;&#x4E8C;&#x8DEF;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#xFF0C;&#x4E5F;&#x53EF;&#x8003;&#x8651;&#x4E09;&#x8DEF;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#x3002;</p>
+<h3 id="&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;">&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;</h3>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge_sort</span><span class="hljs-params">(ls)</span>:</span>
+    <span class="hljs-keyword">if</span> len(ls) &lt;= <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">return</span> ls
+    mid = len(ls)//<span class="hljs-number">2</span>
+    <span class="hljs-comment"># &#x5E8F;&#x5217;&#x5DE6;&#x8FB9;&#x90E8;&#x5206;</span>
+    left = merge_sort(ls[:mid])
+    <span class="hljs-comment"># &#x5E8F;&#x5217;&#x53F3;&#x8FB9;&#x90E8;&#x5206;</span>
+    right = merge_sort(ls[mid:])
+    <span class="hljs-keyword">return</span> merge(left,right)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge</span><span class="hljs-params">(left,right)</span>:</span>
+    <span class="hljs-comment">## left&#x90E8;&#x5206;&#x7684;&#x6307;&#x9488; l right&#x90E8;&#x5206;&#x7684;&#x6307;&#x9488; r</span>
+    l,r = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>
+    res = []
+    <span class="hljs-keyword">while</span> l &lt; len(left) <span class="hljs-keyword">and</span> r &lt; len(right):
+        <span class="hljs-keyword">if</span> left[l] &lt; right[r]:
+            res.append(left[l])
+            l += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            res.append(right[r])
+            r += <span class="hljs-number">1</span>
+    res += left[l:]
+    res += right[r:]
+    <span class="hljs-keyword">return</span> res
+ls = [<span class="hljs-number">4</span>,<span class="hljs-number">7</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">50</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">8</span>,-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">12</span>,<span class="hljs-number">2</span>,<span class="hljs-number">88</span>]
+print(merge_sort(ls))
+</code></pre>
+<p>&#x4E09;&#x8DEF;&#x5E76;&#x6392;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge_sort3</span><span class="hljs-params">(ls)</span>:</span>
+    <span class="hljs-keyword">if</span> len(ls) &lt;= <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">return</span> ls
+    num = len(ls)//<span class="hljs-number">3</span>
+    <span class="hljs-comment"># &#x5E8F;&#x5217;&#x5DE6;&#x8FB9;&#x90E8;&#x5206;</span>
+    left = merge_sort(ls[:num])
+    <span class="hljs-comment"># &#x5E8F;&#x5217;&#x4E2D;&#x95F4;&#x90E8;&#x5206;</span>
+    mid = merge_sort(ls[num:<span class="hljs-number">2</span>*num])
+    <span class="hljs-comment"># &#x5E8F;&#x5217;&#x53F3;&#x8FB9;&#x90E8;&#x5206;</span>
+    right = merge_sort(ls[<span class="hljs-number">2</span>*num:])
+    <span class="hljs-keyword">return</span> merge3(left,mid,right)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge3</span><span class="hljs-params">(left,mid,right)</span>:</span>
+    l,m,r = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>
+    res = []
+    <span class="hljs-keyword">while</span> l&lt;len(left) <span class="hljs-keyword">and</span> m&lt;len(mid) <span class="hljs-keyword">and</span> r&lt;len(right):
+        <span class="hljs-keyword">if</span> left[l] &lt; right[r]:
+            <span class="hljs-keyword">if</span> left[l] &gt; mid[m]:
+                res.append(mid[m])
+                m += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                res.append(left[l])
+                l += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">if</span> right[r] &gt; mid[m]:
+                res.append(mid[m])
+                m += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                res.append(right[r])
+                r += <span class="hljs-number">1</span>
+    hh = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [left[l:],mid[m:],right[r:]] <span class="hljs-keyword">if</span> i != []]
+    A,B = hh[<span class="hljs-number">0</span>],hh[<span class="hljs-number">1</span>]
+    a,b = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> a&lt;len(A) <span class="hljs-keyword">and</span> b&lt;len(B):
+        <span class="hljs-keyword">if</span> A[a] &gt; B[b]:
+            res.append(B[b])
+            b += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            res.append(A[a])
+            a += <span class="hljs-number">1</span>
+    res += A[a:]
+    res += B[b:]
+    <span class="hljs-keyword">return</span> res
+ls = [<span class="hljs-number">4</span>,<span class="hljs-number">7</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">50</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">8</span>,-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">12</span>,<span class="hljs-number">2</span>,<span class="hljs-number">88</span>]
+print(merge_sort3(ls))
+</code></pre>
+<h3 id="&#x590D;&#x6742;&#x5EA6;&#x548C;&#x7A33;&#x5B9A;&#x6027;">&#x590D;&#x6742;&#x5EA6;&#x548C;&#x7A33;&#x5B9A;&#x6027;</h3>
+<ul>
+<li><p>&#x590D;&#x6742;&#x5EA6;&#xFF1A;O(n log n)</p>
+</li>
+<li><p>&#x7A33;&#x5B9A;&#x6027;: &#x7A33;&#x5B9A;</p>
+</li>
+</ul>
 
                     
                     </section>
@@ -650,10 +739,10 @@
         </div>
 
         
-        <a href="../chapter5/chapter5_4.html" class="navigation navigation-prev " aria-label="Previous page: 分治算法"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter1/chapter1_quick.html" class="navigation navigation-prev " aria-label="Previous page: 快速排序"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter6/chapter6_1.html" class="navigation navigation-next " aria-label="Next page: 数组"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter1/chapter1_compare.html" class="navigation navigation-next " aria-label="Next page: 比较"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

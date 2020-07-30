@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>LeeCode | 数据结构与算法</title>
+        <title>Shell排序 | 数据结构与算法</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter6/chapter6_1.html" />
+    <link rel="next" href="../chapter1/chapter1_quick.html" />
     
     
-    <link rel="prev" href="../chapter5/chapter5_4.html" />
+    <link rel="prev" href="../chapter1/chapter1_insert.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="6"
-        data-chapter-title="LeeCode"
-        data-filepath="chapter6/index.md"
+        data-level="1.4"
+        data-chapter-title="Shell排序"
+        data-filepath="chapter1/chapter1_shell.md"
         data-basepath=".."
         data-revision="Thu Jul 30 2020 20:40:18 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
@@ -143,7 +143,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="chapter1/chapter1_shell.html">
+        <li class="chapter active" data-level="1.4" data-path="chapter1/chapter1_shell.html">
             
                 
                     <a href="../chapter1/chapter1_shell.html">
@@ -334,7 +334,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="chapter6/index.html">
+        <li class="chapter " data-level="6" data-path="chapter6/index.html">
             
                 
                     <a href="../chapter6/index.html">
@@ -639,7 +639,34 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="leecode">LeeCode</h1>
+                        <h1 id="shell&#x6392;&#x5E8F;">Shell&#x6392;&#x5E8F;</h1>
+<p>&#x5E0C;&#x5C14;&#x6392;&#x5E8F;(Shell Sort)&#x662F;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7684;&#x4E00;&#x79CD;&#x3002;&#x4E5F;&#x79F0;&#x7F29;&#x5C0F;&#x589E;&#x91CF;&#x6392;&#x5E8F;&#xFF0C;&#x662F;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x7684;&#x4E00;&#x79CD;&#x66F4;&#x9AD8;&#x6548;&#x7684;&#x6539;&#x8FDB;&#x7248;&#x672C;&#x3002;&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x662F;&#x975E;&#x7A33;&#x5B9A;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x56E0;DL&#xFF0E;Shell&#x4E8E;1959&#x5E74;&#x63D0;&#x51FA;&#x800C;&#x5F97;&#x540D;&#x3002; &#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x662F;&#x628A;&#x8BB0;&#x5F55;&#x6309;&#x4E0B;&#x6807;&#x7684;&#x4E00;&#x5B9A;&#x589E;&#x91CF;&#x5206;&#x7EC4;&#xFF0C;&#x5BF9;&#x6BCF;&#x7EC4;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x6392;&#x5E8F;&#xFF1B;&#x968F;&#x7740;&#x589E;&#x91CF;&#x9010;&#x6E10;&#x51CF;&#x5C11;&#xFF0C;&#x6BCF;&#x7EC4;&#x5305;&#x542B;&#x7684;&#x5173;&#x952E;&#x8BCD;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#xFF0C;&#x5F53;&#x589E;&#x91CF;&#x51CF;&#x81F3;1&#x65F6;&#xFF0C;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x6070;&#x88AB;&#x5206;&#x6210;&#x4E00;&#x7EC4;&#xFF0C;&#x7B97;&#x6CD5;&#x4FBF;&#x7EC8;&#x6B62;&#x3002;</p>
+<h2 id="&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;">&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;</h2>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">shell_sort</span><span class="hljs-params">(alist)</span>:</span>
+    n = len(alist)
+    <span class="hljs-comment"># &#x521D;&#x59CB;&#x6B65;&#x957F;</span>
+    gap = n // <span class="hljs-number">2</span>
+    <span class="hljs-keyword">while</span> gap &gt; <span class="hljs-number">0</span>:
+        <span class="hljs-comment"># &#x6309;&#x6B65;&#x957F;&#x8FDB;&#x884C;&#x63D2;&#x5165;&#x6392;&#x5E8F;</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(gap, n):
+            j = i
+            <span class="hljs-comment"># &#x63D2;&#x5165;&#x6392;&#x5E8F;</span>
+            <span class="hljs-keyword">while</span> j&gt;=gap <span class="hljs-keyword">and</span> alist[j-gap] &gt; alist[j]:
+                alist[j-gap], alist[j] = alist[j], alist[j-gap]
+                j -= gap
+        <span class="hljs-comment"># &#x5F97;&#x5230;&#x65B0;&#x7684;&#x6B65;&#x957F;</span>
+        gap = gap // <span class="hljs-number">2</span>
+
+alist = [<span class="hljs-number">54</span>,<span class="hljs-number">26</span>,<span class="hljs-number">93</span>,<span class="hljs-number">17</span>,<span class="hljs-number">77</span>,<span class="hljs-number">31</span>,<span class="hljs-number">44</span>,<span class="hljs-number">55</span>,<span class="hljs-number">20</span>]
+shell_sort(alist)
+print(alist)
+</code></pre>
+<h2 id="&#x590D;&#x6742;&#x5EA6;&#x548C;&#x7A33;&#x5B9A;&#x6027;">&#x590D;&#x6742;&#x5EA6;&#x548C;&#x7A33;&#x5B9A;&#x6027;</h2>
+<ul>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;&#xFF1A;O(n^1.3 )&#xFF0C;&#x6700;&#x574F;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O(n^2)</li>
+<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O(1)</li>
+<li>&#x7A33;&#x5B9A;&#x6027;&#xFF1A;&#x4E0D;&#x7A33;&#x5B9A;</li>
+</ul>
 
                     
                     </section>
@@ -650,10 +677,10 @@
         </div>
 
         
-        <a href="../chapter5/chapter5_4.html" class="navigation navigation-prev " aria-label="Previous page: 分治算法"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter1/chapter1_insert.html" class="navigation navigation-prev " aria-label="Previous page: 插入排序"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter6/chapter6_1.html" class="navigation navigation-next " aria-label="Next page: 数组"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter1/chapter1_quick.html" class="navigation navigation-next " aria-label="Next page: 快速排序"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
