@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>125 验证回文串 | Python学习</title>
+        <title>栈 | Python学习</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -41,10 +41,10 @@
         
     
     
-    <link rel="next" href="../chapter6/chapter6_344.html" />
+    <link rel="next" href="../chapter4/index.html" />
     
     
-    <link rel="prev" href="../chapter6/chapter6_167.html" />
+    <link rel="prev" href="../chapter3/heap.html" />
     
 
         
@@ -53,9 +53,9 @@
         
         
     <div class="book"
-        data-level="6.2.9"
-        data-chapter-title="125 验证回文串"
-        data-filepath="chapter6/chapter6_125.md"
+        data-level="3.2"
+        data-chapter-title="栈"
+        data-filepath="chapter3/stack.md"
         data-basepath=".."
         data-revision="Mon Aug 10 2020 23:36:51 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
@@ -301,7 +301,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="chapter3/stack.html">
+        <li class="chapter active" data-level="3.2" data-path="chapter3/stack.html">
             
                 
                     <a href="../chapter3/stack.html">
@@ -597,7 +597,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6.2.9" data-path="chapter6/chapter6_125.html">
+        <li class="chapter " data-level="6.2.9" data-path="chapter6/chapter6_125.html">
             
                 
                     <a href="../chapter6/chapter6_125.html">
@@ -743,42 +743,42 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="125-&#x9A8C;&#x8BC1;&#x56DE;&#x6587;&#x4E32;">125 &#x9A8C;&#x8BC1;&#x56DE;&#x6587;&#x4E32;</h1>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x9A8C;&#x8BC1;&#x5B83;&#x662F;&#x5426;&#x662F;&#x56DE;&#x6587;&#x4E32;&#xFF0C;&#x53EA;&#x8003;&#x8651;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#xFF0C;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x5B57;&#x6BCD;&#x7684;&#x5927;&#x5C0F;&#x5199;&#x3002;</p>
-<p>&#x8BF4;&#x660E;&#xFF1A;&#x672C;&#x9898;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x5B9A;&#x4E49;&#x4E3A;&#x6709;&#x6548;&#x7684;&#x56DE;&#x6587;&#x4E32;&#x3002;</p>
-<p>&#x793A;&#x4F8B; 1:</p>
-<pre><code>&#x8F93;&#x5165;: &quot;A man, a plan, a canal: Panama&quot;
-&#x8F93;&#x51FA;: true
-</code></pre><p>&#x793A;&#x4F8B; 2:</p>
-<pre><code>&#x8F93;&#x5165;: &quot;race a car&quot;
-&#x8F93;&#x51FA;: false
-</code></pre><h3 id="&#x89E3;&#x6CD5;">&#x89E3;&#x6CD5;</h3>
+                        <h1 id="&#x6808;">&#x6808;</h1>
+<p>&#x6808;&#x662F;&#x4E00;&#x79CD;&#x64CD;&#x4F5C;&#x53D7;&#x9650;&#x7684;&#x7EBF;&#x6027;&#x8868;&#x53EA;&#x5141;&#x8BB8;&#x4ECE;&#x4E00;&#x7AEF;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x6570;&#x636E;&#x3002;&#x6808;&#x6709;&#x4E24;&#x79CD;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#xFF0C;&#x5373;&#x7EBF;&#x6027;&#x5B58;&#x50A8;&#x548C;&#x94FE;&#x63A5;&#x5B58;&#x50A8;&#xFF08;&#x94FE;&#x8868;&#xFF09;&#x3002;&#x6808;&#x7684;&#x4E00;&#x4E2A;&#x6700;&#x91CD;&#x8981;&#x7684;&#x7279;&#x5F81;&#x5C31;&#x662F;&#x6808;&#x7684;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x53EA;&#x80FD;&#x5728;&#x6808;&#x9876;&#x8FDB;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x6B21;&#x5220;&#x9664;&#x7684;&#x5143;&#x7D20;&#x90FD;&#x662F;&#x6700;&#x540E;&#x8FDB;&#x6808;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x6545;&#x6808;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x540E;&#x8FDB;&#x5148;&#x51FA;&#xFF08;LIFO&#xFF09;&#x8868;&#x3002;</p>
+<h3 id="&#x6808;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;">&#x6808;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;</h3>
 <ul>
-<li>&#x5148;&#x6E05;&#x6D17;&#x6570;&#x636E;&#xFF0C;&#x518D;&#x53CD;&#x8F6C;&#x6570;&#x636E;&#x548C;&#x539F;&#x6570;&#x636E;&#x662F;&#x5426;&#x4E00;&#x81F4;&#x3002;</li>
-<li>&#x53CC;&#x6307;&#x9488;&#x6CD5;</li>
+<li>&#x9012;&#x5F52;</li>
+<li>Ctrl+Z</li>
+<li>&#x62EC;&#x53F7;&#x5339;&#x914D;</li>
 </ul>
-<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_numstr</span><span class="hljs-params">(str)</span>:</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-string">&apos;a&apos;</span>&lt;= str &lt;= <span class="hljs-string">&apos;z&apos;</span>) <span class="hljs-keyword">or</span> (<span class="hljs-string">&apos;1&apos;</span> &lt;= str &lt;= <span class="hljs-string">&apos;9&apos;</span>):
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+<h3 id="&#x6808;&#x7684;&#x5B9E;&#x73B0;python">&#x6808;&#x7684;&#x5B9E;&#x73B0;(Python)</h3>
+<p>&#x6808;&#x7684;&#x5E38;&#x89C1;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code>Stack()         &#x521B;&#x5EFA;&#x6808;
+push(item)      &#x5C06;&#x6570;&#x636E;item&#x653E;&#x5728;&#x6808;&#x7684;&#x9876;&#x90E8;
+pop()             &#x8FD4;&#x56DE;&#x6808;&#x9876;&#x90E8;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4ECE;&#x6808;&#x4E2D;&#x79FB;&#x9664;&#x8BE5;&#x6570;&#x636E;
+peek()           &#x8FD4;&#x56DE;&#x6808;&#x9876;&#x90E8;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x4E0D;&#x79FB;&#x9664;
+size()            &#x8FD4;&#x56DE;&#x6808;&#x7684;&#x5927;&#x5C0F;
+is_empty()       &#x8FD4;&#x56DE;&#x6808;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
+</code></pre><p>&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Stack</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.__items = []
 
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_empty</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.__items == []
 
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isPalindrome</span><span class="hljs-params">(string)</span>:</span>
-    left,right = <span class="hljs-number">0</span>,len(string)-<span class="hljs-number">1</span>
-    <span class="hljs-keyword">while</span> left&lt;right:
-        <span class="hljs-keyword">while</span> (left&lt;right) <span class="hljs-keyword">and</span> is_numstr(string[left]):
-            left += <span class="hljs-number">1</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">size</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> len(self.__items)
 
-        <span class="hljs-keyword">while</span> (left&lt;right) <span class="hljs-keyword">and</span> is_numstr(string[right]):
-            right -= <span class="hljs-number">1</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">push</span><span class="hljs-params">(self,val)</span>:</span>
+        self.__items.append(val)
+        <span class="hljs-keyword">return</span>
 
-        <span class="hljs-keyword">if</span> left &lt; right:
-            <span class="hljs-keyword">if</span> string[left].lower() != string[right].lower():
-                <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
-            <span class="hljs-keyword">else</span>:
-                left += <span class="hljs-number">1</span>
-                right -= <span class="hljs-number">1</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pop</span><span class="hljs-params">(self)</span>:</span>
+        self.__items.pop()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">peek</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.__items[len(self.__items)-<span class="hljs-number">1</span>]
 </code></pre>
 
                     
@@ -790,10 +790,10 @@
         </div>
 
         
-        <a href="../chapter6/chapter6_167.html" class="navigation navigation-prev " aria-label="Previous page: 167 两数之和II"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter3/heap.html" class="navigation navigation-prev " aria-label="Previous page: 堆"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter6/chapter6_344.html" class="navigation navigation-next " aria-label="Next page: 344 反转字符串"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter4/index.html" class="navigation navigation-next " aria-label="Next page: 树"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

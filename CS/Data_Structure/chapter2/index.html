@@ -5,11 +5,11 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>链表 | 数据结构与算法</title>
+        <title>链表 | Python学习</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
-        
+        <meta name="author" content="Guohui">
         
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,6 +19,10 @@
         <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
         
     <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
     
         
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
@@ -37,7 +41,7 @@
         
     
     
-    <link rel="next" href="../chapter3/index.html" />
+    <link rel="next" href="../chapter2/compare.html" />
     
     
     <link rel="prev" href="../chapter1/chapter1_compare.html" />
@@ -53,7 +57,7 @@
         data-chapter-title="链表"
         data-filepath="chapter2/index.md"
         data-basepath=".."
-        data-revision="Fri Jul 31 2020 09:16:15 GMT+0800 (中国标准时间)"
+        data-revision="Mon Aug 10 2020 23:36:51 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
     
 
@@ -63,8 +67,15 @@
             
             
             
+                
+                <li>
+                    <a href="../../index.html" target="blank" class="custom-link">个人主页</a>
+                </li>
+            
             
 
+            
+            <li class="divider"></li>
             
 
             
@@ -221,6 +232,42 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter2/compare.html">
+            
+                
+                    <a href="../chapter2/compare.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        与数组比较
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2/link_list_leetcode.html">
+            
+                
+                    <a href="../chapter2/link_list_leetcode.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        链表相关LeetCode
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="3" data-path="chapter3/index.html">
@@ -236,6 +283,42 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter3/heap.html">
+            
+                
+                    <a href="../chapter3/heap.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        堆
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter3/stack.html">
+            
+                
+                    <a href="../chapter3/stack.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        栈
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="4" data-path="chapter4/index.html">
@@ -250,6 +333,27 @@
                         树
                     </a>
             
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter4/bintree.html">
+            
+                
+                    <a href="../chapter4/bintree.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        二叉树
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -629,7 +733,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >数据结构与算法</a>
+        <a href="../" >Python学习</a>
     </h1>
 </div>
 
@@ -640,59 +744,62 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#x94FE;&#x8868;">&#x94FE;&#x8868;</h1>
-<h2 id="&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;">&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;</h2>
-<pre><code class="lang-python"><span class="hljs-comment">### &#x5B9E;&#x73B0;&#x94FE;&#x8868;&#x529F;&#x80FD;</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>:</span>
+<p><em>&#x6765;&#x81EA;&#x767E;&#x5EA6;&#x767E;&#x79D1;</em>  </p>
+<p>&#x94FE;&#x8868;&#x662F;&#x4E00;&#x79CD;&#x7269;&#x7406;<a href="https://baike.baidu.com/item/&#x5B58;&#x50A8;&#x5355;&#x5143;/8727749" target="_blank">&#x5B58;&#x50A8;&#x5355;&#x5143;</a>&#x4E0A;&#x975E;&#x8FDE;&#x7EED;&#x3001;&#x975E;&#x987A;&#x5E8F;&#x7684;<a href="https://baike.baidu.com/item/&#x5B58;&#x50A8;&#x7ED3;&#x6784;/350782" target="_blank">&#x5B58;&#x50A8;&#x7ED3;&#x6784;</a>&#xFF0C;<a href="https://baike.baidu.com/item/&#x6570;&#x636E;&#x5143;&#x7D20;/715313" target="_blank">&#x6570;&#x636E;&#x5143;&#x7D20;</a>&#x7684;&#x903B;&#x8F91;&#x987A;&#x5E8F;&#x662F;&#x901A;&#x8FC7;&#x94FE;&#x8868;&#x4E2D;&#x7684;<a href="https://baike.baidu.com/item/&#x6307;&#x9488;/2878304" target="_blank">&#x6307;&#x9488;</a>&#x94FE;&#x63A5;&#x6B21;&#x5E8F;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x94FE;&#x8868;&#x7531;&#x4E00;&#x7CFB;&#x5217;&#x7ED3;&#x70B9;&#xFF08;&#x94FE;&#x8868;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x79F0;&#x4E3A;&#x7ED3;&#x70B9;&#xFF09;&#x7EC4;&#x6210;&#xFF0C;&#x7ED3;&#x70B9;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x52A8;&#x6001;&#x751F;&#x6210;&#x3002;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x5305;&#x62EC;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;&#x4E00;&#x4E2A;&#x662F;&#x5B58;&#x50A8;<a href="https://baike.baidu.com/item/&#x6570;&#x636E;&#x5143;&#x7D20;" target="_blank">&#x6570;&#x636E;&#x5143;&#x7D20;</a>&#x7684;&#x6570;&#x636E;&#x57DF;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x662F;&#x5B58;&#x50A8;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x5730;&#x5740;&#x7684;<a href="https://baike.baidu.com/item/&#x6307;&#x9488;/2878304" target="_blank">&#x6307;&#x9488;</a>&#x57DF;&#x3002;</p>
+<h2 id="&#x94FE;&#x8868;&#x5B9E;&#x73B0;python">&#x94FE;&#x8868;&#x5B9E;&#x73B0;(Python)</h2>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListNode</span>:</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,val)</span>:</span>
         self.val = val
         self.next = <span class="hljs-keyword">None</span>
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleLink</span>:</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleLinklist</span>:</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
         self.__head = <span class="hljs-keyword">None</span>
 
-    <span class="hljs-comment"># &#x662F;&#x5426;&#x4E3A;&#x7A7A;</span>
+    <span class="hljs-comment">## &#x5224;&#x65AD;&#x94FE;&#x8868;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_empty</span><span class="hljs-params">(self)</span>:</span>
         <span class="hljs-keyword">return</span> self.__head == <span class="hljs-keyword">None</span>
 
-    <span class="hljs-comment"># &#x94FE;&#x8868;&#x957F;&#x5EA6;</span>
+    <span class="hljs-comment">## &#x8FD4;&#x56DE;&#x94FE;&#x8868;&#x7684;&#x957F;&#x5EA6;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">length</span><span class="hljs-params">(self)</span>:</span>
         cur = self.__head
         count = <span class="hljs-number">0</span>
         <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
-            cur = cur.next
             count += <span class="hljs-number">1</span>
+            cur = cur.next
         <span class="hljs-keyword">return</span> count
 
-    <span class="hljs-comment"># &#x904D;&#x5386;&#x94FE;&#x8868;</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">travel</span><span class="hljs-params">(self)</span>:</span>
+    <span class="hljs-comment">## &#x5C3E;&#x90E8;&#x63D2;&#x5165;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">append</span><span class="hljs-params">(self,val)</span>:</span>
+        node = ListNode(val)
         <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>:
+            self.__head = node
             <span class="hljs-keyword">return</span>
+        cur = self.__head
+        <span class="hljs-keyword">while</span> cur.next != <span class="hljs-keyword">None</span>:
+            cur = cur.next
+        cur.next = node
+        <span class="hljs-keyword">return</span>
+
+    <span class="hljs-comment">## &#x5934;&#x90E8;&#x63D2;&#x5165;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(self,val)</span>:</span>
+        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>:
+            self.__head = ListNode(val)
+            <span class="hljs-keyword">return</span>
+        cur = self.__head
+        self.__head = ListNode(val)
+        self.__head.next = cur
+        <span class="hljs-keyword">return</span>
+
+    <span class="hljs-comment">## &#x5BF9;&#x94FE;&#x8868;&#x8FDB;&#x884C;&#x904D;&#x5386;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">travel</span><span class="hljs-params">(self)</span>:</span>
         cur = self.__head
         <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
             print(cur.val,end=<span class="hljs-string">&apos;,&apos;</span>)
             cur = cur.next
         <span class="hljs-keyword">return</span>
 
-    <span class="hljs-comment"># &#x5934;&#x90E8;&#x63D2;&#x5165;</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(self,val)</span>:</span>
-        node = Node(val)
-        node.next = self.__head
-        self.__head = node
-        <span class="hljs-keyword">return</span>
-
-    <span class="hljs-comment"># &#x5C3E;&#x90E8;&#x63D2;&#x5165;</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">append</span><span class="hljs-params">(self,val)</span>:</span>
-        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>:
-            self.__head = Node(val)
-            <span class="hljs-keyword">return</span>
-        cur = self.__head
-        <span class="hljs-keyword">while</span> cur.next != <span class="hljs-keyword">None</span>:
-            cur = cur.next
-        cur.next = Node(val)
-        <span class="hljs-keyword">return</span>
-
-    <span class="hljs-comment"># &#x67E5;&#x627E;&#x5143;&#x7D20;</span>
+    <span class="hljs-comment">##  &#x67E5;&#x627E;&#x94FE;&#x8868;&#x5143;&#x7D20;&#x662F;&#x5426;&#x5B58;&#x5728;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">search</span><span class="hljs-params">(self,val)</span>:</span>
         cur = self.__head
         <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
@@ -701,46 +808,117 @@
             cur = cur.next
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
 
-    <span class="hljs-comment"># &#x5220;&#x9664; val &#x5143;&#x7D20;</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove</span><span class="hljs-params">(self,val)</span>:</span>
-        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>: <span class="hljs-keyword">return</span> 
-        cur = self.__head
-        pre = self.__head
-
-        <span class="hljs-keyword">if</span> cur.val == val:
-            self.__head = cur.next
-            <span class="hljs-keyword">return</span>
-        <span class="hljs-keyword">while</span> cur.val != val <span class="hljs-keyword">and</span> cur.next != <span class="hljs-keyword">None</span>:
-            pre = cur
-            cur = cur.next
-        pre.next = cur.next
-        <span class="hljs-keyword">return</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove_new</span><span class="hljs-params">(self,val)</span>:</span>
-        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>: <span class="hljs-keyword">return</span>
-        cur = self.__head
-        <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
-            <span class="hljs-keyword">if</span> cur.val == val:
-                <span class="hljs-keyword">pass</span>
-
-    <span class="hljs-comment"># &#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;</span>
+    <span class="hljs-comment">## &#x5728;&#x94FE;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x5143;&#x7D20;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert</span><span class="hljs-params">(self,pos,val)</span>:</span>
         <span class="hljs-keyword">if</span> pos &lt;= <span class="hljs-number">0</span>:
             self.add(val)
         <span class="hljs-keyword">elif</span> pos &gt; self.length()-<span class="hljs-number">1</span>:
             self.append(val)
         <span class="hljs-keyword">else</span>:
-            node = Node(val)
+            node = ListNode(val)
             count = <span class="hljs-number">0</span>
-            pre = self.__head
+            cur = self.__head
             <span class="hljs-keyword">while</span> count &lt; pos-<span class="hljs-number">1</span>:
+                cur = cur.next
                 count += <span class="hljs-number">1</span>
-                pre = pre.next
-
-            node.next = pre.next
-            pre.next = node
+            node.next = cur.next
+            cur.next = node
         <span class="hljs-keyword">return</span>
+
+    <span class="hljs-comment">## &#x53BB;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x5143;&#x7D20;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove</span><span class="hljs-params">(self,val)</span>:</span>
+        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>: <span class="hljs-keyword">return</span>
+        cur = self.__head
+        <span class="hljs-keyword">if</span> cur.val == val:
+            self.__head = cur.next
+            <span class="hljs-keyword">return</span>
+        <span class="hljs-keyword">while</span> cur.next != <span class="hljs-keyword">None</span>:
+            <span class="hljs-keyword">if</span> cur.next.val == val:
+                cur.next = cur.next.next
+                <span class="hljs-keyword">return</span>
+            cur = cur.next
+        <span class="hljs-keyword">return</span>
+
+    <span class="hljs-comment">## &#x94FE;&#x8868;&#x7D22;&#x5F15;&#x503C;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">(self,num)</span>:</span>
+        <span class="hljs-keyword">if</span> num &lt;<span class="hljs-number">0</span> <span class="hljs-keyword">or</span> num &gt; self.length()-<span class="hljs-number">1</span>:
+            <span class="hljs-keyword">return</span>
+        cur = self.__head
+        count = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">while</span> count != num:
+            cur = cur.next
+            count += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">return</span> cur.val
 </code></pre>
+<p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x4E3A;&#x5355;&#x94FE;&#x8868;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x5728;ListNode&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;pre&#x5C5E;&#x6027;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x53CC;&#x94FE;&#x8868;&#x3002;</p>
+<h3 id="&#x53CC;&#x94FE;&#x8868;&#x5B9E;&#x73B0;">&#x53CC;&#x94FE;&#x8868;&#x5B9E;&#x73B0;</h3>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListNode</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,val)</span>:</span>
+        self.val = val
+        self.prev = <span class="hljs-keyword">None</span>
+        self.next = <span class="hljs-keyword">None</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DoubleLinklist</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.__head = <span class="hljs-keyword">None</span>
+
+    <span class="hljs-comment">## &#x5224;&#x65AD;&#x94FE;&#x8868;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_empty</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.__head == <span class="hljs-keyword">None</span>
+
+    <span class="hljs-comment">## &#x8FD4;&#x56DE;&#x94FE;&#x8868;&#x7684;&#x957F;&#x5EA6;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">length</span><span class="hljs-params">(self)</span>:</span>
+        cur = self.__head
+        count = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
+            count += <span class="hljs-number">1</span>
+            cur = cur.next
+        <span class="hljs-keyword">return</span> count
+
+    <span class="hljs-comment">## &#x5C3E;&#x90E8;&#x63D2;&#x5165;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">append</span><span class="hljs-params">(self,val)</span>:</span>
+        node = ListNode(val)
+        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>:
+            self.__head = node
+            <span class="hljs-keyword">return</span>
+        cur = self.__head
+        <span class="hljs-keyword">while</span> cur.next != <span class="hljs-keyword">None</span>:
+            cur = cur.next
+        cur.next = node
+        node.prev = cur
+        <span class="hljs-keyword">return</span>
+
+    <span class="hljs-comment">## &#x5934;&#x90E8;&#x63D2;&#x5165;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(self,val)</span>:</span>
+        <span class="hljs-keyword">if</span> self.__head == <span class="hljs-keyword">None</span>:
+            self.__head = ListNode(val)
+            <span class="hljs-keyword">return</span>
+
+        cur = self.__head
+        self.__head.prev = ListNode(val)
+        self.__head = ListNode(val)
+        self.__head.next = cur
+        <span class="hljs-keyword">return</span>
+
+    <span class="hljs-comment">## &#x5BF9;&#x94FE;&#x8868;&#x8FDB;&#x884C;&#x904D;&#x5386;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">travel</span><span class="hljs-params">(self)</span>:</span>
+        cur = self.__head
+        <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
+            print(cur.val,end=<span class="hljs-string">&apos;,&apos;</span>)
+            cur = cur.next
+        <span class="hljs-keyword">return</span>
+
+    <span class="hljs-comment">##  &#x67E5;&#x627E;&#x94FE;&#x8868;&#x5143;&#x7D20;&#x662F;&#x5426;&#x5B58;&#x5728;, &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">search</span><span class="hljs-params">(self,val)</span>:</span>
+        cur = self.__head
+        <span class="hljs-keyword">while</span> cur != <span class="hljs-keyword">None</span>:
+            <span class="hljs-keyword">if</span> cur.val == val:
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+            cur = cur.next
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+</code></pre>
+<h3 id="&#x5355;&#x9879;&#x5FAA;&#x73AF;&#x94FE;&#x8868;">&#x5355;&#x9879;&#x5FAA;&#x73AF;&#x94FE;&#x8868;</h3>
+<p>&#x5355;&#x94FE;&#x8868;&#x7684;&#x4E00;&#x4E2A;&#x53D8;&#x5F62;&#x662F;&#x5355;&#x5411;&#x5FAA;&#x73AF;&#x94FE;&#x8868;&#xFF0C;&#x94FE;&#x8868;&#x4E2D;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;next&#x57DF;&#x4E0D;&#x518D;&#x4E3A;None&#xFF0C;&#x800C;&#x662F;&#x6307;&#x5411;&#x94FE;&#x8868;&#x7684;&#x5934;&#x8282;&#x70B9;&#x3002;</p>
 
                     
                     </section>
@@ -754,13 +932,17 @@
         <a href="../chapter1/chapter1_compare.html" class="navigation navigation-prev " aria-label="Previous page: 比较"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter3/index.html" class="navigation navigation-next " aria-label="Next page: 堆栈"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter2/compare.html" class="navigation navigation-next " aria-label="Next page: 与数组比较"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
 <script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
 
     
     <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
@@ -780,7 +962,7 @@
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"expandable-chapters":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

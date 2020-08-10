@@ -5,11 +5,11 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>堆栈 | 数据结构与算法</title>
+        <title>堆栈 | Python学习</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
-        
+        <meta name="author" content="Guohui">
         
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -19,6 +19,10 @@
         <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
         
     <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
     
         
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
@@ -37,10 +41,10 @@
         
     
     
-    <link rel="next" href="../chapter4/index.html" />
+    <link rel="next" href="../chapter3/heap.html" />
     
     
-    <link rel="prev" href="../chapter2/index.html" />
+    <link rel="prev" href="../chapter2/link_list_leetcode.html" />
     
 
         
@@ -53,7 +57,7 @@
         data-chapter-title="堆栈"
         data-filepath="chapter3/index.md"
         data-basepath=".."
-        data-revision="Fri Jul 31 2020 09:16:15 GMT+0800 (中国标准时间)"
+        data-revision="Mon Aug 10 2020 23:36:51 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
     
 
@@ -63,8 +67,15 @@
             
             
             
+                
+                <li>
+                    <a href="../../index.html" target="blank" class="custom-link">个人主页</a>
+                </li>
+            
             
 
+            
+            <li class="divider"></li>
             
 
             
@@ -221,6 +232,42 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter2/compare.html">
+            
+                
+                    <a href="../chapter2/compare.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        与数组比较
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2/link_list_leetcode.html">
+            
+                
+                    <a href="../chapter2/link_list_leetcode.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        链表相关LeetCode
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter active" data-level="3" data-path="chapter3/index.html">
@@ -236,6 +283,42 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter3/heap.html">
+            
+                
+                    <a href="../chapter3/heap.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        堆
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter3/stack.html">
+            
+                
+                    <a href="../chapter3/stack.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        栈
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="4" data-path="chapter4/index.html">
@@ -250,6 +333,27 @@
                         树
                     </a>
             
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter4/bintree.html">
+            
+                
+                    <a href="../chapter4/bintree.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        二叉树
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -629,7 +733,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >数据结构与算法</a>
+        <a href="../" >Python学习</a>
     </h1>
 </div>
 
@@ -662,30 +766,7 @@ pop()             &#x8FD4;&#x56DE;&#x6808;&#x9876;&#x90E8;&#x6570;&#x636E;&#xFF0
 peek()           &#x8FD4;&#x56DE;&#x6808;&#x9876;&#x90E8;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x4E0D;&#x79FB;&#x9664;
 size()            &#x8FD4;&#x56DE;&#x6808;&#x7684;&#x5927;&#x5C0F;
 is_empty()       &#x8FD4;&#x56DE;&#x6808;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
-</code></pre><p> &#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;&#xFF1A;</p>
-<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Stack</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
-        self.items = []
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_empty</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> self.items == []
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">push</span><span class="hljs-params">(self,item)</span>:</span>
-        self.items.append(item)
-
-    <span class="hljs-comment"># pop()&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x79FB;&#x9664;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5143;&#x7D20;(&#x9ED8;&#x8BA4;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;)</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pop</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> self.items.pop()
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">peek</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> self.items[len(self.items)-<span class="hljs-number">1</span>]
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">size</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> len(self.items)
-
-<span class="hljs-keyword">if</span> __name__ ==  <span class="hljs-string">&apos;__main__&apos;</span>:
-    stack = Stack()
-</code></pre>
-<h2 id="&#x5806;&#x548C;&#x6808;&#x7684;&#x533A;&#x522B;">&#x5806;&#x548C;&#x6808;&#x7684;&#x533A;&#x522B;</h2>
+</code></pre><h2 id="&#x5806;&#x548C;&#x6808;&#x7684;&#x533A;&#x522B;">&#x5806;&#x548C;&#x6808;&#x7684;&#x533A;&#x522B;</h2>
 <ul>
 <li>&#x5806;&#x6808;&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x533A;&#x522B;&#xFF1A;</li>
 </ul>
@@ -739,16 +820,20 @@ size() &#x8FD4;&#x56DE;&#x961F;&#x5217;&#x7684;&#x5927;&#x5C0F;
         </div>
 
         
-        <a href="../chapter2/index.html" class="navigation navigation-prev " aria-label="Previous page: 链表"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter2/link_list_leetcode.html" class="navigation navigation-prev " aria-label="Previous page: 链表相关LeetCode"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter4/index.html" class="navigation navigation-next " aria-label="Next page: 树"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter3/heap.html" class="navigation navigation-next " aria-label="Next page: 堆"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
 <script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
 
     
     <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
@@ -768,7 +853,7 @@ size() &#x8FD4;&#x56DE;&#x961F;&#x5217;&#x7684;&#x5927;&#x5C0F;
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"expandable-chapters":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
