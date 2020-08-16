@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>链表相关LeetCode | 数据结构与算法</title>
+        <title>31 下一个排列 | 数据结构与算法</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -41,10 +41,10 @@
         
     
     
-    <link rel="next" href="../chapter2/206.html" />
+    <link rel="next" href="../chapter5/46.html" />
     
     
-    <link rel="prev" href="../chapter2/compare.html" />
+    <link rel="prev" href="../chapter5/recursion.html" />
     
 
         
@@ -53,9 +53,9 @@
         
         
     <div class="book"
-        data-level="2.2"
-        data-chapter-title="链表相关LeetCode"
-        data-filepath="chapter2/link_list_leetcode.md"
+        data-level="5.4.1"
+        data-chapter-title="31 下一个排列"
+        data-filepath="chapter5/31.md"
         data-basepath=".."
         data-revision="Mon Aug 17 2020 00:23:50 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
@@ -250,7 +250,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2" data-path="chapter2/link_list_leetcode.html">
+        <li class="chapter " data-level="2.2" data-path="chapter2/link_list_leetcode.html">
             
                 
                     <a href="../chapter2/link_list_leetcode.html">
@@ -923,7 +923,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.4.1" data-path="chapter5/31.html">
+        <li class="chapter active" data-level="5.4.1" data-path="chapter5/31.html">
             
                 
                     <a href="../chapter5/31.html">
@@ -1422,81 +1422,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x94FE;&#x8868;&#x76F8;&#x5173;leetcode">&#x94FE;&#x8868;&#x76F8;&#x5173;LeetCode</h1>
-<p>&#x5BF9;&#x4E8E;LeetCode&#x4E0A;&#x7684;&#x94FE;&#x8868;&#x76F8;&#x5173;&#x9898;&#x76EE;&#xFF0C;&#x82E5;&#x60F3;&#x5728;&#x672C;&#x5730;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#xFF0C;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4EE3;&#x7801;&#x3002;</p>
-<h3 id="&#x672C;&#x5730;&#x8F93;&#x51FA;&#x94FE;&#x8868;">&#x672C;&#x5730;&#x8F93;&#x51FA;&#x94FE;&#x8868;</h3>
-<ul>
-<li>Python</li>
-</ul>
-<pre><code class="lang-python"><span class="hljs-comment"># Definition for singly-linked list.</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListNode</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,val)</span>:</span>
-        self.val = val
-        self.next = <span class="hljs-keyword">None</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkList</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
-        self.head = <span class="hljs-keyword">None</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">headList</span><span class="hljs-params">(self,data)</span>:</span>
-        dummy = ListNode(-<span class="hljs-number">1</span>)
-        cur = dummy
-
-        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> data:
-            node = ListNode(i)
-            cur.next = node
-            cur = cur.next
-        <span class="hljs-keyword">return</span> dummy.next
-       <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printList</span><span class="hljs-params">(self,head)</span>:</span>
-        <span class="hljs-keyword">if</span> head == <span class="hljs-keyword">None</span>: <span class="hljs-keyword">return</span>
-        cur = head
-        <span class="hljs-keyword">while</span> cur:
-            print(cur.val)
-            cur = cur.next
-</code></pre>
-<ul>
-<li>C++</li>
-</ul>
-<pre><code class="lang-c++"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
-
-<span class="hljs-keyword">struct</span> ListNode{
-    <span class="hljs-keyword">int</span> val;
-    ListNode *next;
-    ListNode(<span class="hljs-keyword">int</span> x): val(x),next(<span class="hljs-literal">NULL</span>){}
-};
-
-
-<span class="hljs-function">ListNode* <span class="hljs-title">createLinkedList</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[],<span class="hljs-keyword">int</span> n)</span></span>{
-    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>){
-        <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;
-    }
-    ListNode* head = <span class="hljs-keyword">new</span> ListNode(arr[<span class="hljs-number">0</span>]);
-    ListNode* cur = head;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;n;i++){
-        cur-&gt;next = <span class="hljs-keyword">new</span> ListNode(arr[i]);
-        cur = cur-&gt;next;
-    }
-    <span class="hljs-keyword">return</span> head;
-}
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printListNode</span><span class="hljs-params">(ListNode* head)</span></span>{
-    ListNode* cur = head;
-    <span class="hljs-keyword">while</span> (cur){
-        <span class="hljs-built_in">cout</span> &lt;&lt; cur-&gt;val &lt;&lt; <span class="hljs-string">&quot;-&gt;&quot;</span>;
-        cur = cur-&gt;next;
-    }
-    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;NULL&quot;</span> &lt;&lt; endl;
-    <span class="hljs-keyword">return</span>;
-}
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
-    <span class="hljs-keyword">int</span> arr[] = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>};
-    <span class="hljs-keyword">int</span> n = <span class="hljs-keyword">sizeof</span>(arr)/<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>);
-    ListNode* head = createLinkedList(arr,n);
-    printListNode(head);
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-}
-</code></pre>
+                        <h1 id="31-&#x4E0B;&#x4E00;&#x4E2A;&#x6392;&#x5217;">31 &#x4E0B;&#x4E00;&#x4E2A;&#x6392;&#x5217;</h1>
 
                     
                     </section>
@@ -1507,10 +1433,10 @@
         </div>
 
         
-        <a href="../chapter2/compare.html" class="navigation navigation-prev " aria-label="Previous page: 与数组比较"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter5/recursion.html" class="navigation navigation-prev " aria-label="Previous page: 递归"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter2/206.html" class="navigation navigation-next " aria-label="Next page: 206 反转链表"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter5/46.html" class="navigation navigation-next " aria-label="Next page: 46 全排列"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
