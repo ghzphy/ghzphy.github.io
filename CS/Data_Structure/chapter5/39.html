@@ -57,7 +57,7 @@
         data-chapter-title="39 组合总和"
         data-filepath="chapter5/39.md"
         data-basepath=".."
-        data-revision="Mon Aug 17 2020 00:23:50 GMT+0800 (中国标准时间)"
+        data-revision="Mon Aug 17 2020 14:02:54 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
     
 
@@ -821,14 +821,29 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2.15" data-path="chapter5/11.html">
+        <li class="chapter " data-level="5.2.15" data-path="chapter5/977.html">
+            
+                
+                    <a href="../chapter5/977.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.15.</b>
+                        
+                        977 有序数组的平方
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.16" data-path="chapter5/11.html">
             
                 
                     <a href="../chapter5/11.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>5.2.15.</b>
+                            <b>5.2.16.</b>
                         
                         11 盛最多的水的容器
                     </a>
@@ -897,6 +912,21 @@
                             <b>5.3.3.</b>
                         
                         438 找到字符串中的所有字母异位词
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.4" data-path="chapter5/567.html">
+            
+                
+                    <a href="../chapter5/567.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.4.</b>
+                        
+                        567 字符串的排列
                     </a>
             
             
@@ -1423,6 +1453,46 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="39-&#x7EC4;&#x5408;&#x603B;&#x548C;">39 &#x7EC4;&#x5408;&#x603B;&#x548C;</h1>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x65E0;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x7684;&#x6570;&#x7EC4; candidates &#x548C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x6570; target &#xFF0C;&#x627E;&#x51FA; candidates &#x4E2D;&#x6240;&#x6709;&#x53EF;&#x4EE5;&#x4F7F;&#x6570;&#x5B57;&#x548C;&#x4E3A; target &#x7684;&#x7EC4;&#x5408;&#x3002;</p>
+<p>candidates &#x4E2D;&#x7684;&#x6570;&#x5B57;&#x53EF;&#x4EE5;&#x65E0;&#x9650;&#x5236;&#x91CD;&#x590D;&#x88AB;&#x9009;&#x53D6;&#x3002;</p>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>&#x6240;&#x6709;&#x6570;&#x5B57;&#xFF08;&#x5305;&#x62EC; target&#xFF09;&#x90FD;&#x662F;&#x6B63;&#x6574;&#x6570;&#x3002;
+&#x89E3;&#x96C6;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x91CD;&#x590D;&#x7684;&#x7EC4;&#x5408;&#x3002; 
+&#x793A;&#x4F8B; 1&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;candidates = [2,3,6,7], target = 7,
+&#x6240;&#x6C42;&#x89E3;&#x96C6;&#x4E3A;&#xFF1A;
+[
+  [7],
+  [2,2,3]
+]
+</code></pre><p>&#x793A;&#x4F8B; 2&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;candidates = [2,3,5], target = 8,
+&#x6240;&#x6C42;&#x89E3;&#x96C6;&#x4E3A;&#xFF1A;
+[
+  [2,2,2,2],
+  [2,3,3],
+  [3,5]
+]
+</code></pre><h3 id="&#x89E3;&#x6CD5;">&#x89E3;&#x6CD5;</h3>
+<ul>
+<li>Python</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">combinationSum</span><span class="hljs-params">(self, candidates: List[int], target: int)</span> -&gt; <span class="hljs-title">List</span>[<span class="hljs-title">List</span>[<span class="hljs-title">int</span>]]:</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span><span class="hljs-params">(nums,num,path)</span>:</span>
+            <span class="hljs-keyword">if</span> num &gt;= target:
+                <span class="hljs-keyword">if</span> num == target: res.append(path.copy())
+                <span class="hljs-keyword">return</span>
+            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(nums)):
+                num+=nums[i]
+                path.append(nums[i])
+                test(nums[i:],num,path)<span class="hljs-comment">###&#x53EF;&#x91CD;&#x590D;&#x7684;&#x8BDD;, nums[i:]</span>
+                num -= nums[i]
+                path.pop()
+        res = []
+        test(candidates,<span class="hljs-number">0</span>,[])
+        <span class="hljs-keyword">return</span> res
+</code></pre>
 
                     
                     </section>

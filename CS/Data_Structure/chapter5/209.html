@@ -57,7 +57,7 @@
         data-chapter-title="209 长度最小的子数组"
         data-filepath="chapter5/209.md"
         data-basepath=".."
-        data-revision="Mon Aug 17 2020 00:23:50 GMT+0800 (中国标准时间)"
+        data-revision="Mon Aug 17 2020 14:02:54 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
     
 
@@ -821,14 +821,29 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2.15" data-path="chapter5/11.html">
+        <li class="chapter " data-level="5.2.15" data-path="chapter5/977.html">
+            
+                
+                    <a href="../chapter5/977.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.15.</b>
+                        
+                        977 有序数组的平方
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.16" data-path="chapter5/11.html">
             
                 
                     <a href="../chapter5/11.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>5.2.15.</b>
+                            <b>5.2.16.</b>
                         
                         11 盛最多的水的容器
                     </a>
@@ -897,6 +912,21 @@
                             <b>5.3.3.</b>
                         
                         438 找到字符串中的所有字母异位词
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.4" data-path="chapter5/567.html">
+            
+                
+                    <a href="../chapter5/567.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.4.</b>
+                        
+                        567 字符串的排列
                     </a>
             
             
@@ -1430,6 +1460,10 @@
 &#x89E3;&#x91CA;&#xFF1A;&#x5B50;&#x6570;&#x7EC4; [4,3] &#x662F;&#x8BE5;&#x6761;&#x4EF6;&#x4E0B;&#x7684;&#x957F;&#x5EA6;&#x6700;&#x5C0F;&#x7684;&#x5B50;&#x6570;&#x7EC4;&#x3002;
 </code></pre><p>&#x8FDB;&#x9636;&#xFF1A;</p>
 <p>&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86; O(n) &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x89E3;&#x6CD5;, &#x8BF7;&#x5C1D;&#x8BD5; O(nlogn) &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x89E3;&#x6CD5;&#x3002;</p>
+<h3 id="&#x89E3;&#x6CD5;">&#x89E3;&#x6CD5;</h3>
+<ul>
+<li>Python</li>
+</ul>
 <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">minSubArrayLen</span><span class="hljs-params">(self, s: int, nums: List[int])</span> -&gt; <span class="hljs-title">int</span>:</span>
         left,right = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>
@@ -1437,7 +1471,6 @@
         minlen = len(nums)+<span class="hljs-number">1</span>
 
         <span class="hljs-keyword">while</span> left &lt; len(nums):
-            <span class="hljs-comment"># print(&apos;left,right,res,minlen:&apos;,&apos;[&apos;,left,right,&apos;]&apos;,res,minlen)</span>
             <span class="hljs-keyword">if</span> res &lt; s <span class="hljs-keyword">and</span> right&lt;len(nums):
                 res += nums[right]
                 right += <span class="hljs-number">1</span>
@@ -1449,6 +1482,39 @@
                 left += <span class="hljs-number">1</span> 
         <span class="hljs-keyword">if</span> minlen == len(nums)+<span class="hljs-number">1</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
         <span class="hljs-keyword">return</span> minlen
+</code></pre>
+<ul>
+<li>C++</li>
+</ul>
+<pre><code class="lang-c++"><span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">minSubArrayLen</span><span class="hljs-params">(<span class="hljs-keyword">int</span> s, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>{
+        <span class="hljs-keyword">int</span> left=<span class="hljs-number">0</span>,right=<span class="hljs-number">0</span>;
+        <span class="hljs-keyword">int</span> minlen = nums.size()+<span class="hljs-number">1</span>;
+        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;
+
+        <span class="hljs-keyword">while</span> (left&lt;nums.size()){
+            <span class="hljs-keyword">if</span> (res&lt;s&amp;&amp;right&lt;nums.size()){
+                res += nums[right];
+                right ++;
+            }
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(res&gt;=s){
+                <span class="hljs-keyword">if</span> (minlen&gt;(right-left)){
+                    minlen = right-left;
+                }
+                res -= nums[left];
+                left ++;
+            }
+            <span class="hljs-keyword">else</span>{
+                left ++;
+            }
+        }
+        <span class="hljs-keyword">if</span> (minlen==nums.size()+<span class="hljs-number">1</span>){
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-keyword">return</span> minlen;
+    }
+};
 </code></pre>
 <ul>
 <li>&#x82E5;&#x6539;&#x4E3A;&#x6EE1;&#x8DB3;&#x5176;&#x548C;=s&#x7684;&#x957F;&#x5EA6;&#x6700;&#x5C0F;&#x7684;&#x8FDE;&#x7EED;&#x5B50;&#x6570;&#x7EC4;&#x3002;</li>

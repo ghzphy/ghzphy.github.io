@@ -57,7 +57,7 @@
         data-chapter-title="3 无重复字符的最长字串"
         data-filepath="chapter5/3.md"
         data-basepath=".."
-        data-revision="Mon Aug 17 2020 00:23:50 GMT+0800 (中国标准时间)"
+        data-revision="Mon Aug 17 2020 14:02:54 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
     
 
@@ -821,14 +821,29 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2.15" data-path="chapter5/11.html">
+        <li class="chapter " data-level="5.2.15" data-path="chapter5/977.html">
+            
+                
+                    <a href="../chapter5/977.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.15.</b>
+                        
+                        977 有序数组的平方
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.16" data-path="chapter5/11.html">
             
                 
                     <a href="../chapter5/11.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>5.2.15.</b>
+                            <b>5.2.16.</b>
                         
                         11 盛最多的水的容器
                     </a>
@@ -897,6 +912,21 @@
                             <b>5.3.3.</b>
                         
                         438 找到字符串中的所有字母异位词
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.4" data-path="chapter5/567.html">
+            
+                
+                    <a href="../chapter5/567.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.4.</b>
+                        
+                        567 字符串的排列
                     </a>
             
             
@@ -1439,27 +1469,28 @@
      &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x4F60;&#x7684;&#x7B54;&#x6848;&#x5FC5;&#x987B;&#x662F; &#x5B50;&#x4E32; &#x7684;&#x957F;&#x5EA6;&#xFF0C;&quot;pwke&quot; &#x662F;&#x4E00;&#x4E2A;&#x5B50;&#x5E8F;&#x5217;&#xFF0C;&#x4E0D;&#x662F;&#x5B50;&#x4E32;&#x3002;
 </code></pre><h3 id="&#x89E3;&#x6CD5;">&#x89E3;&#x6CD5;</h3>
 <ul>
-<li><pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">lengthOfLongestSubstring</span><span class="hljs-params">(self, s: str)</span> -&gt; <span class="hljs-title">int</span>:</span>
-      <span class="hljs-keyword">if</span> len(s) == <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
-      left,right = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>
-      total = <span class="hljs-string">&apos;&apos;</span>
-      maxlen = <span class="hljs-number">0</span>
+<li>&#x501F;&#x52A9;&#x5B57;&#x7B26;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">lengthOfLongestSubstring</span><span class="hljs-params">(self, s: str)</span> -&gt; <span class="hljs-title">int</span>:</span>
+        <span class="hljs-keyword">if</span> len(s) == <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+        left,right = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>
+        total = <span class="hljs-string">&apos;&apos;</span>
+        maxlen = <span class="hljs-number">0</span>
 
-      <span class="hljs-keyword">while</span> left &lt; len(s):
-          <span class="hljs-comment"># print(&apos;left,right,total,maxlen:&apos;,&apos;[&apos;,left,right,&apos;]&apos;,total,maxlen)</span>
-          <span class="hljs-keyword">if</span> right &lt; len(s) <span class="hljs-keyword">and</span> (s[right] <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> total):
-              total += s[right]
-              right += <span class="hljs-number">1</span>
-          <span class="hljs-keyword">else</span>:
-              total = total[<span class="hljs-number">1</span>:]
-              left += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">while</span> left &lt; len(s):
+            <span class="hljs-keyword">if</span> right &lt; len(s) <span class="hljs-keyword">and</span> (s[right] <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> total):
+                total += s[right]
+                right += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                total = total[<span class="hljs-number">1</span>:]
+                left += <span class="hljs-number">1</span>
 
-          maxlen = max(maxlen,len(total))
-      <span class="hljs-keyword">return</span> maxlen
+            maxlen = max(maxlen,len(total))
+        <span class="hljs-keyword">return</span> maxlen
 </code></pre>
-</li>
-<li></li>
+<ul>
+<li>&#x501F;&#x52A9;&#x6570;&#x7EC4;</li>
 </ul>
 <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">lengthOfLongestSubstring</span><span class="hljs-params">(self, s: str)</span> -&gt; <span class="hljs-title">int</span>:</span>
@@ -1469,14 +1500,12 @@
         maxlen = <span class="hljs-number">0</span>
 
         <span class="hljs-keyword">while</span> left &lt; len(s):
-            <span class="hljs-comment"># print(&apos;left,right,total,maxlen:&apos;,&apos;[&apos;,left,right,&apos;]&apos;,total,maxlen)</span>
             <span class="hljs-keyword">if</span> right+<span class="hljs-number">1</span> &lt; len(s) <span class="hljs-keyword">and</span> freq[ord(s[right+<span class="hljs-number">1</span>])] == <span class="hljs-number">0</span>:
                 right += <span class="hljs-number">1</span>
                 freq[ord(s[right])] += <span class="hljs-number">1</span>
             <span class="hljs-keyword">else</span>:
                 freq[ord(s[left])] -= <span class="hljs-number">1</span>
                 left += <span class="hljs-number">1</span>
-
             maxlen = max(maxlen,right-left+<span class="hljs-number">1</span>)
         <span class="hljs-keyword">return</span> maxlen
 </code></pre>
