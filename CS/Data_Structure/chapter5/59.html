@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>283 移动零 | 数据结构与算法</title>
+        <title>59 螺旋矩阵 II | 数据结构与算法</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -41,10 +41,10 @@
         
     
     
-    <link rel="next" href="../chapter5/27.html" />
+    <link rel="next" href="../chapter5/410.html" />
     
     
-    <link rel="prev" href="../chapter5/189.html" />
+    <link rel="prev" href="../chapter5/54.html" />
     
 
         
@@ -53,9 +53,9 @@
         
         
     <div class="book"
-        data-level="5.2.2"
-        data-chapter-title="283 移动零"
-        data-filepath="chapter5/283.md"
+        data-level="5.2.28"
+        data-chapter-title="59 螺旋矩阵 II"
+        data-filepath="chapter5/59.md"
         data-basepath=".."
         data-revision="Sat Aug 29 2020 11:11:13 GMT+0800 (中国标准时间)"
         data-innerlanguage="">
@@ -662,7 +662,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.2.2" data-path="chapter5/283.html">
+        <li class="chapter " data-level="5.2.2" data-path="chapter5/283.html">
             
                 
                     <a href="../chapter5/283.html">
@@ -1052,7 +1052,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2.28" data-path="chapter5/59.html">
+        <li class="chapter active" data-level="5.2.28" data-path="chapter5/59.html">
             
                 
                     <a href="../chapter5/59.html">
@@ -1764,66 +1764,81 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="283-&#x79FB;&#x52A8;&#x96F6;">283 &#x79FB;&#x52A8;&#x96F6;</h1>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4; nums&#xFF0C;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5C06;&#x6240;&#x6709; 0 &#x79FB;&#x52A8;&#x5230;&#x6570;&#x7EC4;&#x7684;&#x672B;&#x5C3E;&#xFF0C;&#x540C;&#x65F6;&#x4FDD;&#x6301;&#x975E;&#x96F6;&#x5143;&#x7D20;&#x7684;&#x76F8;&#x5BF9;&#x987A;&#x5E8F;&#x3002;</p>
+                        <h1 id="59-&#x87BA;&#x65CB;&#x77E9;&#x9635;-ii">59. &#x87BA;&#x65CB;&#x77E9;&#x9635; II</h1>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6B63;&#x6574;&#x6570; n&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5305;&#x542B; 1 &#x5230; n^ 2 &#x6240;&#x6709;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6309;&#x987A;&#x65F6;&#x9488;&#x987A;&#x5E8F;&#x87BA;&#x65CB;&#x6392;&#x5217;&#x7684;&#x6B63;&#x65B9;&#x5F62;&#x77E9;&#x9635;&#x3002;</p>
 <p>&#x793A;&#x4F8B;:</p>
-<pre><code>&#x8F93;&#x5165;: [0,1,0,3,12]
-&#x8F93;&#x51FA;: [1,3,12,0,0]
-</code></pre><p>&#x8BF4;&#x660E;:</p>
-<p>&#x5FC5;&#x987B;&#x5728;&#x539F;&#x6570;&#x7EC4;&#x4E0A;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0D;&#x80FD;&#x62F7;&#x8D1D;&#x989D;&#x5916;&#x7684;&#x6570;&#x7EC4;&#x3002;
-&#x5C3D;&#x91CF;&#x51CF;&#x5C11;&#x64CD;&#x4F5C;&#x6B21;&#x6570;&#x3002;</p>
-<h3 id="&#x89E3;&#x6CD5;">&#x89E3;&#x6CD5;</h3>
+<pre><code>&#x8F93;&#x5165;: 3
+&#x8F93;&#x51FA;:
+[
+ [ 1, 2, 3 ],
+ [ 8, 9, 4 ],
+ [ 7, 6, 5 ]
+]
+</code></pre><h3 id="&#x89E3;&#x6CD5;">&#x89E3;&#x6CD5;</h3>
 <ul>
-<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</li>
-</ul>
-<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">moveZeroes</span><span class="hljs-params">(self, nums: List[int])</span> -&gt; <span class="hljs-title">None</span>:</span>
-        tmp = []
-        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(nums)):
-            <span class="hljs-keyword">if</span> nums[i] != <span class="hljs-number">0</span>:
-                tmp.append(nums[i])
-
-        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(tmp)):
-            nums[i] = tmp[i]
-
-        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(tmp),len(nums)):
-            nums[i] = <span class="hljs-number">0</span>
-
-        <span class="hljs-keyword">return</span> nums
+<li><pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateMatrix</span><span class="hljs-params">(self, n: int)</span> -&gt; <span class="hljs-title">List</span>[<span class="hljs-title">List</span>[<span class="hljs-title">int</span>]]:</span>
+      matrix = [[<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)]
+      dire = [[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,-<span class="hljs-number">1</span>],[-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>]]
+      index = <span class="hljs-number">0</span>
+      cur_i,cur_j,count = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>
+      <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n**<span class="hljs-number">2</span>):
+          matrix[cur_i][cur_j] = count
+          count += <span class="hljs-number">1</span>
+          nex_i,nex_j = cur_i+dire[index][<span class="hljs-number">0</span>],cur_j+dire[index][<span class="hljs-number">1</span>]
+          <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span>&lt;=nex_i&lt;n) <span class="hljs-keyword">and</span> (<span class="hljs-number">0</span>&lt;=nex_j&lt;n) <span class="hljs-keyword">and</span> (matrix[nex_i][nex_j]==<span class="hljs-number">0</span>):
+              cur_i,cur_j = nex_i,nex_j
+          <span class="hljs-keyword">else</span>:
+              index = (index+<span class="hljs-number">1</span>)%<span class="hljs-number">4</span>
+              cur_i,cur_j = cur_i+dire[index][<span class="hljs-number">0</span>],cur_j+dire[index][<span class="hljs-number">1</span>]
+      <span class="hljs-keyword">return</span> matrix
 </code></pre>
-<ul>
-<li>Python &#x53CC;&#x6307;&#x9488;&#x6CD5;&#x3002;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)</li>
+</li>
 </ul>
-<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">moveZeroes</span><span class="hljs-params">(self, nums: List[int])</span> -&gt; <span class="hljs-title">None</span>:</span>
-        k = <span class="hljs-number">0</span>
-        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(nums)):
-            <span class="hljs-keyword">if</span> nums[i] != <span class="hljs-number">0</span>:
-                nums[k] = nums[i]
-                k += <span class="hljs-number">1</span>
-        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(k,len(nums)):
-            nums[i] = <span class="hljs-number">0</span>
-        <span class="hljs-keyword">return</span> nums
-</code></pre>
-<ul>
-<li>C++ &#x53CC;&#x6307;&#x9488;&#x6CD5;&#x3002;</li>
-</ul>
-<pre><code class="lang-c++"><span class="hljs-keyword">class</span> Solution {
-<span class="hljs-keyword">public</span>:
-    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">moveZeroes</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>{
-        <span class="hljs-keyword">int</span> len = nums.size();
-        <span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>;
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;len;i++){
-            <span class="hljs-keyword">if</span> (nums[i]!=<span class="hljs-number">0</span>){
-                nums[k] = nums[i];
-                k ++;
-            }
-        }
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=k;i&lt;len;i++){
-            nums[i] = <span class="hljs-number">0</span>;
-        }
-    }
-};
+<h3 id="&#x9898;&#x76EE;&#x6539;&#x5199;">&#x9898;&#x76EE;&#x6539;&#x5199;</h3>
+<p>&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6590;&#x6CE2;&#x90A3;&#x5951;&#x6570;&#x5217;&#x7684;&#x6B63;&#x65B9;&#x5F62;&#x77E9;&#x9635;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>&#x4F8B;&#x5982; n = 3
+34 21 13
+ 1  1  8
+ 2  3  5
+
+n = 4
+987 610 377 233
+  5   3   2 144
+  8   1   1  89
+ 13  21  34  55
+</code></pre><p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateMatrix</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-comment">### &#x751F;&#x6210;&#x6590;&#x6CE2;&#x90A3;&#x5951;&#x6570;&#x5217;&#x6570;&#x5217;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib</span><span class="hljs-params">(n)</span>:</span>
+        <span class="hljs-keyword">if</span> n == <span class="hljs-number">1</span>: <span class="hljs-keyword">return</span> [<span class="hljs-number">1</span>]
+        dp = [<span class="hljs-number">0</span>]*(n**<span class="hljs-number">2</span>)
+        dp[<span class="hljs-number">0</span>],dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>,<span class="hljs-number">1</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>,n**<span class="hljs-number">2</span>):
+            dp[i] = dp[i-<span class="hljs-number">1</span>]+dp[i-<span class="hljs-number">2</span>]
+        <span class="hljs-keyword">return</span> dp
+
+    res = fib(n)
+    matrix = [[<span class="hljs-number">0</span>]*n <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)]
+    dire = [[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,-<span class="hljs-number">1</span>],[-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>]]
+    index = <span class="hljs-number">0</span>
+    cur_i,cur_j,count = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>,n**<span class="hljs-number">2</span>-<span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n**<span class="hljs-number">2</span>):
+        matrix[cur_i][cur_j] = res[count]
+        count -= <span class="hljs-number">1</span>
+        nex_i,nex_j = cur_i+dire[index][<span class="hljs-number">0</span>],cur_j+dire[index][<span class="hljs-number">1</span>]
+        <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span>&lt;=nex_i&lt;n) <span class="hljs-keyword">and</span> (<span class="hljs-number">0</span>&lt;=nex_j&lt;n) <span class="hljs-keyword">and</span> matrix[nex_i][nex_j]==<span class="hljs-number">0</span>:
+            cur_i,cur_j = nex_i,nex_j
+        <span class="hljs-keyword">else</span>:
+            index = (index+<span class="hljs-number">1</span>)%<span class="hljs-number">4</span>
+            cur_i,cur_j = cur_i+dire[index][<span class="hljs-number">0</span>],cur_j+dire[index][<span class="hljs-number">1</span>]
+    <span class="hljs-keyword">return</span> matrix
+print(generateMatrix(<span class="hljs-number">5</span>))
+[[<span class="hljs-number">75025</span>, <span class="hljs-number">46368</span>, <span class="hljs-number">28657</span>, <span class="hljs-number">17711</span>, <span class="hljs-number">10946</span>],
+ [<span class="hljs-number">55</span>, <span class="hljs-number">34</span>, <span class="hljs-number">21</span>, <span class="hljs-number">13</span>, <span class="hljs-number">6765</span>],
+ [<span class="hljs-number">89</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">8</span>, <span class="hljs-number">4181</span>],
+ [<span class="hljs-number">144</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2584</span>],
+ [<span class="hljs-number">233</span>, <span class="hljs-number">377</span>, <span class="hljs-number">610</span>, <span class="hljs-number">987</span>, <span class="hljs-number">1597</span>]]
 </code></pre>
 
                     
@@ -1835,10 +1850,10 @@
         </div>
 
         
-        <a href="../chapter5/189.html" class="navigation navigation-prev " aria-label="Previous page: 189 旋转数组"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter5/54.html" class="navigation navigation-prev " aria-label="Previous page: 54 螺旋矩阵"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter5/27.html" class="navigation navigation-next " aria-label="Next page: 27 移除元素"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter5/410.html" class="navigation navigation-next " aria-label="Next page: 410 分割数组的最大值"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
