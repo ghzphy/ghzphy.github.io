@@ -1,0 +1,463 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>TCP | GitBook学习</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="Ghz">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter4/chapter4_3.html" />
+    
+    
+    <link rel="prev" href="../chapter4/chapter4_1.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.2"
+        data-chapter-title="TCP"
+        data-filepath="chapter4/chapter4_2.md"
+        data-basepath=".."
+        data-revision="Thu Jul 16 2020 00:02:53 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+                
+                <li>
+                    <a href="../../index.html" target="blank" class="custom-link">个人主页</a>
+                </li>
+            
+            
+
+            
+            <li class="divider"></li>
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        计算机网络
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter1/index.html">
+            
+                
+                    <a href="../chapter1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        网络模型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter2/index.html">
+            
+                
+                    <a href="../chapter2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        应用层
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter2/chapter2_1.html">
+            
+                
+                    <a href="../chapter2/chapter2_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Web
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2/chapter2_2.html">
+            
+                
+                    <a href="../chapter2/chapter2_2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Email
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter2/chapter2_3.html">
+            
+                
+                    <a href="../chapter2/chapter2_3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        DNS
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter3/index.html">
+            
+                
+                    <a href="../chapter3/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Socket编程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter4/index.html">
+            
+                
+                    <a href="../chapter4/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        传输层
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter4/chapter4_1.html">
+            
+                
+                    <a href="../chapter4/chapter4_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        UDP
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="chapter4/chapter4_2.html">
+            
+                
+                    <a href="../chapter4/chapter4_2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        TCP
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter4/chapter4_3.html">
+            
+                
+                    <a href="../chapter4/chapter4_3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        二者区别
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter5/index.html">
+            
+                
+                    <a href="../chapter5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        网络层
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter6/index.html">
+            
+                
+                    <a href="../chapter6/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        网络接口层
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >GitBook学习</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="tcp">TCP</h1>
+<ul>
+<li>&#x70B9;&#x5BF9;&#x70B9;<ul>
+<li>&#x4E00;&#x4E2A;&#x53D1;&#x9001;&#x65B9;&#xFF0C;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x65B9;</li>
+</ul>
+</li>
+<li>&#x53EF;&#x9760;&#x7684;&#xFF0C;&#x6309;&#x5E8F;&#x7684;&#x5B57;&#x8282;&#x6D41;</li>
+<li>&#x6D41;&#x6C34;&#x7EBF;&#x673A;&#x5236;<ul>
+<li>TCP&#x62E5;&#x585E;&#x63A7;&#x5236;&#x548C;&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x673A;&#x5236;</li>
+<li>&#x8BBE;&#x7F6E;&#x7A97;&#x53E3;&#x5927;&#x5C0F;</li>
+</ul>
+</li>
+<li>&#x53D1;&#x9001;&#x65B9;/&#x63A5;&#x6536;&#x65B9;&#x7F13;&#x5B58;</li>
+<li>&#x5168;&#x53CC;&#x5DE5;</li>
+<li>&#x9762;&#x5411;&#x8FDE;&#x63A5;<ul>
+<li>&#x901A;&#x4FE1;&#x53CC;&#x65B9;&#x5728;&#x53D1;&#x9001;&#x6570;&#x636E;&#x4E4B;&#x524D;&#x5FC5;&#x987B;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;</li>
+<li>&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x53EA;&#x5728;&#x8FDE;&#x63A5;&#x7684;&#x4E24;&#x7AEF;&#x4E2D;&#x7EF4;&#x62A4;&#xFF0C;&#x5728;&#x6CBF;&#x9014;&#x8282;&#x70B9;&#x4E2D;&#x5E76;&#x4E0D;&#x7EF4;&#x62A4;</li>
+<li>TCP&#x8FDE;&#x63A5;&#x5305;&#x62EC;&#xFF1A;&#x4E24;&#x53F0;&#x4E3B;&#x673A;&#x4E0A;&#x7684;&#x7F13;&#x5B58;&#xFF0C;&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x53D8;&#x91CF;&#xFF0C;socket&#x7B49;</li>
+</ul>
+</li>
+<li>&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x673A;&#x5236;</li>
+</ul>
+<p>&#x89E6;&#x53D1;&#x91CD;&#x4F20;&#x7684;&#x4E8B;&#x4EF6;</p>
+<pre><code>- &#x8D85;&#x65F6;
+- &#x6536;&#x5230;&#x91CD;&#x590D;ACK
+</code></pre><h3 id="tcp&#x6D41;&#x91CF;&#x63A7;&#x5236;">TCP&#x6D41;&#x91CF;&#x63A7;&#x5236;</h3>
+<ol>
+<li>&#x63A5;&#x6536;&#x65B9;&#x4E3A;TCP&#x8FDE;&#x63A5;&#x5206;&#x914D;buffer</li>
+<li>&#x901F;&#x5EA6;&#x5339;&#x914D;&#x673A;&#x5236;</li>
+</ol>
+<h3 id="tcp&#x8FDE;&#x63A5;&#x7BA1;&#x7406;">TCP&#x8FDE;&#x63A5;&#x7BA1;&#x7406;</h3>
+<ul>
+<li>TCP sender&#x548C; receiver&#x5728;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x524D;&#x9700;&#x8981;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;</li>
+<li>&#x521D;&#x59CB;&#x5316;TCP&#x53D8;&#x91CF;</li>
+<li>Client&#xFF1A;&#x8FDE;&#x63A5;&#x53D1;&#x8D77;&#x8005;</li>
+<li>Server&#xFF1A;&#x7B49;&#x5F85;&#x5BA2;&#x6237;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;</li>
+<li>Three way handshake<ol>
+<li>Client host sends TCP SYN segment to server<ul>
+<li>specifies initial seq</li>
+<li>no data</li>
+</ul>
+</li>
+<li>Server host receivers SYN, replies with SYNACK segment<ul>
+<li>server allocates buffers</li>
+<li>specifies server initial seq</li>
+</ul>
+</li>
+<li>client receives SYNACK, replies with ACK segment, which may contain data
+<img src="D:/&#x6587;&#x6863;/&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;/&#x7B14;&#x8BB0;/three_way_handshake.png" style="zoom:45%;"></li>
+</ol>
+</li>
+<li>Four way handwave<ol>
+<li>Client host sends TCP FIN(controls segment) to server</li>
+<li>Server host receives FIN and replies ACK, then close the connection and sends FIN to client host</li>
+<li>Client receives FIN, replies ACK, At the same time, Client will be waitting state. If Client receives another FIN, it will resend ACK to server</li>
+<li>Server host receives ACK, Connection close. 
+<img src="D:/&#x6587;&#x6863;/&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;/&#x7B14;&#x8BB0;/four_way_handwave.png" style="zoom: 50%;"></li>
+</ol>
+</li>
+</ul>
+<h3 id="tcp&#x62E5;&#x585E;&#x63A7;&#x5236;">TCP&#x62E5;&#x585E;&#x63A7;&#x5236;</h3>
+<p>&#x62E5;&#x585E;(congestion)&#xFF1A;&#x592A;&#x591A;&#x53D1;&#x9001;&#x4E3B;&#x673A;&#x53D1;&#x9001;&#x4E86;&#x592A;&#x591A;&#x6570;&#x636E;&#x6216;&#x8005;&#x53D1;&#x9001;&#x901F;&#x5EA6;&#x592A;&#x5FEB;&#xFF0C;&#x4EE5;&#x81F3;&#x4E8E;&#x7F51;&#x7EDC;&#x65E0;&#x6CD5;&#x5904;&#x7406;&#x3002;&#x8868;&#x73B0;&#x4E3A;&#xFF1A;&#x5206;&#x7EC4;&#x4E22;&#x5931;&#xFF0C;&#x5206;&#x7EC4;&#x5EF6;&#x8FDF;&#x8FC7;&#x5927;&#x3002;</p>
+<ul>
+<li><p>&#x7AEF;&#x5230;&#x7AEF;&#x62E5;&#x585E;&#x63A7;&#x5236;</p>
+<ul>
+<li>&#x7F51;&#x7EDC;&#x5C42;&#x4E0D;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x7684;&#x63D0;&#x4F9B;&#x652F;&#x6301;</li>
+<li>&#x7AEF;&#x7CFB;&#x7EDF;&#x901A;&#x8FC7;&#x89C2;&#x5BDF;loss&#xFF0C;delay&#x7B49;&#x7F51;&#x7EDC;&#x884C;&#x4E3A;&#x5224;&#x65AD;&#x662F;&#x5426;&#x53D1;&#x751F;&#x62E5;&#x585E;</li>
+<li>TCP&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;</li>
+</ul>
+</li>
+<li><p>&#x7F51;&#x7EDC;&#x8F85;&#x52A9;&#x7684;&#x62E5;&#x585E;&#x63A7;&#x5236;</p>
+<ul>
+<li>&#x8DEF;&#x7531;&#x5668;&#x5411;&#x53D1;&#x9001;&#x65B9;&#x663E;&#x5F0F;&#x5730;&#x53CD;&#x9988;&#x7F51;&#x7EDC;&#x62E5;&#x585E;&#x4FE1;&#x606F;</li>
+<li>&#x7B80;&#x5355;&#x7684;&#x62E5;&#x585E;&#x6307;&#x793A;&#xFF1A;SNA&#xFF0C;DECbit&#xFF0C;TCP/IP</li>
+<li>&#x6307;&#x793A;&#x53D1;&#x9001;&#x65B9;&#x5E94;&#x8BE5;&#x91C7;&#x53D6;&#x4F55;&#x79CD;&#x901F;&#x7387;<h3 id="&#x4F20;&#x8F93;&#x5C42;&#x603B;&#x7ED3;">&#x4F20;&#x8F93;&#x5C42;&#x603B;&#x7ED3;</h3>
+</li>
+</ul>
+</li>
+<li>&#x4F20;&#x8F93;&#x5C42;&#x670D;&#x52A1;&#x7684;&#x57FA;&#x672C;&#x539F;&#x7406;<ul>
+<li>&#x590D;&#x7528;/&#x89E3;&#x590D;&#x7528;</li>
+<li>&#x53EF;&#x9760;&#x6570;&#x636E;&#x4F20;&#x8F93;</li>
+<li>&#x6D41;&#x91CF;&#x63A7;&#x5236;</li>
+<li>&#x62E5;&#x585E;&#x63A7;&#x5236;</li>
+</ul>
+</li>
+<li>Internet&#x7684;&#x4F20;&#x8F93;&#x5C42;<ul>
+<li>UCP</li>
+<li>TCP</li>
+</ul>
+</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter4/chapter4_1.html" class="navigation navigation-prev " aria-label="Previous page: UDP"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter4/chapter4_3.html" class="navigation navigation-next " aria-label="Next page: 二者区别"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

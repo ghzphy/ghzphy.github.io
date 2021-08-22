@@ -1,0 +1,583 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>进程和线程 | Python学习</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="Guohui">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter7/chapter7_1.html" />
+    
+    
+    <link rel="prev" href="../chapter6/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="7"
+        data-chapter-title="进程和线程"
+        data-filepath="chapter7/index.md"
+        data-basepath=".."
+        data-revision="Tue Aug 04 2020 11:53:42 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+                
+                <li>
+                    <a href="../../index.html" target="blank" class="custom-link">个人主页</a>
+                </li>
+            
+            
+
+            
+            <li class="divider"></li>
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Python学习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter1/index.html">
+            
+                
+                    <a href="../chapter1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        小知识集合
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter2/index.html">
+            
+                
+                    <a href="../chapter2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        异常处理
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter2/chapter2_1.html">
+            
+                
+                    <a href="../chapter2/chapter2_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Python 标准异常
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter3/index.html">
+            
+                
+                    <a href="../chapter3/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        装饰器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter4/index.html">
+            
+                
+                    <a href="../chapter4/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        浅复制深复制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter5/index.html">
+            
+                
+                    <a href="../chapter5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        内存管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter6/index.html">
+            
+                
+                    <a href="../chapter6/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        MySQL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="7" data-path="chapter7/index.html">
+            
+                
+                    <a href="../chapter7/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        进程和线程
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="chapter7/chapter7_1.html">
+            
+                
+                    <a href="../chapter7/chapter7_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        Python Multiprocessing库
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="chapter7/chapter7_2.html">
+            
+                
+                    <a href="../chapter7/chapter7_2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Python Thread库
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="chapter7/chapter7_3.html">
+            
+                
+                    <a href="../chapter7/chapter7_3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        GIL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="chapter7/chapter7_4.html">
+            
+                
+                    <a href="../chapter7/chapter7_4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        并发并行串行
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="chapter7/chapter7_5.html">
+            
+                
+                    <a href="../chapter7/chapter7_5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                        I/O五种模型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="chapter7/chapter7_6.html">
+            
+                
+                    <a href="../chapter7/chapter7_6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                        I/O是否占用CPU
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="chapter7/chapter7_7.html">
+            
+                
+                    <a href="../chapter7/chapter7_7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.7.</b>
+                        
+                        计算密集型vs I/O密集型
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="chapter8/index.html">
+            
+                
+                    <a href="../chapter8/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Socket编程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="chapter9/index.html">
+            
+                
+                    <a href="../chapter9/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="chapter10/index.html">
+            
+                
+                    <a href="../chapter10/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        操作文件os
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python学习</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x8BA1;&#x7B97;&#x673A;&#x7CFB;&#x7EDF;">&#x8BA1;&#x7B97;&#x673A;&#x7CFB;&#x7EDF;</h1>
+<h2 id="&#x8FDB;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B;">&#x8FDB;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B;</h2>
+<p>&#x8FDB;&#x7A0B;(Process)&#x662F;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x7684;&#x6700;&#x5C0F;&#x5355;&#x4F4D;&#xFF0C;&#x5177;&#x6709;&#x4E00;&#x5B9A;&#x529F;&#x80FD;&#x7684;&#x7A0B;&#x5E8F; &#x5173;&#x4E8E;&#x67D0;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x5408;&#x4E0A;&#x7684;&#x4E00;&#x6B21;&#x8FD0;&#x884C;&#x6D3B;&#x52A8;&#xFF0C;&#x8FDB;&#x7A0B;&#x662F;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x548C;&#x8C03;&#x5EA6;&#x7684;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x5355;&#x4F4D;&#x3002;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x72EC;&#x7ACB;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x901A;&#x8FC7;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x6765;&#x901A;&#x4FE1;&#x3002;&#x7531;&#x4E8E;&#x8FDB;&#x7A0B;&#x5360;&#x72EC;&#x7ACB;&#x5185;&#x5B58;&#xFF0C;&#x6240;&#x4EE5;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x5207;&#x6362;&#x5F00;&#x9500;&#x5927;&#x3002;</p>
+<p>&#x7EBF;&#x7A0B;(Thread)&#x662F;&#x8FDB;&#x7A0B;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F53;&#xFF0C;&#x662F;&#x72EC;&#x7ACB;&#x8FD0;&#x884C;&#x548C;&#x72EC;&#x7ACB;&#x8C03;&#x5EA6;&#x7684;&#x6700;&#x5C0F;&#x5355;&#x4F4D;(CPU&#x4E0A;&#x771F;&#x6B63;&#x8FD0;&#x884C;&#x7684;&#x662F;&#x7EBF;&#x7A0B;)&#x3002;</p>
+<ul>
+<li>&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x66F4;&#x65B9;&#x4FBF;&#xFF0C;&#x540C;&#x4E00;&#x8FDB;&#x7A0B;&#x4E0B;&#x7684;&#x7EBF;&#x7A0B;&#x5171;&#x4EAB;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x9759;&#x6001;&#x53D8;&#x91CF;&#x7B49;&#x6570;&#x636E;&#x3002;&#x800C;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x9700;&#x8981;&#x4EE5; &#x901A;&#x4FE1;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;</li>
+<li>&#x7EBF;&#x7A0B;&#x7684;&#x8C03;&#x5EA6;&#x4E0E;&#x5207;&#x6362;&#x6BD4;&#x8FDB;&#x7A0B;&#x5FEB;&#x5F88;&#x591A;&#xFF0C;&#x540C;&#x65F6;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x5F00;&#x9500;&#x4E5F;&#x6BD4;&#x8FDB;&#x7A0B;&#x8981;&#x5C0F;&#x5F88;&#x591A;</li>
+<li>&#x591A;&#x8FDB;&#x7A0B;&#x7A0B;&#x5E8F;&#x66F4;&#x7A33;&#x5B9A;&#xFF0C;&#x591A;&#x7EBF;&#x7A0B;&#x7A0B;&#x5E8F;&#x53EA;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6B7B;&#x6389;&#xFF0C;&#x6574;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E5F;&#x6B7B;&#x6389;&#x4E86;&#x3002;</li>
+</ul>
+<p>&#x4EFB;&#x52A1;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x8FDB;&#x7A0B;&#xFF08;process&#xFF09;&#xFF0C;&#x5982;&#x6253;&#x5F00;&#x4E00;&#x4E2A;word&#x5C31;&#x662F;&#x542F;&#x52A8;&#x4E00;&#x4E2A;word&#x8FDB;&#x7A0B;&#x3002;&#x5728;&#x4E00;&#x4E2A;word&#x8FDB;&#x7A0B;&#x4E4B;&#x4E2D;&#x4E0D;&#x53EA;&#x662F;&#x8FDB;&#x884C;&#x6253;&#x5B57;&#x8F93;&#x5165;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x62FC;&#x5199;&#x68C0;&#x67E5;&#x3001;&#x6253;&#x5370;&#x7B49;&#x5B50;&#x4EFB;&#x52A1;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x8FDB;&#x7A0B;&#x4E2D;&#x7684;&#x8FD9;&#x4E9B;&#x5B50;&#x4EFB;&#x52A1;&#x79F0;&#x4E3A;&#x7EBF;&#x7A0B;&#xFF08;thread&#xFF09;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x81F3;&#x5C11;&#x8981;&#x5E72;&#x4E00;&#x4EF6;&#x4E8B;&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x6709;&#x7684;&#x590D;&#x6742;&#x8FDB;&#x7A0B;&#x6709;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x5728;&#x8FDB;&#x7A0B;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x662F;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x6267;&#x884C;&#x7684;&#x3002;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x65B9;&#x5F0F;&#x548C;&#x591A;&#x8FDB;&#x7A0B;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4E5F;&#x662F;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5728;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x5FEB;&#x901F;&#x5207;&#x6362;&#xFF0C;&#x8BA9;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x90FD;&#x77ED;&#x6682;&#x5730;&#x4EA4;&#x66FF;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x5C31;&#x50CF;&#x540C;&#x65F6;&#x6267;&#x884C;&#x4E00;&#x6837;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x771F;&#x6B63;&#x5730;&#x540C;&#x65F6;&#x6267;&#x884C;&#x591A;&#x7EBF;&#x7A0B;&#x9700;&#x8981;&#x591A;&#x6838;CPU&#x624D;&#x53EF;&#x80FD;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#x5C31;&#x662F;&#xFF0C;&#x591A;&#x4EFB;&#x52A1;&#x7684;&#x5B9E;&#x73B0;&#x6709;3&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li><strong>&#x591A;&#x8FDB;&#x7A0B;&#x6A21;&#x5F0F;&#xFF1B;</strong></li>
+</ul>
+<p>&#x542F;&#x52A8;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x867D;&#x7136;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F46;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x4E00;&#x5757;&#x6267;&#x884C;&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x3002;</p>
+<ul>
+<li><strong>&#x591A;&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;</strong></li>
+</ul>
+<p>&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5185;&#x542F;&#x52A8;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E5F;&#x53EF;&#x4EE5;&#x4E00;&#x5757;&#x6267;&#x884C;&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x3002;</p>
+<ul>
+<li><strong>&#x591A;&#x8FDB;&#x7A0B;+**</strong>&#x591A;&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;&#x3002;**</li>
+</ul>
+<p>&#x542F;&#x52A8;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x518D;&#x542F;&#x52A8;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x8FD9;&#x6837;&#x540C;&#x65F6;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x5C31;&#x66F4;&#x591A;&#x4E86;&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x79CD;&#x6A21;&#x578B;&#x66F4;&#x590D;&#x6742;&#xFF0C;&#x5B9E;&#x9645;&#x5F88;&#x5C11;&#x91C7;&#x7528;&#x3002;&#x540C;&#x65F6;&#x6267;&#x884C;&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x901A;&#x5E38;&#x5404;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x5E76;&#x4E0D;&#x662F;&#x6CA1;&#x6709;&#x5173;&#x8054;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x9700;&#x8981;&#x76F8;&#x4E92;&#x901A;&#x4FE1;&#x548C;&#x534F;&#x8C03;&#xFF0C;&#x6709;&#x65F6;&#xFF0C;&#x4EFB;&#x52A1;1&#x5FC5;&#x987B;&#x6682;&#x505C;&#x7B49;&#x5F85;&#x4EFB;&#x52A1;2&#x5B8C;&#x6210;&#x540E;&#x624D;&#x80FD;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x6709;&#x65F6;&#xFF0C;&#x4EFB;&#x52A1;3&#x548C;&#x4EFB;&#x52A1;4&#x53C8;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x6267;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7A0B;&#x5E8F;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x8981;&#x8FDC;&#x8FDC;&#x9AD8;&#x4E8E;&#x6211;&#x4EEC;&#x524D;&#x9762;&#x5199;&#x7684;&#x5355;&#x8FDB;&#x7A0B;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#x7A0B;&#x5E8F;&#x3002;</p>
+<hr>
+<p>&#x7F51;&#x4E0A;&#x6709;&#x4E9B;&#x5F88;&#x5F62;&#x8C61;&#x7684;&#x6BD4;&#x55BB;&#xFF1A;<a href="http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html" target="_blank">&#x962E;&#x4E00;&#x5CF0;&#x7684;&#x535A;&#x5BA2;</a>&#xFF0C;<a href="https://www.zhihu.com/question/25532384/answer/411179772" target="_blank"><strong>&#x8F6C;&#x8F7D;&#x81EA;&#x77E5;&#x4E4E;&#x7528;&#x6237;biaodianfu</strong></a></p>
+<p>&#x505A;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6BD4;&#x55BB;&#xFF1A;&#x8FDB;&#x7A0B;=&#x706B;&#x8F66;&#xFF0C;&#x7EBF;&#x7A0B;=&#x8F66;&#x53A2;</p>
+<ul>
+<li>&#x7EBF;&#x7A0B;&#x5728;&#x8FDB;&#x7A0B;&#x4E0B;&#x884C;&#x8FDB;&#xFF08;&#x5355;&#x7EAF;&#x7684;&#x8F66;&#x53A2;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;&#xFF09;</li>
+<li>&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF08;&#x4E00;&#x8F86;&#x706B;&#x8F66;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x8F66;&#x53A2;&#xFF09;</li>
+<li>&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x95F4;&#x6570;&#x636E;&#x5F88;&#x96BE;&#x5171;&#x4EAB;&#xFF08;&#x4E00;&#x8F86;&#x706B;&#x8F66;&#x4E0A;&#x7684;&#x4E58;&#x5BA2;&#x5F88;&#x96BE;&#x6362;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x8F86;&#x706B;&#x8F66;&#xFF0C;&#x6BD4;&#x5982;&#x7AD9;&#x70B9;&#x6362;&#x4E58;&#xFF09;</li>
+<li>&#x540C;&#x4E00;&#x8FDB;&#x7A0B;&#x4E0B;&#x4E0D;&#x540C;&#x7EBF;&#x7A0B;&#x95F4;&#x6570;&#x636E;&#x5F88;&#x6613;&#x5171;&#x4EAB;&#xFF08;A&#x8F66;&#x53A2;&#x6362;&#x5230;B&#x8F66;&#x53A2;&#x5F88;&#x5BB9;&#x6613;&#xFF09;</li>
+<li>&#x8FDB;&#x7A0B;&#x8981;&#x6BD4;&#x7EBF;&#x7A0B;&#x6D88;&#x8017;&#x66F4;&#x591A;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x8D44;&#x6E90;&#xFF08;&#x91C7;&#x7528;&#x591A;&#x5217;&#x706B;&#x8F66;&#x76F8;&#x6BD4;&#x591A;&#x4E2A;&#x8F66;&#x53A2;&#x66F4;&#x8017;&#x8D44;&#x6E90;&#xFF09;</li>
+<li>&#x8FDB;&#x7A0B;&#x95F4;&#x4E0D;&#x4F1A;&#x76F8;&#x4E92;&#x5F71;&#x54CD;&#xFF0C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6302;&#x6389;&#x5C06;&#x5BFC;&#x81F4;&#x6574;&#x4E2A;&#x8FDB;&#x7A0B;&#x6302;&#x6389;&#xFF08;&#x4E00;&#x5217;&#x706B;&#x8F66;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x5217;&#x706B;&#x8F66;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4E00;&#x5217;&#x706B;&#x8F66;&#x4E0A;&#x4E2D;&#x95F4;&#x7684;&#x4E00;&#x8282;&#x8F66;&#x53A2;&#x7740;&#x706B;&#x4E86;&#xFF0C;&#x5C06;&#x5F71;&#x54CD;&#x5230;&#x6240;&#x6709;&#x8F66;&#x53A2;&#xFF09;</li>
+<li>&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x62D3;&#x5C55;&#x5230;&#x591A;&#x673A;&#xFF0C;&#x8FDB;&#x7A0B;&#x6700;&#x591A;&#x9002;&#x5408;&#x591A;&#x6838;&#xFF08;&#x4E0D;&#x540C;&#x706B;&#x8F66;&#x53EF;&#x4EE5;&#x5F00;&#x5728;&#x591A;&#x4E2A;&#x8F68;&#x9053;&#x4E0A;&#xFF0C;&#x540C;&#x4E00;&#x706B;&#x8F66;&#x7684;&#x8F66;&#x53A2;&#x4E0D;&#x80FD;&#x5728;&#x884C;&#x8FDB;&#x7684;&#x4E0D;&#x540C;&#x7684;&#x8F68;&#x9053;&#x4E0A;&#xFF09;</li>
+<li>&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x53EF;&#x4EE5;&#x4E0A;&#x9501;&#xFF0C;&#x5373;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;&#x67D0;&#x4E9B;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x65F6;&#xFF0C;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x5FC5;&#x987B;&#x7B49;&#x5B83;&#x7ED3;&#x675F;&#xFF0C;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#x8FD9;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x3002;&#xFF08;&#x6BD4;&#x5982;&#x706B;&#x8F66;&#x4E0A;&#x7684;&#x6D17;&#x624B;&#x95F4;&#xFF09;&#xFF0D;&quot;&#x4E92;&#x65A5;&#x9501;&quot;</li>
+<li>&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x53EF;&#x4EE5;&#x9650;&#x5B9A;&#x4F7F;&#x7528;&#x91CF;&#xFF08;&#x6BD4;&#x5982;&#x706B;&#x8F66;&#x4E0A;&#x7684;&#x9910;&#x5385;&#xFF0C;&#x6700;&#x591A;&#x53EA;&#x5141;&#x8BB8;&#x591A;&#x5C11;&#x4EBA;&#x8FDB;&#x5165;&#xFF0C;&#x5982;&#x679C;&#x6EE1;&#x4E86;&#x9700;&#x8981;&#x5728;&#x95E8;&#x53E3;&#x7B49;&#xFF0C;&#x7B49;&#x6709;&#x4EBA;&#x51FA;&#x6765;&#x4E86;&#x624D;&#x80FD;&#x8FDB;&#x53BB;&#xFF09;&#xFF0D;&#x201C;&#x4FE1;&#x53F7;&#x91CF;&#x201D;</li>
+</ul>
+<hr>
+<h3 id="python&#x8FDB;&#x7A0B;&#x7EBF;&#x7A0B;">Python&#x8FDB;&#x7A0B;&#x7EBF;&#x7A0B;</h3>
+<h4 id="multiprocessing-&#x5E93;">Multiprocessing &#x5E93;</h4>
+<p>multiprocessing &#x662F;&#x4E00;&#x4E2A;&#x7528;&#x4E0E; threading &#x6A21;&#x5757;&#x76F8;&#x4F3C;API&#x7684;&#x652F;&#x6301;&#x4EA7;&#x751F;&#x8FDB;&#x7A0B;&#x7684;&#x5305;&#x3002;multiprocessing &#x5305;&#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x672C;&#x5730;&#x548C;&#x8FDC;&#x7A0B;&#x5E76;&#x53D1;&#xFF0C;&#x4F7F;&#x7528;&#x5B50;&#x8FDB;&#x7A0B;&#x4EE3;&#x66FF;&#x7EBF;&#x7A0B;&#xFF0C;&#x6709;&#x6548;&#x907F;&#x514D; Global Interpreter Lock &#x5E26;&#x6765;&#x7684;&#x5F71;&#x54CD;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Pool
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span><span class="hljs-params">(x)</span>:</span>
+    <span class="hljs-keyword">return</span> x*x
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">with</span> Pool(<span class="hljs-number">5</span>) <span class="hljs-keyword">as</span> p:
+        print(p.map(f, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]))
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>[<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">9</span>]  <span class="hljs-comment">#&#x8F93;&#x51FA;</span>
+</code></pre>
+<ul>
+<li><code>Process</code> &#x7C7B;</li>
+</ul>
+<pre><code class="lang-python">class multiprocessing.Process(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)
+</code></pre>
+<p>&#x5728; <code>multiprocessing</code>&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Process</code> &#x5BF9;&#x8C61;&#x7136;&#x540E;&#x8C03;&#x7528;&#x5B83;&#x7684; <code>start()</code> &#x65B9;&#x6CD5;&#x6765;&#x751F;&#x6210;&#x8FDB;&#x7A0B;&#x3002; <code>Process</code> &#x548C; <code>threading.Thread</code> API &#x76F8;&#x540C;&#x3002; &#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x591A;&#x8FDB;&#x7A0B;&#x7A0B;&#x5E8F;&#x793A;&#x4F8B;&#x662F;:</p>
+<pre><code>from multiprocessing import Process
+
+def f(name):
+    print(&apos;hello&apos;, name)
+
+if __name__ == &apos;__main__&apos;:
+    p = Process(target=f, args=(&apos;bob&apos;,))
+    p.start()
+    p.join()
+</code></pre><p>&#x8981;&#x663E;&#x793A;&#x6240;&#x6D89;&#x53CA;&#x7684;&#x5404;&#x4E2A;&#x8FDB;&#x7A0B;ID&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6269;&#x5C55;&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process
+<span class="hljs-keyword">import</span> os
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">info</span><span class="hljs-params">(title)</span>:</span>
+    print(title)
+    print(<span class="hljs-string">&apos;module name:&apos;</span>, __name__)
+    print(<span class="hljs-string">&apos;parent process:&apos;</span>, os.getppid())
+    print(<span class="hljs-string">&apos;process id:&apos;</span>, os.getpid())
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span><span class="hljs-params">(name)</span>:</span>
+    info(<span class="hljs-string">&apos;function f&apos;</span>)
+    print(<span class="hljs-string">&apos;hello&apos;</span>, name)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    info(<span class="hljs-string">&apos;main line&apos;</span>)
+    p = Process(target=f, args=(<span class="hljs-string">&apos;bob&apos;</span>,))
+    p.start()
+    p.join()
+
+<span class="hljs-comment"># &#x8F93;&#x51FA;</span>
+main line
+module name: __main__
+parent process: <span class="hljs-number">14993</span>
+process id: <span class="hljs-number">26271</span>
+function f
+module name: __main__
+parent process: <span class="hljs-number">26271</span>
+process id: <span class="hljs-number">26762</span>
+hello bob
+</code></pre>
+<h5 id="&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;">&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;</h5>
+<p><code>Process</code>&#x4E4B;&#x95F4;&#x80AF;&#x5B9A;&#x662F;&#x9700;&#x8981;&#x901A;&#x4FE1;&#x7684;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x673A;&#x5236;&#x6765;&#x5B9E;&#x73B0;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x3002;Python &#x7684; <code>multiprocessing</code> &#x6A21;&#x5757;&#x5305;&#x88C5;&#x4E86;&#x5E95;&#x5C42;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;<code>Queue</code>&#x3001;<code>Pipes</code>&#x7B49;&#x591A;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x4EA4;&#x6362;&#x6570;&#x636E;&#x3002;</p>
+<h4 id="threading-&#x5E93;">Threading &#x5E93;</h4>
+<p>Python3 &#x7EBF;&#x7A0B;&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x4E24;&#x4E2A;&#x6A21;&#x5757;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li><strong>_thread</strong></li>
+<li><strong>threading(&#x63A8;&#x8350;&#x4F7F;&#x7528;)</strong></li>
+</ul>
+<pre><code class="lang-python">threading.Thread(group=<span class="hljs-keyword">None</span>, target=<span class="hljs-keyword">None</span>, name=<span class="hljs-keyword">None</span>, args=(), kwargs={})
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;threading.Thread&#x63D0;&#x4F9B;&#x7684;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li>start()&#xFF1A;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x540E;&#x901A;&#x8FC7;start&#x542F;&#x52A8;&#x7EBF;&#x7A0B;&#xFF0C;&#x7B49;&#x5F85;CPU&#x8C03;&#x5EA6;&#xFF0C;&#x4E3A;run&#x51FD;&#x6570;&#x6267;&#x884C;&#x505A;&#x51C6;&#x5907;&#xFF1B;</li>
+<li>run()&#xFF1A;&#x7EBF;&#x7A0B;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x7684;&#x5165;&#x53E3;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x4F53;&#x4E2D;&#x4F1A;&#x8C03;&#x7528;&#x7528;&#x6237;&#x7F16;&#x5199;&#x7684;target&#x51FD;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x6267;&#x884C;&#x88AB;&#x91CD;&#x8F7D;&#x7684;run&#x51FD;&#x6570;&#xFF1B;</li>
+<li>join([timeout])&#xFF1A;&#x963B;&#x585E;&#x6302;&#x8D77;&#x8C03;&#x7528;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x76F4;&#x5230;&#x88AB;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x6216;&#x8D85;&#x65F6;&#x3002;&#x901A;&#x5E38;&#x4F1A;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x7B49;&#x5F85;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x3002;</li>
+<li>name&#x3001;getName()&amp;setName()&#xFF1A;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#xFF1B;</li>
+<li>ident&#xFF1A;&#x6574;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x7EBF;&#x7A0B;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x7EBF;&#x7A0B;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x524D;&#xFF08;&#x8C03;&#x7528;start&#x4E4B;&#x524D;&#xFF09;&#x4E3A;None&#xFF1B;</li>
+<li>isAlive()&#x3001;is_alive()&#xFF1A;start&#x51FD;&#x6570;&#x6267;&#x884C;&#x4E4B;&#x540E;&#x5230;run&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x524D;&#x90FD;&#x4E3A;True&#xFF1B;</li>
+<li>daemon&#x3001;isDaemon()&amp;setDaemon()&#xFF1A;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x76F8;&#x5173;&#xFF1B;</li>
+</ul>
+</blockquote>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter6/index.html" class="navigation navigation-prev " aria-label="Previous page: MySQL"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter7/chapter7_1.html" class="navigation navigation-next " aria-label="Next page: Python Multiprocessing库"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

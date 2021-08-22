@@ -1,0 +1,567 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>数据查询语言DQL | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../SQL/tcl.html" />
+    
+    
+    <link rel="prev" href="../SQL/dcl.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.4"
+        data-chapter-title="数据查询语言DQL"
+        data-filepath="SQL/dql.md"
+        data-basepath=".."
+        data-revision="Wed Aug 05 2020 13:52:51 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        数据库系统
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 数据库概念</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter_1.html">
+            
+                
+                    <a href="../chapter_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        关系型数据库/非关系型数据库
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="SQL/index.html">
+            
+                
+                    <a href="../SQL/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        SQL 语言
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="SQL/ddl.html">
+            
+                
+                    <a href="../SQL/ddl.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        数据定义语言DDL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="SQL/dml.html">
+            
+                
+                    <a href="../SQL/dml.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        数据操作语言DML
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="SQL/dcl.html">
+            
+                
+                    <a href="../SQL/dcl.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        数据控制语言DCL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="SQL/dql.html">
+            
+                
+                    <a href="../SQL/dql.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        数据查询语言DQL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="SQL/tcl.html">
+            
+                
+                    <a href="../SQL/tcl.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        事务控制语言TCL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="SQL/ccl.html">
+            
+                
+                    <a href="../SQL/ccl.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        指针控制语言CCL
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="MySQL笔记.html">
+            
+                
+                    <a href="../MySQL笔记.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        之前的笔记版本
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6570;&#x636E;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;dql">&#x6570;&#x636E;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;DQL</h1>
+<p>&#x6570;&#x636E;&#x67E5;&#x8BE2;&#x8BED;&#x8A00; DQL &#x4F7F;&#x7528; <code>SELETE</code> &#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;</p>
+<h2 id="select-&#x67E5;&#x8BE2;&#x8BED;&#x53E5;">SELECT &#x67E5;&#x8BE2;&#x8BED;&#x53E5;</h2>
+<p>SELECT&#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x4ECE;&#x8868;&#x4E2D;&#x9009;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#x4ECE;&#x67D0;&#x4E2A;&#x8868;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-mysql">SELECT * FROM &#x8868;&#x540D;
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-mysql">mysql&gt; select * from student;
++----------+--------+------+
+| id       | name   | age  |
++----------+--------+------+
+| 20141224 | &#x5360;&#x56FD;&#x6167; |   24 |
+| 20141223 | &#x4E8E;&#x6BBF;&#x5F3A; |   24 |
+| 20141222 | &#x6768;&#x6587;&#x5F66; |   24 |
+| 20141219 | &#x7530;&#x660E;&#x8D6B; |   25 |
++----------+--------+------+
+4 rows in set (0.01 sec)
+</code></pre>
+<h2 id="&#x53BB;&#x91CD;">&#x53BB;&#x91CD;</h2>
+<p>&#x53BB;&#x91CD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5173;&#x952E;&#x8BCD; <code>DISTINCT</code> &#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x4F8B;&#x5982;</p>
+<pre><code class="lang-mysql">mysql&gt; select distinct  age from student;
++------+
+| age  |
++------+
+|   24 |
+|   25 |
++------+
+2 rows in set (0.00 sec)
+</code></pre>
+<h2 id="&#x6761;&#x4EF6;&#x67E5;&#x8BE2;">&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</h2>
+<p>&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x7528;&#x5230; <code>WHERE</code> &#x5173;&#x952E;&#x8BCD;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x60F3;&#x5728; student &#x8868;&#x4E2D;&#xFF0C;&#x627E;&#x5230; age &#x7B49;&#x4E8E; 24 &#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-mysql">mysql&gt; select * from student where age=24;
++----------+--------+------+
+| id       | name   | age  |
++----------+--------+------+
+| 20141224 | &#x5360;&#x56FD;&#x6167; |   24 |
+| 20141223 | &#x4E8E;&#x6BBF;&#x5F3A; |   24 |
+| 20141222 | &#x6768;&#x6587;&#x5F66; |   24 |
++----------+--------+------+
+3 rows in set (0.00 sec)
+</code></pre>
+<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;<code>WHERE</code> &#x6761;&#x4EF6;&#x5B50;&#x53E5;&#x540E;&#x9762;&#x53EF;&#x4EE5;&#x6709;&#x5F88;&#x591A;&#x5224;&#x65AD;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x4F8B;&#x5982; <code>=,&gt;,&lt;,&lt;=,&gt;=,!=</code> &#x7B49;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x64CD;&#x4F5C;&#x7B26;</th>
+<th style="text-align:center">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">&#x7B49;&#x4E8E;</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&gt;</td>
+<td style="text-align:center">&#x4E0D;&#x7B49;&#x4E8E;&#xFF0C;&#x5728;&#x67D0;&#x4E9B;&#x7248;&#x672C;&#x91CC;&#xFF0C;&#x4E5F;&#x5199;&#x4E3A;!=</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt; (&lt;)</td>
+<td style="text-align:center">&#x5927;&#x4E8E;(&#x5C0F;&#x4E8E;)</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;= (&lt;=)</td>
+<td style="text-align:center">&#x5927;&#x4E8E;&#x7B49;&#x4E8E;(&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;)</td>
+</tr>
+<tr>
+<td style="text-align:center">BETWEEN</td>
+<td style="text-align:center">&#x5728;&#x67D0;&#x4E2A;&#x8303;&#x56F4;&#x5185;&#xFF0C;<code>BETWEEN ... AND</code> &#x4F1A;&#x9009;&#x53D6;&#x4ECB;&#x4E8E;&#x4E24;&#x4E2A;&#x503C;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x8303;&#x56F4;</td>
+</tr>
+<tr>
+<td style="text-align:center">LIKE</td>
+<td style="text-align:center">&#x641C;&#x7D22;&#x67D0;&#x79CD;&#x6A21;&#x5F0F;</td>
+</tr>
+<tr>
+<td style="text-align:center">IN</td>
+<td style="text-align:center">WHERE XXX IN (&#x503C;1, &#x503C;2, ...)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x6392;&#x5E8F;">&#x6392;&#x5E8F;</h2>
+<p><code>ORDER BY</code> &#x8BED;&#x53E5;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-mysql">SELECT * FROM &#x8868;&#x540D; WHERE &#x6761;&#x4EF6; ORDER BY &#x5B57;&#x6BB5;1 DESC|ASC, &#x5B57;&#x6BB5;2 DESC|ASC ...
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7684; <code>DESC</code> &#x548C; <code>ASC</code> &#x8868;&#x793A;&#x6309;&#x964D;&#x5E8F;&#x6392;&#x5E8F;&#x548C;&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x9ED8;&#x8BA4;&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#x3002;<code>ORDER BY</code> &#x540E;&#x9762;&#x53EF;&#x4EE5;&#x8DDF;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x6392;&#x5E8F;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-mysql">mysql&gt; select * from student order by age desc, id asc;
++----------+--------+------+
+| id       | name   | age  |
++----------+--------+------+
+| 20141219 | &#x7530;&#x660E;&#x8D6B; |   25 |
+| 20141222 | &#x6768;&#x6587;&#x5F66; |   24 |
+| 20141223 | &#x4E8E;&#x6BBF;&#x5F3A; |   24 |
+| 20141224 | &#x5360;&#x56FD;&#x6167; |   24 |
++----------+--------+------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5F53;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x6392;&#x5E8F;&#x65F6;&#xFF0C;&#x4F1A;&#x5148;&#x6839;&#x636E;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x6392;&#x5E8F;&#xFF0C;&#x5F53;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x4E00;&#x6837;&#x65F6;&#xFF0C;&#x518D;&#x6309;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B57;&#x6BB5;&#x6392;&#x5E8F;&#x3002;</p>
+<h2 id="&#x9650;&#x5236;">&#x9650;&#x5236;</h2>
+<p><code>LIMIT</code> &#x8BED;&#x53E5;&#xFF1A;&#x5BF9;&#x4E8E;&#x67E5;&#x8BE2;&#x540E;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x5982;&#x679C;&#x53EA;&#x60F3;&#x663E;&#x793A;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>LIMIT</code> &#x5173;&#x952E;&#x8BCD;&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x53EA;&#x60F3;&#x53D6;3&#x6761;&#x6570;&#x636E;&#x663E;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-mysql">SELECT * FROM &#x8868;&#x540D; LIMIT 3;
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x7684; <code>LIMIT</code> &#x662F;&#x4ECE;&#x8868;&#x7684;&#x7B2C; 0 &#x6761;&#x5F00;&#x59CB;&#x53D6;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;&#x6307;&#x5B9A;&#x8BB0;&#x5F55;&#x5F00;&#x59CB;&#x53D6;&#xFF0C;&#x6BD4;&#x5982;&#x4ECE;&#x7B2C;&#x4E8C;&#x6761;&#x6570;&#x636E;&#x5F00;&#x59CB;&#x53D6;&#xFF0C;&#x53D6;&#x4E09;&#x6761;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-mysql">SELECT * FROM &#x8868;&#x540D; LIMIT 2,3;
+</code></pre>
+<p>MySQL &#x4E5F;&#x652F;&#x6301;&#x8BED;&#x53E5;&#xFF1A;</p>
+<pre><code class="lang-mysql">SELECT * FROM &#x8868;&#x540D; LIMIT 3 OFFSET 0
+</code></pre>
+<p>&#x5176;&#x4E2D; <code>3</code> &#x8868;&#x660E;&#x6BCF;&#x9875;&#x663E;&#x793A;3&#x6761;&#x7ED3;&#x679C;&#xFF0C; <code>OFFSET 0</code> &#x7B2C; 0 &#x6761;&#x5F00;&#x59CB;&#x663E;&#x793A;&#x3002;</p>
+<hr>
+<h4 id="limit&#x7684;&#x6548;&#x7387;&#x9AD8;&#xFF1F;"><strong>Limit&#x7684;&#x6548;&#x7387;&#x9AD8;&#xFF1F;</strong></h4>
+<p>&#x3000;&#x3000;&#x5E38;&#x8BF4;&#x7684;Limit&#x7684;&#x6267;&#x884C;&#x6548;&#x7387;&#x9AD8;&#xFF0C;&#x662F;&#x5BF9;&#x4E8E;&#x4E00;&#x79CD;&#x7279;&#x5B9A;&#x6761;&#x4EF6;&#x4E0B;&#x6765;&#x8BF4;&#x7684;&#xFF1A;&#x5373;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6570;&#x91CF;&#x5F88;&#x5927;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x9700;&#x8981;&#x67E5;&#x8BE2;&#x4E00;&#x90E8;&#x5206;&#x6570;&#x636E;&#x7684;&#x60C5;&#x51B5;&#x3002;
+&#x3000;&#x3000;&#x9AD8;&#x6548;&#x7387;&#x7684;&#x539F;&#x7406;&#x662F;&#xFF1A;&#x907F;&#x514D;&#x5168;&#x8868;&#x626B;&#x63CF;&#xFF0C;&#x63D0;&#x9AD8;&#x67E5;&#x8BE2;&#x6548;&#x7387;&#x3002;</p>
+<p>&#x3000;&#x3000;&#x6BD4;&#x5982;&#xFF1A;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x7684;email&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6237;&#x4F7F;&#x7528;email&#x4F5C;&#x4E3A;&#x7528;&#x6237;&#x540D;&#x767B;&#x9646;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x67E5;&#x8BE2;&#x51FA;email&#x5BF9;&#x5E94;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x3002;</p>
+<pre><code class="lang-mysql">SELECT * FROM t_user WHERE email=?;
+</code></pre>
+<p>&#x3000;&#x3000;&#x4E0A;&#x9762;&#x7684;&#x8BED;&#x53E5;&#x5B9E;&#x73B0;&#x4E86;&#x67E5;&#x8BE2;email&#x5BF9;&#x5E94;&#x7684;&#x4E00;&#x6761;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;email&#x8FD9;&#x4E00;&#x5217;&#x6CA1;&#x6709;&#x52A0;&#x7D22;&#x5F15;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x5168;&#x8868;&#x626B;&#x63CF;&#xFF0C;&#x6548;&#x7387;&#x4F1A;&#x5F88;&#x4F4E;&#x3002;</p>
+<pre><code class="lang-mysql">SELECT * FROM t_user WHERE email=? LIMIT 1;
+</code></pre>
+<p>&#x3000;&#x3000;&#x52A0;&#x4E0A;LIMIT 1&#xFF0C;&#x53EA;&#x8981;&#x627E;&#x5230;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x7EE7;&#x7EED;&#x5411;&#x4E0B;&#x626B;&#x63CF;&#x4E86;&#xFF0C;&#x6548;&#x7387;&#x4F1A;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x3002;</p>
+<h4 id="limit&#x7684;&#x6548;&#x7387;&#x4F4E;&#xFF1F;"><strong>Limit&#x7684;&#x6548;&#x7387;&#x4F4E;&#xFF1F;</strong></h4>
+<p>&#x3000;&#x3000;&#x5728;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528; <code>LIMIT</code>&#x6548;&#x7387;&#x4F4E;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#xFF1A;&#x53EA;&#x4F7F;&#x7528; <code>LIMIT</code> &#x6765;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x4E14;&#x504F;&#x79FB;&#x91CF;&#x7279;&#x522B;&#x5927;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p>&#x8BED;&#x53E5;1&#xFF1A;</p>
+<pre><code class="lang-mysql">select * from &#x8868;&#x540D; limit 150000,1000;
+</code></pre>
+<p>&#x8BED;&#x53E5;2:</p>
+<pre><code class="lang-mysql">select * from &#x8868;&#x540D; where id&gt;=150000 limit 1000;
+</code></pre>
+<p>&#x8BED;&#x53E5;1&#x4E3A;0.2077&#x79D2;&#xFF1B;&#x8BED;&#x53E5;2&#x4E3A;0.0063&#x79D2;&#x3002;&#x4E24;&#x6761;&#x8BED;&#x53E5;&#x7684;&#x65F6;&#x95F4;&#x6BD4;&#x662F;&#xFF1A;&#x8BED;&#x53E5;1/&#x8BED;&#x53E5;2&#xFF1D;32.968&#x3002;</p>
+<p>&#x3000;&#x3000;&#x6BD4;&#x8F83;&#x4EE5;&#x4E0A;&#x7684;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x91C7;&#x7528; <code>WHERE...LIMIT....</code> &#x6027;&#x80FD;&#x57FA;&#x672C;&#x7A33;&#x5B9A;&#xFF0C;&#x53D7;&#x504F;&#x79FB;&#x91CF;&#x548C;&#x884C;&#x6570;&#x7684;&#x5F71;&#x54CD;&#x4E0D;&#x5927;&#xFF0C;&#x800C;&#x5355;&#x7EAF;&#x91C7;&#x7528; <code>LIMIT</code> &#x7684;&#x8BDD;&#xFF0C;&#x53D7;&#x504F;&#x79FB;&#x91CF;&#x7684;&#x5F71;&#x54CD;&#x5F88;&#x5927;&#xFF0C;&#x5F53;&#x504F;&#x79FB;&#x91CF;&#x5927;&#x5230;&#x4E00;&#x5B9A;&#x540E;&#x6027;&#x80FD;&#x5F00;&#x59CB;&#x5927;&#x5E45;&#x4E0B;&#x964D;&#x3002;&#x4E0D;&#x8FC7;&#x5728;&#x6570;&#x636E;&#x91CF;&#x4E0D;&#x5927;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E24;&#x8005;&#x7684;&#x533A;&#x522B;&#x4E0D;&#x5927;&#x3002;&#x6240;&#x4EE5;&#x5E94;&#x5F53;&#x5148;&#x4F7F;&#x7528; <code>WHERE</code> &#x7B49;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#xFF0C;&#x914D;&#x5408; <code>LIMIT</code> &#x4F7F;&#x7528;&#xFF0C;&#x6548;&#x7387;&#x624D;&#x9AD8;&#x3002;</p>
+<p>&#x5728; SQL &#x8BED;&#x53E5;&#x4E2D;&#xFF0C;<code>LIMIT</code> &#x5173;&#x952E;&#x5B57;&#x662F;&#x6700;&#x540E;&#x624D;&#x7528;&#x5230;&#x7684;&#x3002;&#x4EE5;&#x4E0B;&#x6761;&#x4EF6;&#x7684;&#x51FA;&#x73B0;&#x987A;&#x5E8F;&#x4E00;&#x822C;&#x662F;&#xFF1A;<code>where-&gt;group by-&gt;having-order by-&gt;limit</code>&#x3002;</p>
+<hr>
+<h2 id="&#x805A;&#x5408;&#x51FD;&#x6570;">&#x805A;&#x5408;&#x51FD;&#x6570;</h2>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#x5BF9;&#x8BB0;&#x5F55;&#x8FDB;&#x884C;&#x6C47;&#x603B;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x7C7B;&#x64CD;&#x4F5C;&#x4E3B;&#x8981;&#x6709;&#xFF1A;</p>
+<ul>
+<li>&#x6C47;&#x603B;&#x51FD;&#x6570;&#xFF1A;&#x6BD4;&#x5982;&#x6C42;&#x548C;SUM&#xFF0C;&#x7EDF;&#x8BA1; COUNT&#xFF0C;&#x6700;&#x503C; MAX/MIN&#x7B49;&#xFF1B;</li>
+<li><code>GROUP BY</code> &#xFF1A;&#x5173;&#x952E;&#x8BCD;&#x8868;&#x793A;&#x5BF9;&#x5206;&#x7C7B;&#x805A;&#x5408;&#x7684;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x3002;</li>
+<li><code>HAVING</code>&#xFF1A;&#x5173;&#x952E;&#x8BCD;&#x8868;&#x793A;&#x5BF9;&#x5206;&#x7C7B;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x518D;&#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x7684;&#x8FC7;&#x6EE4;&#x3002;</li>
+</ul>
+<p><code>WHERE</code> &#x548C; <code>HAVING</code> &#x7684;&#x7528;&#x6CD5;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;<code>WHERE</code> &#x5173;&#x952E;&#x8BCD;&#x7528;&#x5728;&#x7EDF;&#x8BA1;&#x4E4B;&#x524D;&#xFF0C;&#x5BF9;&#x7EDF;&#x8BA1;&#x524D;&#x7684;&#x8BB0;&#x5F55;&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#xFF0C;<code>HAVING</code> &#x5173;&#x952E;&#x8BCD;&#x5219;&#x662F;&#x7528;&#x5728;&#x7EDF;&#x8BA1;&#x4E4B;&#x540E;&#xFF0C;&#x5BF9;&#x805A;&#x5408;&#x4E4B;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#x3002;&#x56E0;&#x6B64; <code>WHERE</code> &#x6C38;&#x8FDC;&#x5728; <code>HAVING</code> &#x7684;&#x524D;&#x9762;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5BF9; student &#x8868;&#x7684;&#x5E74;&#x9F84;&#x6C42;&#x548C;&#xFF1A;</p>
+<pre><code class="lang-python">mysql&gt; select sum(age) <span class="hljs-keyword">from</span> student;
++----------+
+| sum(age) |
++----------+
+|       <span class="hljs-number">97</span> |
++----------+
+<span class="hljs-number">1</span> row <span class="hljs-keyword">in</span> set (<span class="hljs-number">0.01</span> sec)
+</code></pre>
+<p><em>&#xFF08;&#x7531;&#x4E8E;&#x6570;&#x636E;&#x592A;&#x5C11;&#xFF0C;&#x6211;&#x5728;student&#x8868;&#x4E2D;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x4E86;5&#x6761;&#x6570;&#x636E;&#xFF09;</em></p>
+<p>&#x7EDF;&#x8BA1; student &#x8868;&#x7684;&#x6570;&#x636E;&#x6761;&#x6570;:</p>
+<pre><code class="lang-mysql">mysql&gt; select count(*) from student;
++----------+
+| count(1) |
++----------+
+|        9 |
++----------+
+1 row in set (0.00 sec)
+</code></pre>
+<p>&#x5BF9; student &#x8868;&#x6309; age &#x5206;&#x7EC4;&#xFF1A;</p>
+<pre><code class="lang-python">mysql&gt; select age,count(*) <span class="hljs-keyword">from</span> student group by age;
++------+----------+
+| age  | count(*) |
++------+----------+
+|   <span class="hljs-number">24</span> |        <span class="hljs-number">6</span> |
+|   <span class="hljs-number">25</span> |        <span class="hljs-number">2</span> |
+|   <span class="hljs-number">23</span> |        <span class="hljs-number">1</span> |
++------+----------+
+<span class="hljs-number">3</span> rows <span class="hljs-keyword">in</span> set (<span class="hljs-number">0.00</span> sec)
+</code></pre>
+<h2 id="&#x8868;&#x8FDE;&#x63A5;">&#x8868;&#x8FDE;&#x63A5;</h2>
+<p>&#x5F53;&#x9700;&#x8981;&#x540C;&#x65F6;&#x663E;&#x793A;&#x591A;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x65F6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x8868;&#x8FDE;&#x63A5;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x5185;&#x8FDE;&#x63A5;&#xFF1A;&#x5BA3;&#x79F0;&#x4E24;&#x5F20;&#x8868;&#x4E2D;&#x4E92;&#x76F8;&#x5339;&#x914D;&#x7684;&#x8BB0;&#x5F55;&#xFF1B;</p>
+<p>&#x5916;&#x8FDE;&#x63A5;&#xFF1A;&#x4E0D;&#x4EC5;&#x9009;&#x51FA;&#x5339;&#x914D;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x4E5F;&#x4F1A;&#x9009;&#x51FA;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x8BB0;&#x5F55;&#xFF1B;</p>
+<ul>
+<li>&#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#xFF1A;&#x7B5B;&#x9009;&#x51FA;&#x5305;&#x62EC;&#x5DE6;&#x8868;&#x7684;&#x8BB0;&#x5F55;&#x5E76;&#x4E14;&#x53F3;&#x8868;&#x6CA1;&#x6709;&#x548C;&#x5B83;&#x5339;&#x914D;&#x7684;&#x8BB0;&#x5F55;&#x3002;</li>
+<li>&#x53F3;&#x5916;&#x8FDE;&#x63A5;&#xFF1A;&#x7B5B;&#x9009;&#x51FA;&#x5305;&#x62EC;&#x53F3;&#x8868;&#x7684;&#x8BB0;&#x5F55;&#x5E76;&#x4E14;&#x5DE6;&#x8868;&#x6CA1;&#x6709;&#x548C;&#x5B83;&#x5339;&#x914D;&#x7684;&#x8BB0;&#x5F55;&#x3002;</li>
+</ul>
+<p>&#x6211;&#x5728; yw1402 &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x65B0;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; type_job &#x8868;&#x3002;</p>
+<pre><code class="lang-mysql">mysql&gt; select * from type_job;
++------+--------------+
+| type | name         |
++------+--------------+
+|    1 | student      |
+|    2 | postgraduate |
+|    3 | PhD          |
+|    4 | Overseas     |
+|    5 | Worker       |
+|    6 | Professor    |
++------+--------------+
+6 rows in set (0.00 sec)
+</code></pre>
+<p>&#x7136;&#x540E;&#x5728; student &#x8868;&#x4E2D;&#x53E6;&#x52A0;&#x4E00;&#x5217; type&#x5C5E;&#x6027;&#x3002;</p>
+<pre><code class="lang-mysql">mysql&gt; select * from student;
++----------+--------+------+------+
+| id       | name   | age  | type |
++----------+--------+------+------+
+| 20141224 | &#x5360;&#x56FD;&#x6167; |   24 |    1 |
+| 20141223 | &#x4E8E;&#x6BBF;&#x5F3A; |   24 |    2 |
+| 20141222 | &#x6768;&#x6587;&#x5F66; |   24 |    4 |
+| 20141219 | &#x7530;&#x660E;&#x8D6B; |   25 |    3 |
+| 20141225 | &#x80E1;j    |   23 |    3 |
+| 20141226 | &#x6797;z    |   24 |    2 |
+| 20141227 | &#x5B59;x    |   24 |    3 |
+| 20141228 | &#x5510;r    |   25 |    5 |
+| 20141229 | &#x5F20;b    |   24 |    3 |
+| 20148888 | &#x5F20;&#x4E09;   |  100 | NULL |
++----------+--------+------+------+
+10 rows in set (0.00 sec)
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#xFF0C;&#x67E5;&#x8BE2;&#x4E24;&#x8868;&#x4E2D;type&#x5339;&#x914D;&#x7684; id &#x548C; name&#xFF1B;</p>
+<pre><code class="lang-mysql">mysql&gt; select student.name, type_job.name from student left join type_job on student.type=type_job.type;
++--------+--------------+
+| name   | name         |
++--------+--------------+
+| &#x5360;&#x56FD;&#x6167; | student      |
+| &#x4E8E;&#x6BBF;&#x5F3A; | postgraduate |
+| &#x6768;&#x6587;&#x5F66; | Overseas     |
+| &#x7530;&#x660E;&#x8D6B; | PhD          |
+| &#x80E1;j    | PhD          |
+| &#x6797;z    | postgraduate |
+| &#x5B59;x    | PhD          |
+| &#x5510;r    | Worker       |
+| &#x5F20;b    | PhD          |
+| &#x5F20;&#x4E09;   | NULL         |
++--------+--------------+
+10 rows in set (0.00 sec)
+</code></pre>
+<p>&#x53F3;&#x8FDE;&#x63A5;&#xFF1A;</p>
+<pre><code class="lang-mysql">mysql&gt; select student.name, type_job.name from student right join type_job on student.type=type_job.type;
++--------+--------------+
+| name   | name         |
++--------+--------------+
+| &#x5360;&#x56FD;&#x6167; | student      |
+| &#x4E8E;&#x6BBF;&#x5F3A; | postgraduate |
+| &#x6797;z    | postgraduate |
+| &#x7530;&#x660E;&#x8D6B; | PhD          |
+| &#x80E1;j    | PhD          |
+| &#x5B59;x    | PhD          |
+| &#x5F20;b    | PhD          |
+| &#x6768;&#x6587;&#x5F66; | Overseas     |
+| &#x5510;r    | Worker       |
+| NULL   | Professor    |
++--------+--------------+
+10 rows in set (0.00 sec)
+</code></pre>
+<h2 id="&#x5B50;&#x67E5;&#x8BE2;">&#x5B50;&#x67E5;&#x8BE2;</h2>
+<p>&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x662F;&#x53E6;&#x4E00;&#x4E2A; SQL &#x8BED;&#x53E5;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#xFF0C;&#x8FD9;&#x79CD;&#x67E5;&#x8BE2;&#x65B9;&#x5F0F;&#x79F0;&#x4E3A;&#x5B50;&#x67E5;&#x8BE2;&#x3002;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x5173;&#x952E;&#x8BCD;&#x6709; <code>in,not in,=,!=, exists,not exists</code> &#x7B49;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../SQL/dcl.html" class="navigation navigation-prev " aria-label="Previous page: 数据控制语言DCL"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../SQL/tcl.html" class="navigation navigation-next " aria-label="Next page: 事务控制语言TCL"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

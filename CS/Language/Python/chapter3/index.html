@@ -1,0 +1,729 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>装饰器 | Python学习</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="Guohui">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter4/index.html" />
+    
+    
+    <link rel="prev" href="../chapter2/chapter2_1.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3"
+        data-chapter-title="装饰器"
+        data-filepath="chapter3/index.md"
+        data-basepath=".."
+        data-revision="Tue Aug 04 2020 11:53:42 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+                
+                <li>
+                    <a href="../../index.html" target="blank" class="custom-link">个人主页</a>
+                </li>
+            
+            
+
+            
+            <li class="divider"></li>
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Python学习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter1/index.html">
+            
+                
+                    <a href="../chapter1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        小知识集合
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter2/index.html">
+            
+                
+                    <a href="../chapter2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        异常处理
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter2/chapter2_1.html">
+            
+                
+                    <a href="../chapter2/chapter2_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Python 标准异常
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="3" data-path="chapter3/index.html">
+            
+                
+                    <a href="../chapter3/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        装饰器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter4/index.html">
+            
+                
+                    <a href="../chapter4/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        浅复制深复制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter5/index.html">
+            
+                
+                    <a href="../chapter5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        内存管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter6/index.html">
+            
+                
+                    <a href="../chapter6/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        MySQL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="chapter7/index.html">
+            
+                
+                    <a href="../chapter7/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        进程和线程
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="chapter7/chapter7_1.html">
+            
+                
+                    <a href="../chapter7/chapter7_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        Python Multiprocessing库
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="chapter7/chapter7_2.html">
+            
+                
+                    <a href="../chapter7/chapter7_2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Python Thread库
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="chapter7/chapter7_3.html">
+            
+                
+                    <a href="../chapter7/chapter7_3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        GIL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="chapter7/chapter7_4.html">
+            
+                
+                    <a href="../chapter7/chapter7_4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        并发并行串行
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="chapter7/chapter7_5.html">
+            
+                
+                    <a href="../chapter7/chapter7_5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                        I/O五种模型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="chapter7/chapter7_6.html">
+            
+                
+                    <a href="../chapter7/chapter7_6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                        I/O是否占用CPU
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="chapter7/chapter7_7.html">
+            
+                
+                    <a href="../chapter7/chapter7_7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.7.</b>
+                        
+                        计算密集型vs I/O密集型
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="chapter8/index.html">
+            
+                
+                    <a href="../chapter8/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Socket编程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="chapter9/index.html">
+            
+                
+                    <a href="../chapter9/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="chapter10/index.html">
+            
+                
+                    <a href="../chapter10/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        操作文件os
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python学习</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x88C5;&#x9970;&#x5668;">&#x88C5;&#x9970;&#x5668;</h1>
+<ul>
+<li>&#x88C5;&#x9970;&#x5668;(Decorator)&#x7684;&#x4F5C;&#x7528;</li>
+</ul>
+<p>python&#x88C5;&#x9970;&#x5668;&#x5C31;&#x662F;&#x7528;&#x4E8E;&#x62D3;&#x5C55;&#x539F;&#x6765;&#x51FD;&#x6570;&#x529F;&#x80FD;&#x7684;&#x4E00;&#x79CD;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x7279;&#x6B8A;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x5B83;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;python&#x88C5;&#x9970;&#x5668;&#x7684;&#x597D;&#x5904;&#x5C31;&#x662F;<strong>&#x5728;&#x4E0D;&#x7528;&#x66F4;&#x6539;&#x539F;&#x51FD;&#x6570;&#x7684;&#x4EE3;&#x7801;&#x524D;&#x63D0;&#x4E0B;&#x7ED9;&#x51FD;&#x6570;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x529F;&#x80FD;</strong>&#x3002;</p>
+<p>&#x5B83;&#x7ECF;&#x5E38;&#x7528;&#x4E8E;&#x6709;&#x5207;&#x9762;&#x9700;&#x6C42;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x63D2;&#x5165;&#x65E5;&#x5FD7;&#x3001;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x3001;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x3001;&#x7F13;&#x5B58;&#x3001;&#x6743;&#x9650;&#x6821;&#x9A8C;&#x7B49;&#x573A;&#x666F;&#x3002;&#x88C5;&#x9970;&#x5668;&#x662F;&#x89E3;&#x51B3;&#x8FD9;&#x7C7B;&#x95EE;&#x9898;&#x7684;&#x7EDD;&#x4F73;&#x8BBE;&#x8BA1;&#xFF0C;&#x6709;&#x4E86;&#x88C5;&#x9970;&#x5668;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x62BD;&#x79BB;&#x51FA;&#x5927;&#x91CF;&#x4E0E;&#x51FD;&#x6570;&#x529F;&#x80FD;&#x672C;&#x8EAB;&#x65E0;&#x5173;&#x7684;&#x96F7;&#x540C;&#x4EE3;&#x7801;&#x5E76;&#x7EE7;&#x7EED;&#x91CD;&#x7528;&#x3002;</p>
+<ul>
+<li>&#x4EC0;&#x4E48;&#x662F;&#x88C5;&#x9970;&#x5668;&#xFF1F;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x53D6;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func1</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&apos;func1 is running&apos;</span>)
+    start = time.time()
+    <span class="hljs-comment">### &#x4EE3;&#x7801;&#x5757;</span>
+    a = <span class="hljs-number">10</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1000000</span>):
+        a *= a
+        a /= a
+    end = time.time()
+    print(<span class="hljs-string">&apos;func1 ends!&apos;</span>)
+    print(<span class="hljs-string">&apos;func1 run {} s!&apos;</span>.format(end-start))
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func2</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&apos;func2 is running&apos;</span>)
+    start = time.time()
+    <span class="hljs-comment">### &#x4EE3;&#x7801;&#x5757;</span>
+    a = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1000000</span>):
+        a.append(i)
+    end = time.time()
+    print(<span class="hljs-string">&apos;func2 ends!&apos;</span>)
+    print(<span class="hljs-string">&apos;func2 run {} s!&apos;</span>.format(end-start))
+func1()
+func2()
+
+<span class="hljs-comment">## &#x8F93;&#x51FA;</span>
+func1 <span class="hljs-keyword">is</span> running
+func1 ends!
+func1 run <span class="hljs-number">0.21602988243103027</span> s!
+func2 <span class="hljs-keyword">is</span> running
+func2 ends!
+func2 run <span class="hljs-number">0.24808359146118164</span> s!
+</code></pre>
+<p>&#x5047;&#x8BBE;&#x73B0;&#x6709;&#x4E24;&#x4E2A;&#x51FD;&#x6570; func1 &#x548C; func2 &#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6253;&#x5370;&#x8FD9;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#x548C;&#x7ED3;&#x675F;&#x7684;&#x8BED;&#x53E5;&#x4EE5;&#x53CA;&#x7EDF;&#x8BA1;&#x51FD;&#x6570;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x52A0;&#x5165;&#x6253;&#x5370;&#x7684;&#x8BED;&#x53E5;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6709;&#x5F88;&#x591A;&#x8FD9;&#x6837;&#x7684;&#x51FD;&#x6570;&#x9700;&#x8981;&#x6253;&#x5370;&#x65F6;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x5B9E;&#x5728;&#x592A;&#x7D2F;&#x8D58;&#x9EBB;&#x70E6;&#x4E86;&#xFF0C;&#x800C;&#x4E14;<strong>&#x4EE3;&#x7801;&#x5757;&#x90E8;&#x5206;</strong>&#x624D;&#x662F;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x6CA1;&#x5FC5;&#x8981;&#x8FD9;&#x4E48;&#x52A0;&#x5165;&#x65E0;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x51FD;&#x6570;&#x88C5;&#x9970;&#x5668;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x4F53;&#x73B0;&#x4E86;&#x3002;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">log</span><span class="hljs-params">(func)</span>:</span>
+    print(<span class="hljs-string">&apos;{} is running&apos;</span>.format(func.__name__))
+    start = time.time()
+    func()
+    end = time.time()
+    print(<span class="hljs-string">&apos;{} ends!&apos;</span>.format(func.__name__))
+    print(<span class="hljs-string">&apos;{} run {} s!&apos;</span>.format(func.__name__,end-start))
+
+<span class="hljs-decorator">@log</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func1</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment">### &#x4EE3;&#x7801;&#x5757;</span>
+    a = <span class="hljs-number">10</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1000000</span>):
+        a *= a
+        a /= a
+
+<span class="hljs-decorator">@log</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func2</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment">### &#x4EE3;&#x7801;&#x5757;</span>
+    a = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1000000</span>):
+        a.append(i)
+
+<span class="hljs-comment">## &#x8F93;&#x51FA;</span>
+func1 <span class="hljs-keyword">is</span> running
+func1 ends!
+func1 run <span class="hljs-number">0.22405648231506348</span> s!
+func2 <span class="hljs-keyword">is</span> running
+func2 ends!
+func2 run <span class="hljs-number">0.24805998802185059</span> s!
+</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x52A0;&#x5165;&#x4E86;@&#x51FD;&#x6570;&#x540E;&#xFF0C;&#x51FD;&#x6570; func1 &#x548C; func2 &#x5C31;&#x53EA;&#x9700;&#x8F93;&#x5165;&#x81EA;&#x5DF1;&#x7684;&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x90E8;&#x5206;&#x4E86;&#x3002;</p>
+<h2 id="&#x51FD;&#x6570;&#x88C5;&#x9970;&#x5668;&#x8BE6;&#x89E3;">&#x51FD;&#x6570;&#x88C5;&#x9970;&#x5668;&#x8BE6;&#x89E3;</h2>
+<p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decorator</span><span class="hljs-params">(func)</span>:</span>
+    start = time.time()
+    func()
+    end = time.time()
+    print(end-start)
+
+<span class="hljs-decorator">@decorator</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span><span class="hljs-params">()</span>:</span>
+    time.sleep(<span class="hljs-number">2</span>)
+    print(<span class="hljs-string">&apos;Hello World!&apos;</span>)
+
+<span class="hljs-comment">## &#x8F93;&#x51FA;</span>
+Hello World!
+<span class="hljs-number">2.0020856857299805</span>
+
+&gt;&gt; test
+<span class="hljs-keyword">None</span>
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x51FD;&#x6570;&#x88C5;&#x9970;&#x5668;&#x7684;&#x4F5C;&#x7528;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F; <code>test = decorator(test)</code>&#xFF0C;&#x56E0;&#x4E3A; decorator &#x51FD;&#x6570;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x8F93;&#x5165; <code>test</code> &#x540E;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A; <code>None</code>&#x3002;</p>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x770B;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decorator</span><span class="hljs-params">(func)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">()</span>:</span>
+        start = time.time()
+        func()
+        end = time.time()
+        print(end-start)
+    <span class="hljs-keyword">return</span> wrapper
+
+<span class="hljs-decorator">@decorator</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span><span class="hljs-params">()</span>:</span>
+    time.sleep(<span class="hljs-number">2</span>)
+    print(<span class="hljs-string">&apos;Hello World!&apos;</span>)
+
+<span class="hljs-comment">## &#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8F93;&#x51FA;</span>
+<span class="hljs-comment">## &#x56E0;&#x4E3A; test = decorator(test) &#x8FD4;&#x56DE;&#x4E00;&#x4E2A; wrapper &#x51FD;&#x6570;</span>
+
+<span class="hljs-comment">## &#x5982;&#x679C;&#x518D;&#x52A0;&#x5165;&#x4E0B;&#x9762;&#x4EE3;&#x7801;</span>
+test()
+<span class="hljs-comment">## &#x5219;&#x8F93;&#x51FA;</span>
+Hello World!
+<span class="hljs-number">2.0020856857299805</span>
+
+&gt;&gt; test() <span class="hljs-comment">## wrapper()&#x51FD;&#x6570;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;</span>
+<span class="hljs-keyword">None</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4E24;&#x6BB5;&#x4EE3;&#x7801;&#x90FD;&#x662F;&#x65E0;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x88C5;&#x9970;&#x5668;&#xFF0C;<strong>&#x5982;&#x679C; test() &#x51FD;&#x6570;&#x5B58;&#x5728;&#x53C2;&#x6570;&#x5462;&#xFF0C;&#x90A3;&#x8BE5;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x88C5;&#x9970;&#x5668;&#xFF1F;</strong></p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decorator</span><span class="hljs-params">(func)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args,**kwargs)</span>:</span>
+        start = time.time()
+        func(*args,**kwargs)
+        end = time.time()
+        print(end-start)
+    <span class="hljs-keyword">return</span> wrapper
+
+<span class="hljs-decorator">@decorator</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span><span class="hljs-params">(a,b)</span>:</span>
+    time.sleep(<span class="hljs-number">2</span>)
+    print(a+b)
+
+test(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)
+
+<span class="hljs-comment">## &#x8F93;&#x51FA;</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">2.0041680335998535</span>
+</code></pre>
+<p>&#x89E3;&#x91CA;&#xFF1A;<code>test = decorator(test) = wrapper</code> (test&#x51FD;&#x6570;&#x4F5C;&#x4E3A;decorator&#x51FD;&#x6570;&#x7684;&#x5185;&#x53D8;&#x91CF;)&#xFF0C;&#x5F53;&#x8F93;&#x5165; <code>test(1,2)</code> &#x65F6;&#xFF0C;&#x7B49;&#x6548;&#x4E8E; <code>wrapper(1,2)</code> &#xFF0C;&#x5373;&#x8F93;&#x51FA;&#x8BE5;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x88C5;&#x9970;&#x5668;&#x542B;&#x6709;&#x53C2;&#x6570;&#x5462;&#xFF0C;&#x8BE5;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#xFF1F;&#xFF08;Flask &#x6846;&#x67B6; route&#x8DEF;&#x7531;&#x51FD;&#x6570;&#x5C31;&#x5B58;&#x5728;&#x88C5;&#x9970;&#x5668;&#x542B;&#x6709;&#x53C2;&#x6570;&#xFF0C;&#x6765;&#x6807;&#x8BB0;&#x88C5;&#x9970;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5728;&#x88C5;&#x9970;&#x5668;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x518D;&#x5D4C;&#x5957;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x3002;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decorator</span><span class="hljs-params">(a)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">out_wrapper</span><span class="hljs-params">(func)</span>:</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>:</span>
+            <span class="hljs-keyword">if</span> a == <span class="hljs-string">&apos;task1&apos;</span>:
+                starttime = time.time()
+                func(*args, **kwargs)
+                stoptime = time.time()
+                print(<span class="hljs-string">&quot;the task1 run time is :&quot;</span>, stoptime - starttime)
+            <span class="hljs-keyword">elif</span> a == <span class="hljs-string">&apos;task2&apos;</span>:
+                starttime = time.time()
+                func(*args, **kwargs)
+                stoptime = time.time()
+                print(<span class="hljs-string">&quot;the task2 run time is :&quot;</span>, stoptime - starttime)
+        <span class="hljs-keyword">return</span> wrapper
+    <span class="hljs-keyword">return</span> out_wrapper
+
+<span class="hljs-decorator">@decorator(a =&apos;task1&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">task1</span><span class="hljs-params">()</span>:</span>
+    time.sleep(<span class="hljs-number">1</span>)
+    print(<span class="hljs-string">&quot;in the task1&quot;</span>)
+
+<span class="hljs-decorator">@decorator(a =&apos;task2&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">task2</span><span class="hljs-params">()</span>:</span>
+    time.sleep(<span class="hljs-number">1</span>)
+    print(<span class="hljs-string">&quot;in the task2&quot;</span>)
+
+task1()
+task2()
+</code></pre>
+<ul>
+<li>&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x88C5;&#x9970;&#x5668;&#x65F6;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dec1</span><span class="hljs-params">(func)</span>:</span>
+    print(<span class="hljs-string">&apos;1&apos;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">one</span><span class="hljs-params">()</span>:</span>
+        print(<span class="hljs-string">&apos;2&apos;</span>)
+        func()
+        print(<span class="hljs-string">&apos;3&apos;</span>)
+    print(<span class="hljs-string">&apos;4&apos;</span>)
+    <span class="hljs-keyword">return</span> one
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dec2</span><span class="hljs-params">(func)</span>:</span>
+    print(<span class="hljs-string">&apos;a&apos;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">two</span><span class="hljs-params">()</span>:</span>
+        print(<span class="hljs-string">&apos;b&apos;</span>)
+        func()
+        print(<span class="hljs-string">&apos;c&apos;</span>)
+    print(<span class="hljs-string">&apos;d&apos;</span>)
+    <span class="hljs-keyword">return</span> two
+
+<span class="hljs-decorator">@dec1</span>
+<span class="hljs-decorator">@dec2</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&quot;test ------------&quot;</span>)
+
+test()
+
+<span class="hljs-comment"># test() = dec1(dec2(test))() = dec1(two)() &#x6B64;&#x65F6;&#x8F93;&#x51FA; &apos;a&apos;,&apos;d&apos;</span>
+<span class="hljs-comment">#        = one() &#x6B64;&#x65F6;&#x8F93;&#x51FA; &apos;1&apos;,&apos;4&apos;</span>
+<span class="hljs-comment">#             &#x8F93;&#x51FA; &apos;2&apos;, func() ---&gt; two() &#x8F93;&#x51FA; &apos;b&apos;, func() ---&gt; test() &#x8F93;&#x51FA; &apos;test --------&apos;,&apos;c&apos; &apos;3&apos;</span>
+
+<span class="hljs-comment"># &#x8F93;&#x51FA;</span>
+<span class="hljs-string">&apos;a&apos;</span> <span class="hljs-string">&apos;d&apos;</span> <span class="hljs-string">&apos;1&apos;</span> <span class="hljs-string">&apos;4&apos;</span> <span class="hljs-string">&apos;2&apos;</span> <span class="hljs-string">&apos;b&apos;</span> <span class="hljs-string">&apos;test --------&apos;</span> <span class="hljs-string">&apos;c&apos;</span> <span class="hljs-string">&apos;3&apos;</span>
+</code></pre>
+<hr>
+<h1 id="&#x4E4B;&#x524D;&#x7684;&#x88C5;&#x9970;&#x5668;&#x7B14;&#x8BB0;&#x7248;&#x672C;">&#x4E4B;&#x524D;&#x7684;&#x88C5;&#x9970;&#x5668;&#x7B14;&#x8BB0;&#x7248;&#x672C;</h1>
+<p>python &#x4E2D;@&#x51FD;&#x6570;&#x88C5;&#x9970;&#x5668;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;<a href="http://c.biancheng.net/view/2270.html" target="_blank">&#x8BE5;&#x90E8;&#x5206;&#x53C2;&#x8003;&#x6765;&#x6E90;</a>&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x7528; $funA()$ &#x51FD;&#x6570;&#x88C5;&#x9970;&#x5668;&#x53BB;&#x88C5;&#x9970; $funB()$ &#x51FD;&#x6570;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#funA &#x4F5C;&#x4E3A;&#x88C5;&#x9970;&#x5668;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">funA</span><span class="hljs-params">(fn)</span>:</span>
+    &#x4EE3;&#x7801;...   
+    fn() <span class="hljs-comment"># &#x6267;&#x884C;&#x4F20;&#x5165;&#x7684;fn&#x53C2;&#x6570;</span>
+    &#x4EE3;&#x7801;...    
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;...&apos;</span>
+
+<span class="hljs-decorator">@funA</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">funB</span><span class="hljs-params">()</span>:</span>
+    &#x4EE3;&#x7801;
+</code></pre>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x4E0A;&#x9762;&#x7A0B;&#x5E8F;&#x5B8C;&#x5168;&#x7B49;&#x4EF7;&#x4E8E;&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">funA</span><span class="hljs-params">(fn)</span>:</span>
+    &#x4EE3;&#x7801;...
+    fn() <span class="hljs-comment"># &#x6267;&#x884C;&#x4F20;&#x5165;&#x7684;fn&#x53C2;&#x6570;</span>
+    &#x4EE3;&#x7801;...    
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;...&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">funB</span><span class="hljs-params">()</span>:</span>
+    &#x4EE3;&#x7801;...
+
+funB = funA(funB)
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x6BD4;&#x5BF9;&#x4EE5;&#x4E0A; 2 &#x6BB5;&#x7A0B;&#x5E8F;&#x4E0D;&#x96BE;&#x53D1;&#x73B0;&#xFF0C;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x88C5;&#x9970;&#x5668; A() &#x53BB;&#x88C5;&#x9970;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570; B()&#xFF0C;&#x5176;&#x5E95;&#x5C42;&#x6267;&#x884C;&#x4E86;&#x5982;&#x4E0B; 2 &#x6B65;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ol>
+<li><strong>&#x5C06; B &#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x7ED9; A() &#x51FD;&#x6570;</strong>&#xFF1B;</li>
+<li><strong>&#x5C06; A() &#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x53CD;&#x9988;&#x56DE; B</strong>&#x3002;</li>
+</ol>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<p>&#x4E3E;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#funA &#x4F5C;&#x4E3A;&#x88C5;&#x9970;&#x5668;&#x51FD;&#x6570;</span>
+&gt;&gt;&gt;<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">funA</span><span class="hljs-params">(fn)</span>:</span>
+    print(<span class="hljs-string">&quot;&#x4EBA;&#x751F;&#x82E6;&#x77ED;&#xFF0C;&#x6211;&#x7528;Python&quot;</span>)
+    fn() <span class="hljs-comment"># &#x6267;&#x884C;&#x4F20;&#x5165;&#x7684;fn&#x53C2;&#x6570;</span>
+    print(<span class="hljs-string">&quot;Hello wolrd&quot;</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Good Ending&quot;</span>
+
+&gt;&gt;&gt;@funA
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">funB</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&quot;&#x5B66;&#x4E60; Python&quot;</span>)
+
+<span class="hljs-comment">##&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7ED3;&#x679C;</span>
+&#x4EBA;&#x751F;&#x82E6;&#x77ED;&#xFF0C;&#x6211;&#x7528;Python
+&#x5B66;&#x4E60; Python
+Hello World
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>funB
+Good Ending
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter2/chapter2_1.html" class="navigation navigation-prev " aria-label="Previous page: Python 标准异常"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter4/index.html" class="navigation navigation-next " aria-label="Next page: 浅复制深复制"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
