@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>占国慧 - 个人主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+            --text-color: #333;
+            --light-text: #7f8c8d;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* 个人简介区域 */
+        .profile-container {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .profile-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            max-width: 100%;
+        }
+
+        .profile-image {
+            flex-shrink: 0;
+        }
+
+        .profile-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .profile-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-family: "楷体", KaiTi, "STKaiti", serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: normal;
+        }
+
+        .profile-name a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .profile-title {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .profile-details {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .profile-details a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .profile-details a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* 邮箱字体改为Times New Roman */
+        .email-link {
+            font-family: "Times New Roman", serif;
+        }
+
+        .profile-language-link {
+            margin-top: 1rem;
+        }
+
+        .profile-language-link a {
+            font-family: "Times New Roman", serif;
+            text-decoration: none;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .profile-language-link a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* 主要内容区域 */
+        .content-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2 i {
+            color: var(--secondary-color);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 论文样式 */
+        .paper-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .paper-item:last-child {
+            border-bottom: none;
+        }
+
+        .paper-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .paper-authors {
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+        }
+
+        .paper-journal {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .paper-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        .paper-links a:hover {
+            color: white;
+            background-color: var(--secondary-color);
+        }
+
+        /* 技能标签 */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background-color: var(--light-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 获奖经历 */
+        .award-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .award-icon {
+            color: var(--secondary-color);
+            margin-right: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .award-content {
+            flex: 1;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .profile-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-name {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: var(--primary-color);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .mobile-menu.active {
+                transform: translateY(0);
+            }
+
+            .mobile-menu a {
+                color: white;
+                text-decoration: none;
+                font-size: 1.5rem;
+                margin: 1rem 0;
+                transition: var(--transition);
+            }
+
+            .mobile-menu a:hover {
+                color: var(--secondary-color);
+            }
+
+            .close-menu {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-menu-btn, .mobile-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">占国慧</div>
+                <div class="nav-links">
+                    <a href="#research">研究方向</a>
+                    <a href="#experience">工作经历</a>
+                    <a href="#education">教育背景</a>
+                    <a href="#publications">发表论文</a>
+                    <a href="#skills">掌握技能</a>
+                    <a href="#awards">获奖经历</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu">
+        <button class="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#research">研究方向</a>
+        <a href="#experience">工作经历</a>
+        <a href="#education">教育背景</a>
+        <a href="#publications">发表论文</a>
+        <a href="#skills">掌握技能</a>
+        <a href="#awards">获奖经历</a>
+    </div>
+
+    <div class="container">
+        <!-- 个人简介区域 -->
+        <section class="profile-container">
+            <div class="profile-content">
+                <div class="profile-image">
+                    <a href="https://ghzphy.github.io/">
+                        <img src="./resume_files/ghzhan20251027.jpg" alt="占国慧个人照片">
+                    </a>
+                </div>
+                <div class="profile-info">
+                    <h1 class="profile-name">
+                        <a href="https://ghzphy.github.io/">占国慧</a>
+                    </h1>
+                    <p class="profile-title">工学博士, 半导体器件模拟仿真</p>
+                    <div class="profile-details">
+                        <span>中共党员, 1996年9月生</span>
+                        <span>邮箱: <a href="mailto:ghzphysics@163.com" class="email-link">ghzphysics@163.com</a></span>
+                    </div>
+                    <div class="profile-language-link">
+                        <a href="resume_zh-cn.html" target="_blank" rel="noopener">中文简历</a>
+                        <a href="resume_en.html" target="_blank" rel="noopener">CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 研究方向 -->
+        <section id="research" class="content-section">
+            <h2><i class="fas fa-flask"></i> 研究方向</h2>
+            <ul>
+                <li>目前从事半导体器件模拟仿真研究工作, 通过TCAD工具或原子级仿真程序, 重点关注极限尺寸下纳米器件的量子输运行为; 开发基于𝐤 ⋅𝐩-NEGF框架的量子输运程序.</li>
+                <li>硕士期间从事于凝聚态物理计算物理方向，主要利用计算手段(第一性原理计算+𝐤 ⋅𝐩近似)来研究材料的各种性质, 例如电学磁学性质. 探索和理解凝聚态物理中的新奇物性, 兼顾凝聚态物性的基础研究和凝聚态材料的实际应用.</li>
+            </ul>
+        </section>
+
+        <!-- 工作经历 -->
+        <section id="experience" class="content-section">
+            <h2><i class="fas fa-briefcase"></i> 工作经历</h2>
+            <ul>
+                <li>学科博后, 浙江大学物理学院/量子物态与器件研究中心, 浙江杭州, 2024.11-2026.10</li>
+                <li>高级集成开发工程师, 比亚迪汽车工业有限公司, 深圳坪山, 2024.7-2024.9</li>
+                <li>(实习)后端开发工程师, 南京贝湾教育科技有限公司, 南京, 2020.09-2020.11</li>
+            </ul>
+        </section>
+
+        <!-- 教育背景 -->
+        <section id="education" class="content-section">
+            <h2><i class="fas fa-graduation-cap"></i> 教育背景</h2>
+            <ul>
+                <li>2021.09-2024.06 &nbsp;&nbsp;博士: <a href="https://www.ucas.ac.cn/">中国科学院大学</a>. &nbsp;&nbsp;专业: 微电子学与固体电子学. &nbsp;&nbsp;导师: <a href="https://teacher.ucas.ac.cn/~wuzhenhua">吴振华 研究员</a></li>
+                <li>2018.09-2021.06 &nbsp;&nbsp;硕士: <a href="https://www.nju.edu.cn/">南京大学</a>. &nbsp;&nbsp;专业: 凝聚态物理(推荐免试). &nbsp;&nbsp;导师: <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i261992.html">张海军 教授</a></li>
+                <li>2014.10-2018.06 &nbsp;&nbsp;本科: <a href="https://www.neu.edu.cn/">东北大学</a>. &nbsp;&nbsp;专业: 应用物理学(GPA排名:3/90). &nbsp;&nbsp;导师: <a href="http://cos.neu.edu.cn/2019/0318/c4329a84627/page.htm">公卫江 教授</a></li>
+            </ul>
+        </section>
+
+        <!-- 发表论文 -->
+        <section id="publications" class="content-section">
+            <h2><i class="fas fa-file-alt"></i> 发表论文</h2>
+            
+            <div class="paper-item">
+                <div class="paper-title">Enhancing the circular photogalvanic effect in double Weyl semimetals via symmetry breaking.</div>
+                <div class="paper-authors">Tongshuai Zhu, Hao Ni, Dinghui Wang*, Zhilong Yang*, <strong>Guohui Zhan</strong>*, Baojun Wei.</div>
+                <div class="paper-journal"><i>Applied Physics Letters</i>, 126, 123103 (2025).</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.1063/5.0257016">DOI</a>
+                    <a href="./resume_files/pubs/123103_1_5.0257016.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">Quantum transport for the gate-length scaling limit of Si nanowire field-effect transistors based on calibrated 𝐤 ⋅𝐩 Hamiltonian parameters.</div>
+                <div class="paper-authors"><strong>Guohui Zhan</strong>, Tongshuai Zhu, Jiaxin Yao, Kun Luo, Huaxiang Yin, Shengli Zhang, and Zhenhua Wu*.</div>
+                <div class="paper-journal"><i>Physical Review Applied</i>, 23, 034049 (2025).</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.1103/PhysRevApplied.23.034049">DOI</a>
+                    <a href="./resume_files/pubs/PhysRevApplied.23.034049.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">Quantum transport of 2D Weyl VSi2N4-based magnetic tunnel junction: a kp-NEGF study.</div>
+                <div class="paper-authors"><strong>Guohui Zhan</strong>, Kun Luo, Ruoran Jia, Christopher Yang, Zhenhua Wu*.</div>
+                <div class="paper-journal">2023 International Conference on Simulation of Semiconductor Processes and Devices (SISPAD), Kobe, Japan, 2023, pp. 249-252.</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.23919/SISPAD57422.2023.10319590">DOI</a>
+                    <a href="./resume_files/pubs/Quantum_transport_of_2D_Weyl_VSi2N4-based_magnetic_tunnel_junction_a_k__p-NEGF_study.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">Large magnetoresistance and perfect spin inject efficiency in two-dimensional strained VSi2N4-based room temperature magnetic tunnel junction devices.</div>
+                <div class="paper-authors"><strong>Guohui Zhan</strong>, Zhilong Yang, Kun Luo, Shengli Zhang*, Zhenhua Wu*.</div>
+                <div class="paper-journal"><i>Physical Review Applied</i>, 19, 014020 (2023).</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.1103/PhysRevApplied.19.014020">DOI</a>
+                    <a href="./resume_files/pubs/PhysRevApplied.19.014020.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">Spin-dependent tunneling in 2D MnBi2Te4-based magnetic tunnel junctions.</div>
+                <div class="paper-authors"><strong>Guohui Zhan</strong>, Zhilong Yang, Kun Luo, Dong Zhang, Wenkai Lou, Jiangtao Liu*, Zhenhua Wu*, Kai Chang*.</div>
+                <div class="paper-journal"><i>MRS Bulletin</i>, 1938,1425 (2022).</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.1557/s43577-022-00381-8">DOI</a>
+                    <a href="./resume_files/pubs/s43577-022-00381-8.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">A Programmable k·p Hamiltonian Method and Application to Magnetic Topological Insulator MnBi2Te4.</div>
+                <div class="paper-authors"><strong>Guohui Zhan</strong>, Minji Shi, Zhilong Yang, Haijun Zhang*.</div>
+                <div class="paper-journal"><i>Chinese Physics Letters</i>, 2021, 38(7): 077105.</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.1088/0256-307X/38/7/077105">DOI</a>
+                    <a href="./resume_files/pubs/CPL077105_2021.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">反铁磁拓扑绝缘体与轴子绝缘体——MnBi2Te4系列磁性体系的研究进展.</div>
+                <div class="paper-authors"><strong>占国慧</strong>, 王怀强, 张海军*.</div>
+                <div class="paper-journal"><i>物理</i>, 2020, 49(12): 817-827.</div>
+                <div class="paper-links">
+                    <a href="http://www.wuli.ac.cn/CN/abstract/abstract76266.shtml">Link</a>
+                    <a href="./resume_files/pubs/反铁磁拓扑绝缘体与轴子绝缘体MnBi2Te4系列磁性体系的研究进展_占国慧.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">PT-symmetry-protected Dirac states in strain-induced hidden MoS2 monolayer.</div>
+                <div class="paper-authors">Meiling Xu, <strong>Guo-Hui Zhan</strong>(Co-first author) et. al.</div>
+                <div class="paper-journal"><i>Physical Review B</i>, 100,235435(2019).</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.1103/PhysRevB.100.235435">DOI</a>
+                    <a href="./resume_files/pubs/PhysRevB.100.235435.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">Eigenenergies and quantum transport properties in a non-Hermitian quantum-dot chain with side-coupled dots.</div>
+                <div class="paper-authors">Lian-Lian Zhang, Ze-Zhong Li, <strong>Guo-Hui Zhan</strong> et. al.</div>
+                <div class="paper-journal"><i>Physical Review A</i>, 99,032119(2019).</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.1103/PhysRevA.99.032119">DOI</a>
+                    <a href="./resume_files/pubs/PhysRevA.99.032119.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">PT 对称的非厄米体系的能谱性质.</div>
+                <div class="paper-authors"><strong>占国慧</strong>, 于殿强, 王郅臻, 张莲莲*, 公卫江.</div>
+                <div class="paper-journal"><i>大学物理</i>, 2018, 37(3).</div>
+                <div class="paper-links">
+                    <a href="./resume_files/pubs/PT对称的非厄米体系的能谱性质_占国慧.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">Effect of PT symmetry in a parallel double-quantum-dot structure.</div>
+                <div class="paper-authors">Lian-Lian Zhang, <strong>Guo-Hui Zhan</strong>, Ze-Zhong Li et. al.</div>
+                <div class="paper-journal"><i>Physical Review A</i>, 96,062133(2017).</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.1103/PhysRevA.96.062133">DOI</a>
+                    <a href="./resume_files/pubs/PhysRevA.96.062133.pdf">PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专利软著 -->
+        <section class="content-section">
+            <h2><i class="fas fa-file-contract"></i> 专利软著</h2>
+            <ul>
+                <li>暂无</li>
+            </ul>
+        </section>
+
+        <!-- 社团工作 -->
+        <section class="content-section">
+            <h2><i class="fas fa-users"></i> 社团工作</h2>
+            <ul>
+                <li>东北大学, 应物1402班副班长, 2016年-2018年</li>
+            </ul>
+        </section>
+
+        <!-- 掌握技能 -->
+        <section id="skills" class="content-section">
+            <h2><i class="fas fa-cogs"></i> 掌握技能</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Fortran</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Matlab</span>
+                <span class="skill-tag">Mathematica</span>
+                <span class="skill-tag">Latex</span>
+                <span class="skill-tag">Markdown</span>
+                <span class="skill-tag">HTML</span>
+            </div>
+        </section>
+
+        <!-- 获奖经历 -->
+        <section id="awards" class="content-section">
+            <h2><i class="fas fa-award"></i> 获奖经历</h2>
+            <div class="award-item">
+                <div class="award-icon"><i class="fas fa-trophy"></i></div>
+                <div class="award-content">
+                    <div><a href="./resume_files/awards/2024-北京市优秀毕业生.jpg">北京市优秀毕业生</a>, 北京市教育委员会, 2024年</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon"><i class="fas fa-medal"></i></div>
+                <div class="award-content">
+                    <div>中国科学院大学优秀毕业生, 中国科学院大学, 2024年</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon"><i class="fas fa-star"></i></div>
+                <div class="award-content">
+                    <div>中国科学院大学三好学生, 中国科学院大学, 2023年、2024年</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="award-content">
+                    <div>中科院微电子所荣誉奖学金, 中科院微电子所, 2022年优秀奖、2023年特等奖</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon"><i class="fas fa-certificate"></i></div>
+                <div class="award-content">
+                    <div>南京大学优秀研究生, 南京大学, 2020年</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon"><i class="fas fa-award"></i></div>
+                <div class="award-content">
+                    <div>南京大学硕士英才一等奖学金, 南京大学, 2020年</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="award-content">
+                    <div>东北大学一等奖学金2次二等奖学金2次, 东北大学, 2015年-2018年</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon"><i class="fas fa-trophy"></i></div>
+                <div class="award-content">
+                    <div><a href="./resume_files/awards/辽宁省优秀毕业生.PDF">辽宁省优秀毕业生</a>, 辽宁省教育厅,2018年</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon"><i class="fas fa-certificate"></i></div>
+                <div class="award-content">
+                    <div><a href="./resume_files/awards/国家奖学金.PDF">国家奖学金</a>, 中华人民共和国教育部, 2017年</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon"><i class="fas fa-medal"></i></div>
+                <div class="award-content">
+                    <div>大学生数学建模竞赛辽宁省一等奖, 辽宁省教育厅, 2016年</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="mailto:ghzphysics@163.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://ghzphy.github.io/"><i class="fas fa-globe"></i></a>
+                <a href="https://github.com/ghzphy"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 占国慧. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单功能
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.add('active');
+        });
+
+        document.querySelector('.close-menu').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.remove('active');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    document.querySelector('.mobile-menu').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
