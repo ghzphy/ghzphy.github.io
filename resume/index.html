@@ -8,7 +8,7 @@
     <style>
         :root {
             --primary-color: #2c3e50;
-            --secondary-color: #3498db;
+            --secondary-color: #7e22ce; /* 改为紫色 */
             --accent-color: #e74c3c;
             --light-color: #ecf0f1;
             --dark-color: #34495e;
@@ -40,15 +40,16 @@
             padding: 0 20px;
         }
 
-        /* 顶部导航 */
+        /* 顶部导航 - 修改为紫色背景 */
         header {
-            background-color: var(--primary-color);
+            background: rgba(44, 15, 71, 0.85);
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         nav {
@@ -60,6 +61,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
+            color: #d8b4fe; /* 紫色调文字 */
         }
 
         .nav-links {
@@ -68,7 +70,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #f0f0f0; /* 浅色文字 */
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
@@ -76,7 +78,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--secondary-color);
+            color: #c084fc; /* 紫色悬停效果 */
         }
 
         .nav-links a::after {
@@ -86,7 +88,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--secondary-color);
+            background-color: #c084fc; /* 紫色下划线 */
             transition: var(--transition);
         }
 
@@ -94,15 +96,150 @@
             width: 100%;
         }
 
-        /* 个人简介区域 */
-        .profile-container {
-            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
-            color: white;
-            padding: 3rem 0;
-            margin-bottom: 2rem;
-            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        /* 移动端菜单背景色 */
+        .mobile-menu {
+            background-color: rgba(44, 15, 71, 0.95);
         }
 
+        /* 个人简介区域 - 修改为紫色半透明背景 */
+        .profile-container {
+            background: rgba(44, 15, 71, 0.85);
+            color: #f0f0f0; /* 浅色文字 */
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .profile-name {
+            font-family: "楷体", KaiTi, "STKaiti", serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: normal;
+            color: #d8b4fe; /* 紫色调文字 */
+        }
+
+        .profile-title {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            color: #f0abfc; /* 浅紫色 */
+        }
+
+        .profile-details {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: #f0f0f0; /* 浅色文字 */
+        }
+
+        .profile-details a {
+            color: #f0f0f0; /* 浅色链接 */
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .profile-details a:hover {
+            color: #c084fc; /* 紫色悬停效果 */
+        }
+
+        .profile-language-link a {
+            font-family: "Times New Roman", serif;
+            text-decoration: none;
+            color: #f0f0f0; /* 浅色文字 */
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .profile-language-link a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #c084fc; /* 紫色悬停效果 */
+        }
+
+        /* 中间所有内容区域 */
+        .content-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        /* 修改章节标题分割线为紫色 */
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #7e22ce; /* 改为紫色 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2 i {
+            color: #7e22ce; /* 改为紫色 */
+        }
+
+        /* 修改列表项前的圆点为紫色 */
+        ul li::before {
+            content: "•";
+            color: #7e22ce; /* 改为紫色 */
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 修改DOI文字框为紫色 */
+        .paper-links a {
+            color: #7e22ce; /* 改为紫色 */
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            padding: 0.3rem 0.8rem;
+            border: 1px solid #7e22ce; /* 改为紫色 */
+            border-radius: 4px;
+        }
+
+        .paper-links a:hover {
+            color: white;
+            background-color: #7e22ce; /* 改为紫色 */
+        }
+
+        /* 修改获奖经历图标为紫色 */
+        .award-icon {
+            color: #7e22ce; /* 改为紫色 */
+            margin-right: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        /* 页脚 - 修改为紫色背景 */
+        footer {
+            background: rgba(44, 15, 71, 0.9);
+            color: #d8b4fe; /* 紫色调文字 */
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links a {
+            color: #d8b4fe; /* 紫色图标 */
+        }
+
+        .social-links a:hover {
+            color: #c084fc; /* 紫色悬停效果 */
+        }
+
+        /* 其余所有样式保持不变 */
         .profile-content {
             display: flex;
             align-items: center;
@@ -119,24 +256,18 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid white;
+            border: 4px solid rgba(255, 255, 255, 0.2); /* 半透明边框 */
             box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
 
         .profile-image img:hover {
             transform: scale(1.05);
+            border-color: #d8b4fe; /* 紫色边框悬停效果 */
         }
 
         .profile-info {
             flex: 1;
-        }
-
-        .profile-name {
-            font-family: "楷体", KaiTi, "STKaiti", serif;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: normal;
         }
 
         .profile-name a {
@@ -144,82 +275,13 @@
             color: inherit;
         }
 
-        .profile-title {
-            font-style: italic;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .profile-details {
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .profile-details a {
-            color: var(--light-color);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .profile-details a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* 邮箱字体改为Times New Roman */
         .email-link {
             font-family: "Times New Roman", serif;
-        }
-
-        .profile-language-link {
-            margin-top: 1rem;
-        }
-
-        .profile-language-link a {
-            font-family: "Times New Roman", serif;
-            text-decoration: none;
-            color: white;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
-
-        .profile-language-link a:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* 主要内容区域 */
-        .content-section {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            box-shadow: var(--box-shadow);
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
         }
 
         .content-section:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        h2 i {
-            color: var(--secondary-color);
         }
 
         ul {
@@ -238,15 +300,6 @@
             border-bottom: none;
         }
 
-        ul li::before {
-            content: "•";
-            color: var(--secondary-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* 论文样式 */
         .paper-item {
             margin-bottom: 1.5rem;
             padding-bottom: 1.5rem;
@@ -279,22 +332,6 @@
             margin-top: 0.5rem;
         }
 
-        .paper-links a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            padding: 0.3rem 0.8rem;
-            border: 1px solid var(--secondary-color);
-            border-radius: 4px;
-        }
-
-        .paper-links a:hover {
-            color: white;
-            background-color: var(--secondary-color);
-        }
-
-        /* 技能标签 */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -317,31 +354,14 @@
             transform: translateY(-2px);
         }
 
-        /* 获奖经历 */
         .award-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 1rem;
         }
 
-        .award-icon {
-            color: var(--secondary-color);
-            margin-right: 0.8rem;
-            flex-shrink: 0;
-            margin-top: 0.2rem;
-        }
-
         .award-content {
             flex: 1;
-        }
-
-        /* 页脚 */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
         }
 
         .social-links {
@@ -352,13 +372,11 @@
         }
 
         .social-links a {
-            color: white;
             font-size: 1.5rem;
             transition: var(--transition);
         }
 
         .social-links a:hover {
-            color: var(--secondary-color);
             transform: translateY(-3px);
         }
 
@@ -402,7 +420,6 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: var(--primary-color);
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -425,7 +442,7 @@
             }
 
             .mobile-menu a:hover {
-                color: var(--secondary-color);
+                color: #c084fc; /* 紫色悬停效果 */
             }
 
             .close-menu {
@@ -730,13 +747,13 @@
             <div class="award-item">
                 <div class="award-icon"><i class="fas fa-trophy"></i></div>
                 <div class="award-content">
-                    <div><a href="./resume_files/awards/辽宁省优秀毕业生.PDF">辽宁省优秀毕业生</a>, 辽宁省教育厅,2018年</div>
+                    <div><a href="./resume_files/awards/辽宁省优秀毕业生.jpeg">辽宁省优秀毕业生</a>, 辽宁省教育厅,2018年</div>
                 </div>
             </div>
             <div class="award-item">
                 <div class="award-icon"><i class="fas fa-certificate"></i></div>
                 <div class="award-content">
-                    <div><a href="./resume_files/awards/国家奖学金.PDF">国家奖学金</a>, 中华人民共和国教育部, 2017年</div>
+                    <div><a href="./resume_files/awards/国家奖学金.jpeg">国家奖学金</a>, 中华人民共和国教育部, 2017年</div>
                 </div>
             </div>
             <div class="award-item">
