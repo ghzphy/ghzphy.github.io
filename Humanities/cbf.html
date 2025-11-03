@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苏轼《赤壁赋》 - Humanities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+QingKe+HuangYou&family=Comic+Neue:wght@700&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        /* 文章页面特殊样式 */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .article-title {
+            font-size: 2.8rem;
+            color: #d8b4fe;
+            margin-bottom: 15px;
+            font-family: 'Ma Shan Zheng', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .article-subtitle {
+            font-size: 1.4rem;
+            color: #f0abfc;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .article-meta {
+            color: #c084fc;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .article-content {
+            background: linear-gradient(135deg, #fef9e7 0%, #fdf6e3 50%, #faf3e0 100%);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #e8d4b2;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #5d4037;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+        }
+        
+        .article-content:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><rect fill="%235d4037" width="100" height="100"/></svg>');
+            pointer-events: none;
+        }
+        
+        .poem-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-radius: 10px;
+            border-left: 4px solid #d4a017;
+            border: 1px solid #e6c07b;
+            color: #5d4037;
+            position: relative;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+        }
+        
+        .poem-section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.03"><rect fill="%235d4037" width="100" height="100"/></svg>');
+            pointer-events: none;
+            border-radius: 10px;
+        }
+        
+        .poem-title {
+            font-size: 1.6rem;
+            color: #8d6e63;
+            margin-bottom: 25px;
+            text-align: center;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+            position: relative;
+        }
+        
+        .poem-content {
+            font-size: 1.2rem;
+            line-height: 2.2;
+            text-align: center;
+            color: #5d4037;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+            position: relative;
+        }
+        
+        .poem-line {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .poem-line:before {
+            content: "❖";
+            position: absolute;
+            left: -25px;
+            color: #d4a017;
+            opacity: 0.8;
+        }
+        
+        .article-content p {
+            color: #5d4037;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+        }
+        
+        .reading-time {
+            text-align: center;
+            color: #8d6e63;
+            font-size: 0.9rem;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+        
+        .annotation {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 3px solid #f0abfc;
+            font-size: 0.95rem;
+            color: #e0e0e0;
+        }
+        
+        .annotation-title {
+            color: #d8b4fe;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7e22ce, #c084fc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .author-details {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-size: 1.3rem;
+            color: #d8b4fe;
+            margin-bottom: 5px;
+        }
+        
+        .author-dynasty {
+            color: #c084fc;
+            font-style: italic;
+        }
+        
+        .reading-time {
+            text-align: center;
+            color: #c084fc;
+            font-size: 0.9rem;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2.2rem;
+            }
+            
+            .article-content {
+                padding: 25px;
+            }
+            
+            .poem-content {
+                font-size: 1.1rem;
+            }
+            
+            .author-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background decorations -->
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <a href="../index.html" class="logo"></a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../Physics/index.html">Physics</a></li>
+                    <li><a href="../Microelectronics/index.html">Microelectronics</a></li>
+                    <li><a href="../Computer-Science/index.html">Computer Science</a></li>
+                    <li><a href="index.html">Humanities</a></li>
+                    <li><a href="https://www.cnblogs.com/ghzhan/">Blog</a></li>
+                    <li><a href="../Relax/index.html">Relax</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <div class="container">
+        <div class="article-container">
+            <!-- Article Header -->
+            <div class="article-header">
+                <h1 class="article-title">赤壁赋</h1>
+                <div class="article-subtitle">前赤壁赋</div>
+                <div class="article-meta">北宋 · 苏轼</div>
+            </div>
+
+            <!-- Author Information -->
+            <div class="author-info">
+                <div class="author-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="author-details">
+                    <div class="author-name">苏轼</div>
+                    <div class="author-dynasty">北宋文学家、书画家（1037-1101）</div>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content">
+                <p>《赤壁赋》是北宋文学家苏轼创作的一篇赋，作于宋神宗元丰五年（1082年）贬谪黄州（今湖北黄冈）时。此赋记叙了作者与朋友们月夜泛舟游赤壁的所见所感，以主客问答的形式，反映了作者由月夜泛舟的舒畅，到怀古伤今的悲咽，再到精神解脱的达观。</p>
+
+                <!-- 前赤壁赋 -->
+                <div class="poem-section">
+                    <h3 class="poem-title">前赤壁赋</h3>
+                    <div class="poem-content">
+                        <div class="poem-line">壬戌之秋，七月既望，苏子与客泛舟游于赤壁之下。</div>
+                        <div class="poem-line">清风徐来，水波不兴。举酒属客，诵明月之诗，歌窈窕之章。</div>
+                        <div class="poem-line">少焉，月出于东山之上，徘徊于斗牛之间。</div>
+                        <div class="poem-line">白露横江，水光接天。纵一苇之所如，凌万顷之茫然。</div>
+                        <div class="poem-line">浩浩乎如冯虚御风，而不知其所止；</div>
+                        <div class="poem-line">飘飘乎如遗世独立，羽化而登仙。</div>
+                        <div class="poem-line">于是饮酒乐甚，扣舷而歌之。</div>
+                        <div class="poem-line">歌曰："桂棹兮兰桨，击空明兮溯流光。</div>
+                        <div class="poem-line">渺渺兮予怀，望美人兮天一方。"</div>
+                        <div class="poem-line">客有吹洞箫者，倚歌而和之。</div>
+                        <div class="poem-line">其声呜呜然，如怨如慕，如泣如诉，余音袅袅，不绝如缕。</div>
+                        <div class="poem-line">舞幽壑之潜蛟，泣孤舟之嫠妇。</div>
+                    </div>
+                </div>
+
+                <!-- 中段 -->
+                <div class="poem-section">
+                    <div class="poem-content">
+                        <div class="poem-line">苏子愀然，正襟危坐，而问客曰："何为其然也？"</div>
+                        <div class="poem-line">客曰："'月明星稀，乌鹊南飞'，此非曹孟德之诗乎？</div>
+                        <div class="poem-line">西望夏口，东望武昌，山川相缪，郁乎苍苍，此非孟德之困于周郎者乎？</div>
+                        <div class="poem-line">方其破荆州，下江陵，顺流而东也，舳舻千里，旌旗蔽空，酾酒临江，横槊赋诗，固一世之雄也，而今安在哉？</div>
+                        <div class="poem-line">况吾与子渔樵于江渚之上，侣鱼虾而友麋鹿，驾一叶之扁舟，举匏樽以相属。</div>
+                        <div class="poem-line">寄蜉蝣于天地，渺沧海之一粟。</div>
+                        <div class="poem-line">哀吾生之须臾，羡长江之无穷。</div>
+                        <div class="poem-line">挟飞仙以遨游，抱明月而长终。</div>
+                        <div class="poem-line">知不可乎骤得，托遗响于悲风。"</div>
+                    </div>
+                </div>
+
+                <!-- 结尾段 -->
+                <div class="poem-section">
+                    <div class="poem-content">
+                        <div class="poem-line">苏子曰："客亦知夫水与月乎？逝者如斯，而未尝往也；</div>
+                        <div class="poem-line">盈虚者如彼，而卒莫消长也。</div>
+                        <div class="poem-line">盖将自其变者而观之，则天地曾不能以一瞬；</div>
+                        <div class="poem-line">自其不变者而观之，则物与我皆无尽也，而又何羡乎！</div>
+                        <div class="poem-line">且夫天地之间，物各有主，苟非吾之所有，虽一毫而莫取。</div>
+                        <div class="poem-line">惟江上之清风，与山间之明月，耳得之而为声，目遇之而成色，取之无禁，用之不竭。</div>
+                        <div class="poem-line">是造物者之无尽藏也，而吾与子之所共适。"</div>
+                        <div class="poem-line">客喜而笑，洗盏更酌。肴核既尽，杯盘狼藉。</div>
+                        <div class="poem-line">相与枕藉乎舟中，不知东方之既白。</div>
+                    </div>
+                </div>
+
+                <p>《赤壁赋》是北宋文学家苏轼创作的一篇赋，作于宋神宗元丰五年（1082年）贬谪黄州（今湖北黄冈）时。此赋记叙了作者与朋友们月夜泛舟游赤壁的所见所感，以主客问答的形式，反映了作者由月夜泛舟的舒畅，到怀古伤今的悲咽，再到精神解脱的达观。</p>
+
+                <div class="reading-time">
+                    <i class="fas fa-clock"></i> 阅读时间约5分钟
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-icons">
+                    <a href="mailto:ghzphysics@163.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/ghzphy" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.cnblogs.com/ghzhan/" title="Blog"><i class="fas fa-blog"></i></a>
+                    <a href="https://www.zhihu.com/" title="Zhihu"><i class="fab fa-zhihu"></i></a>
+                    <a href="https://www.bilibili.com/" title="Bilibili"><i class="fab fa-bilibili"></i></a>
+                    <a href="https://www.douyin.com/" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.weibo.com/" title="Weibo"><i class="fab fa-weibo"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2021-2026 Ghz. All rights reserved.</p>
+                    <p>Design inspired by HTML5 UP and DeepSeek.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/scripts.js"></script>
+</body>
+</html>

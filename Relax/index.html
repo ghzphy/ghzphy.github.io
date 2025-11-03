@@ -6,222 +6,11 @@
     <title>Relax</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+QingKe+HuangYou&family=Comic+Neue:wght@700&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(-45deg, #2c0f47, #3a1c5c, #4a2a7a, #2c0f47);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            color: #f0f0f0;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background: rgba(44, 15, 71, 0.85);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #d8b4fe;
-            text-decoration: none;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 25px;
-            position: relative;
-        }
-        
-        .nav-menu a {
-            color: #f0f0f0;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 5px 0;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 1.1rem;
-        }
-        
-        .nav-menu a:hover {
-            color: #c084fc;
-        }
-
-        /* 当前页面导航项样式 */
-        .nav-menu a.current-page {
-            color: #c084fc;
-            border-bottom: 2px solid #c084fc;
-            pointer-events: none;
-            cursor: default;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 80px 0 50px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #d8b4fe;
-            font-family: 'Comic Neue', cursive;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: bounce 2s infinite;
-        }
-        
-        .chinese-welcome {
-            font-family: 'Ma Shan Zheng', 'ZCOOL QingKe HuangYou', cursive;
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            color: #f0abfc;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .intro-section {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .intro-section p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: #d8b4fe;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .social-icons a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: #c084fc;
-            transform: translateY(-3px);
-        }
-        
-        /* Content Sections */
-        .content-section {
-            margin-bottom: 50px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            scroll-margin-top: 80px; /* 为锚点跳转添加偏移，避免被导航栏遮挡 */
-        }
-        
-        .section-title {
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            color: #d8b4fe;
-            font-size: 1.5rem;
-        }
-        
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-        
+        /* Relax页面特有的样式 */
         .content-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            transition: transform 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
-        }
-        
-        .content-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.08);
-        }
-        
-        .content-card h3 {
-            margin-bottom: 15px;
-            color: #d8b4fe;
-        }
-        
-        .content-card a {
-            color: #f0f0f0;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .content-card a:hover {
-            color: #c084fc;
-            text-decoration: underline;
         }
         
         .image-featured {
@@ -237,187 +26,34 @@
             transform: scale(1.05);
         }
         
-        /* Relax Specific Styles */
-        .relax-section {
+        /* 网站链接列表样式 */
+        .website-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        
-        .relax-card {
-            background: rgba(255, 255, 255, 0.07);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 30px;
-            width: 100%;
-            max-width: 800px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .relax-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .relax-card h3 {
-            color: #d8b4fe;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-        
-        .relax-card p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .relax-card .btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #7e22ce, #c084fc);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-        
-        .relax-card .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(192, 132, 252, 0.4);
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(44, 15, 71, 0.9);
-            color: #d8b4fe;
-            padding: 30px 0;
-            margin-top: 50px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .footer-icons {
-            display: flex;
-            gap: 20px;
-            margin: 15px 0;
-        }
-        
-        .footer-icons a {
-            display: inline-flex;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: #d8b4fe;
+            gap: 15px;
+        }
+        
+        .website-list li {
+            margin: 5px 0;
+        }
+        
+        .website-list a {
             text-decoration: none;
-            font-size: 1.2rem;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background-color: #f0f0f0;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .footer-icons a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: #c084fc;
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            margin-top: 15px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                padding: 15px 0;
-            }
-            
-            .nav-menu {
-                margin-top: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .nav-menu li {
-                margin: 5px 10px;
-            }
-            
-            .hero {
-                padding: 60px 0 30px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .chinese-welcome {
-                font-size: 1.8rem;
-            }
-            
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Background decorations */
-        .decoration {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(126, 34, 206, 0.1) 0%, transparent 70%);
-            z-index: -1;
-        }
-        
-        .decoration-1 {
-            top: 10%;
-            left: 5%;
-        }
-        
-        .decoration-2 {
-            bottom: 10%;
-            right: 5%;
-        }
-        
-        /* Floating particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-        
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 20s infinite linear;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(10px, -10px) rotate(5deg); }
-            50% { transform: translate(-5px, 5px) rotate(-5deg); }
-            75% { transform: translate(-10px, 10px) rotate(5deg); }
+        .website-list a:hover {
+            background-color: #4a90e2;
+            color: white;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -457,7 +93,7 @@
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Music Section -->
+        <!-- 原有音乐收藏区块 -->
         <section class="content-section">
             <h2 class="section-title">Music Collections</h2>
             <div class="content-grid">
@@ -484,7 +120,7 @@
             </div>
         </section>
         
-        <!-- Quick Relax -->
+        <!-- 快速放松区块 -->
         <section class="content-section">
             <h2 class="section-title">Quick Relaxation</h2>
             <div class="content-grid">
@@ -504,6 +140,73 @@
                 </div>
             </div>
         </section>
+
+                <!-- 视频网站区块 -->
+        <section class="content-section">
+            <h2 class="section-title">视频网站 <i class="fas fa-video"></i></h2>
+            <div class="content-card">
+                <ul class="website-list">
+                    <li><a href="https://www.youtube.com/" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.netflix.com/" target="_blank">Netflix</a></li>
+                    <li><a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a></li>
+                    <li><a href="https://www.iqiyi.com/" target="_blank">爱奇艺</a></li>
+                    <li><a href="https://v.qq.com/" target="_blank">腾讯视频</a></li>
+                    <li><a href="https://www.mgtv.com/" target="_blank">芒果TV</a></li>
+                    <li><a href="https://www.yangshipin.cn/" target="_blank">央视频</a></li>
+                    <li><a href="https://www.douyin.com/" target="_blank">抖音</a></li>
+                    <li><a href="https://www.youku.com/" target="_blank">优酷</a></li>
+                    <li><a href="https://www.twitch.tv/" target="_blank">Twitch</a></li>
+                    <li><a href="https://vimeo.com/" target="_blank">Vimeo</a></li>
+                    <li><a href="https://www.hujiang.com/" target="_blank">沪江网校</a></li>
+                    <li><a href="https://edu.163.com/" target="_blank">网易公开课</a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- 音乐网站区块 -->
+        <section class="content-section">
+            <h2 class="section-title">音乐网站 <i class="fas fa-music"></i></h2>
+            <div class="content-card">
+                <ul class="website-list">
+                    <li><a href="https://www.spotify.com/" target="_blank">Spotify</a></li>
+                    <li><a href="https://music.apple.com/" target="_blank">Apple Music</a></li>
+                    <li><a href="https://y.qq.com/" target="_blank">QQ音乐</a></li>
+                    <li><a href="https://music.163.com/" target="_blank">网易云音乐</a></li>
+                    <li><a href="https://www.kugou.com/" target="_blank">酷狗音乐</a></li>
+                    <li><a href="https://www.kuwo.cn/" target="_blank">酷我音乐</a></li>
+                    <li><a href="https://soundcloud.com/" target="_blank">SoundCloud</a></li>
+                    <li><a href="https://www.xiami.com/" target="_blank">虾米音乐</a></li>
+                    <li><a href="https://www.bilibili.com/audio/" target="_blank">B站音频</a></li>
+                    <li><a href="https://www.migu.cn/" target="_blank">咪咕音乐</a></li>
+                    <li><a href="https://www.deezer.com/" target="_blank">Deezer</a></li>
+                    <li><a href="https://bandcamp.com/" target="_blank">Bandcamp</a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- 购物网站区块 -->
+        <section class="content-section">
+            <h2 class="section-title">购物网站 <i class="fas fa-shopping-cart"></i></h2>
+            <div class="content-card">
+                <ul class="website-list">
+                    <li><a href="https://www.amazon.com/" target="_blank">Amazon</a></li>
+                    <li><a href="https://www.taobao.com/" target="_blank">淘宝</a></li>
+                    <li><a href="https://www.jd.com/" target="_blank">京东</a></li>
+                    <li><a href="https://www.pinduoduo.com/" target="_blank">拼多多</a></li>
+                    <li><a href="https://www.tmall.com/" target="_blank">天猫</a></li>
+                    <li><a href="https://www.shein.com/" target="_blank">Shein</a></li>
+                    <li><a href="https://www.ebay.com/" target="_blank">eBay</a></li>
+                    <li><a href="https://www.vip.com/" target="_blank">唯品会</a></li>
+                    <li><a href="https://www.alibaba.com/" target="_blank">阿里巴巴</a></li>
+                    <li><a href="https://www.koubei.com/" target="_blank">口碑</a></li>
+                    <li><a href="https://www.dangdang.com/" target="_blank">当当网</a></li>
+                    <li><a href="https://www.suning.com/" target="_blank">苏宁易购</a></li>
+                    <li><a href="https://www.ozon.ru/" target="_blank">OZON</a></li>
+                    <li><a href="https://www.wildberries.ru/" target="_blank">Wildberries</a></li>
+                </ul>
+            </div>
+        </section>
+        
     </div>
 
     <!-- Footer -->
@@ -527,33 +230,6 @@
         </div>
     </footer>
 
-    <script>
-        // Create background particles
-        document.addEventListener('DOMContentLoaded', function() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 20;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Random properties
-                const size = Math.random() * 5 + 2;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const opacity = Math.random() * 0.5 + 0.1;
-                const animationDelay = Math.random() * 20;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${posX}%`;
-                particle.style.top = `${posY}%`;
-                particle.style.opacity = opacity;
-                particle.style.animationDelay = `${animationDelay}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        });
-    </script>
+    <script src="../assets/scripts.js"></script>
 </body>
 </html>

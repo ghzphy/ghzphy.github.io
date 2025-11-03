@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关汉卿《窦娥冤》 - Humanities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+QingKe+HuangYou&family=Comic+Neue:wght@700&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        /* 文章页面特殊样式 */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .article-title {
+            font-size: 2.8rem;
+            color: #d8b4fe;
+            margin-bottom: 15px;
+            font-family: 'Ma Shan Zheng', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .article-subtitle {
+            font-size: 1.4rem;
+            color: #f0abfc;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .article-meta {
+            color: #c084fc;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .article-content {
+            background: linear-gradient(135deg, #fef9e7 0%, #fdf6e3 50%, #faf3e0 100%);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #e8d4b2;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #5d4037;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+        }
+        
+        .article-content:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><rect fill="%235d4037" width="100" height="100"/></svg>');
+            pointer-events: none;
+        }
+        
+        .poem-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-radius: 10px;
+            border-left: 4px solid #d4a017;
+            border: 1px solid #e6c07b;
+            color: #5d4037;
+            position: relative;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+        }
+        
+        .poem-section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.03"><rect fill="%235d4037" width="100" height="100"/></svg>');
+            pointer-events: none;
+            border-radius: 10px;
+        }
+        
+        .poem-title {
+            font-size: 1.6rem;
+            color: #8d6e63;
+            margin-bottom: 25px;
+            text-align: center;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+            position: relative;
+        }
+        
+        .poem-content {
+            font-size: 1.2rem;
+            line-height: 2.2;
+            text-align: center;
+            color: #5d4037;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+            position: relative;
+        }
+        
+        .poem-line {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .poem-line:before {
+            content: "❖";
+            position: absolute;
+            left: -25px;
+            color: #d4a017;
+            opacity: 0.8;
+        }
+        
+        .article-content p {
+            color: #5d4037;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+        }
+        
+        .reading-time {
+            text-align: center;
+            color: #8d6e63;
+            font-size: 0.9rem;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7e22ce, #c084fc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .author-details {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-size: 1.3rem;
+            color: #d8b4fe;
+            margin-bottom: 5px;
+        }
+        
+        .author-dynasty {
+            color: #c084fc;
+            font-style: italic;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2.2rem;
+            }
+            
+            .article-content {
+                padding: 25px;
+            }
+            
+            .poem-content {
+                font-size: 1.1rem;
+            }
+            
+            .author-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background decorations -->
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <a href="../index.html" class="logo"></a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../Physics/index.html">Physics</a></li>
+                    <li><a href="../Microelectronics/index.html">Microelectronics</a></li>
+                    <li><a href="../Computer-Science/index.html">Computer Science</a></li>
+                    <li><a href="index.html">Humanities</a></li>
+                    <li><a href="https://www.cnblogs.com/ghzhan/">Blog</a></li>
+                    <li><a href="../Relax/index.html">Relax</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <div class="container">
+        <div class="article-container">
+            <!-- Article Header -->
+            <div class="article-header">
+                <h1 class="article-title">窦娥冤</h1>
+                <div class="article-meta">元代 · 关汉卿</div>
+            </div>
+
+            <!-- Author Information -->
+            <div class="author-info">
+                <div class="author-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="author-details">
+                    <div class="author-name">关汉卿</div>
+                    <div class="author-dynasty">元代戏曲作家（约1220-1300）</div>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content">
+                <p>《窦娥冤》是元代戏曲作家关汉卿的代表作，全名《感天动地窦娥冤》，是中国古代四大悲剧之一。该剧通过窦娥的悲惨遭遇，深刻揭露了元代社会的黑暗现实，表达了人民对正义的渴望和对邪恶的控诉。</p>
+
+                <!-- 楔子 -->
+                <div class="poem-section">
+                    <h3 class="poem-title">楔子</h3>
+                    <div class="poem-content">
+                        <div class="poem-line">（卜儿蔡婆上，诗云）花有重开日，人无再少年。</div>
+                        <div class="poem-line">不须长富贵，安乐是神仙。</div>
+                        <div class="poem-line">老身蔡婆婆是也，楚州人氏，嫡亲三口儿家属。</div>
+                        <div class="poem-line">不幸夫主亡逝已过，止有一个孩儿，年长八岁，</div>
+                        <div class="poem-line">俺娘儿两个，过其日月，家中颇有些钱财。</div>
+                        <div class="poem-line">这里一个窦秀才，从去年问我借了二十两银子，</div>
+                        <div class="poem-line">如今本利该银四十两。我数次索取，那窦秀才</div>
+                        <div class="poem-line">只说贫难，没得还我。他有一个女儿，今年七</div>
+                        <div class="poem-line">岁，生得可喜，长得可爱，我有心看上他，与</div>
+                        <div class="poem-line">我家做个媳妇，就准了这四十两银子，岂不两</div>
+                        <div class="poem-line">得其便？</div>
+                    </div>
+                </div>
+
+                <!-- 第一折 -->
+                <div class="poem-section">
+                    <h3 class="poem-title">第一折</h3>
+                    <div class="poem-content">
+                        <div class="poem-line">（净扮赛卢医上，诗云）行医有斟酌，下药依《本草》。</div>
+                        <div class="poem-line">死的医不活，活的医死了。</div>
+                        <div class="poem-line">自家姓卢，人道我一手好医，都叫做赛卢医。</div>
+                        <div class="poem-line">在这山阳县南门开着生药局。在城有个蔡婆婆，</div>
+                        <div class="poem-line">我问他借了十两银子，本利该还他二十两；数</div>
+                        <div class="poem-line">次来讨这银子，我又无的还他。若不来便罢，</div>
+                        <div class="poem-line">若来呵，我自有个主意！我且在这药铺中坐下，</div>
+                        <div class="poem-line">看有甚么人来。</div>
+                        <div class="poem-line">（卜儿上，云）老身蔡婆婆。我一向搬在山阳县</div>
+                        <div class="poem-line">居住，尽也静办。自十三年前窦天章秀才留下</div>
+                        <div class="poem-line">端云孩儿与我做儿媳妇，改了他小名，唤做窦</div>
+                        <div class="poem-line">娥。自成亲之后，不上二年，不想我这孩儿害</div>
+                        <div class="poem-line">弱症死了。媳妇儿守寡，又早三个年头，服孝</div>
+                        <div class="poem-line">将除了也。我和媳妇儿说知，我往城外赛卢医</div>
+                        <div class="poem-line">家索钱去也。</div>
+                    </div>
+                </div>
+
+                <!-- 第二折 -->
+                <div class="poem-section">
+                    <h3 class="poem-title">第二折</h3>
+                    <div class="poem-content">
+                        <div class="poem-line">（净扮赛卢医上，诗云）小子太医出身，也不知道</div>
+                        <div class="poem-line">医死多人，何尝怕人告发，关了一日店门？</div>
+                        <div class="poem-line">在城有个蔡婆婆，我问他借了十两银子，本利</div>
+                        <div class="poem-line">该还他二十两，数次来讨，我又无钱还他。他</div>
+                        <div class="poem-line">若不来便罢；若来呵，我自有个主意！</div>
+                        <div class="poem-line">（张驴儿上，云）自家张驴儿。可奈那窦娥百般</div>
+                        <div class="poem-line">的不肯随顺我；如今那老婆子害病，我讨服毒</div>
+                        <div class="poem-line">药，与他吃了，药死那老婆子，这小妮子好歹</div>
+                        <div class="poem-line">做我的老婆。</div>
+                        <div class="poem-line">（做行科，云）且住，城里人耳目广，口舌多，</div>
+                        <div class="poem-line">倘见我讨毒药，可不嚷出事来？我前日看见南</div>
+                        <div class="poem-line">门外有个药铺，此处冷静，正好讨药。</div>
+                        <div class="poem-line">（做到科，叫云）太医哥哥，我来讨药的。</div>
+                        <div class="poem-line">（赛卢医云）你讨甚么药？</div>
+                        <div class="poem-line">（张驴儿云）我讨服毒药。</div>
+                        <div class="poem-line">（赛卢医云）谁敢合毒药与你？这厮好大胆也！</div>
+                    </div>
+                </div>
+
+                <!-- 第三折 -->
+                <div class="poem-section">
+                    <h3 class="poem-title">第三折</h3>
+                    <div class="poem-content">
+                        <div class="poem-line">（外扮监斩官上，云）下官监斩官是也。今日处决</div>
+                        <div class="poem-line">犯人，着做公的把住巷口，休放往来人闲走。</div>
+                        <div class="poem-line">（净扮公人，鼓三通、锣三下科。刽子磨旗、提</div>
+                        <div class="poem-line">刀，押正旦带枷上）</div>
+                        <div class="poem-line">（刽子云）行动些，行动些，监斩官去法场上多时了。</div>
+                        <div class="poem-line">（正旦唱）</div>
+                        <div class="poem-line">【正宫·端正好】没来由犯王法，不提防遭刑宪，</div>
+                        <div class="poem-line">叫声屈动地惊天！顷刻间游魂先赴森罗殿，</div>
+                        <div class="poem-line">怎不将天地也生埋怨。</div>
+                        <div class="poem-line">【滚绣球】有日月朝暮悬，有鬼神掌着生死权。</div>
+                        <div class="poem-line">天地也，只合把清浊分辨，可怎生糊突了盗跖颜渊？</div>
+                        <div class="poem-line">为善的受贫穷更命短，造恶的享富贵又寿延。</div>
+                        <div class="poem-line">天地也，做得个怕硬欺软，却原来也这般顺水推船。</div>
+                        <div class="poem-line">地也，你不分好歹何为地？</div>
+                        <div class="poem-line">天也，你错勘贤愚枉做天！</div>
+                        <div class="poem-line">哎，只落得两泪涟涟。</div>
+                    </div>
+                </div>
+
+                <!-- 窦娥三桩誓愿 -->
+                <div class="poem-section">
+                    <h3 class="poem-title">窦娥三桩誓愿</h3>
+                    <div class="poem-content">
+                        <div class="poem-line">【耍孩儿】不是我窦娥罚下这等无头愿，</div>
+                        <div class="poem-line">委实的冤情不浅。若没些儿灵圣与世人传，</div>
+                        <div class="poem-line">也不见得湛湛青天。</div>
+                        <div class="poem-line">我不要半星热血红尘洒，</div>
+                        <div class="poem-line">都只在八尺旗枪素练悬。</div>
+                        <div class="poem-line">等他四下里皆瞧见，</div>
+                        <div class="poem-line">这就是咱苌弘化碧，望帝啼鹃。</div>
+                        <div class="poem-line">【二煞】你道是暑气暄，不是那下雪天；</div>
+                        <div class="poem-line">岂不闻飞霜六月因邹衍？</div>
+                        <div class="poem-line">若果有一腔怨气喷如火，</div>
+                        <div class="poem-line">定要感的六出冰花滚似绵，</div>
+                        <div class="poem-line">免着我尸骸现；</div>
+                        <div class="poem-line">要什么素车白马，断送出古陌荒阡？</div>
+                        <div class="poem-line">【一煞】你道是天公不可期，人心不可怜，</div>
+                        <div class="poem-line">不知皇天也肯从人愿。</div>
+                        <div class="poem-line">做甚么三年不见甘霖降？</div>
+                        <div class="poem-line">也只为东海曾经孝妇冤。</div>
+                        <div class="poem-line">如今轮到你山阳县，</div>
+                        <div class="poem-line">这都是官吏每无心正法，</div>
+                        <div class="poem-line">使百姓有口难言。</div>
+                    </div>
+                </div>
+
+                <p>《窦娥冤》以其深刻的社会批判和强烈的艺术感染力，成为中国古典戏曲的经典之作。窦娥临刑前的三桩誓愿——血溅白练、六月飞雪、大旱三年，最终都应验，体现了人民对正义的坚定信念。</p>
+
+                <div class="reading-time">
+                    <i class="fas fa-clock"></i> 阅读时间约8分钟
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-icons">
+                    <a href="mailto:ghzphysics@163.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/ghzphy" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.cnblogs.com/ghzhan/" title="Blog"><i class="fas fa-blog"></i></a>
+                    <a href="https://www.zhihu.com/" title="Zhihu"><i class="fab fa-zhihu"></i></a>
+                    <a href="https://www.bilibili.com/" title="Bilibili"><i class="fab fa-bilibili"></i></a>
+                    <a href="https://www.douyin.com/" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.weibo.com/" title="Weibo"><i class="fab fa-weibo"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2021-2026 Ghz. All rights reserved.</p>
+                    <p>Design inspired by HTML5 UP and DeepSeek.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/scripts.js"></script>
+</body>
+</html>

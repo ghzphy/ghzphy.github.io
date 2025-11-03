@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张若虚《春江花月夜》 - Humanities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+QingKe+HuangYou&family=Comic+Neue:wght@700&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        /* 文章页面特殊样式 */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .article-title {
+            font-size: 2.8rem;
+            color: #d8b4fe;
+            margin-bottom: 15px;
+            font-family: 'Ma Shan Zheng', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .article-subtitle {
+            font-size: 1.4rem;
+            color: #f0abfc;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .article-meta {
+            color: #c084fc;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .article-content {
+            background: linear-gradient(135deg, #fef9e7 0%, #fdf6e3 50%, #faf3e0 100%);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #e8d4b2;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #5d4037;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+        }
+        
+        .article-content:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><rect fill="%235d4037" width="100" height="100"/></svg>');
+            pointer-events: none;
+        }
+        
+        .poem-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-radius: 10px;
+            border-left: 4px solid #d4a017;
+            border: 1px solid #e6c07b;
+            color: #5d4037;
+            position: relative;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+        }
+        
+        .poem-section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.03"><rect fill="%235d4037" width="100" height="100"/></svg>');
+            pointer-events: none;
+            border-radius: 10px;
+        }
+        
+        .poem-title {
+            font-size: 1.6rem;
+            color: #8d6e63;
+            margin-bottom: 25px;
+            text-align: center;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+            position: relative;
+        }
+        
+        .poem-content {
+            font-size: 1.2rem;
+            line-height: 2.2;
+            text-align: center;
+            color: #5d4037;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+            position: relative;
+        }
+        
+        .poem-line {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .poem-line:before {
+            content: "❖";
+            position: absolute;
+            left: -25px;
+            color: #d4a017;
+            opacity: 0.8;
+        }
+        
+        .article-content p {
+            color: #5d4037;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+        }
+        
+        .reading-time {
+            text-align: center;
+            color: #8d6e63;
+            font-size: 0.9rem;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7e22ce, #c084fc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .author-details {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-size: 1.3rem;
+            color: #d8b4fe;
+            margin-bottom: 5px;
+        }
+        
+        .author-dynasty {
+            color: #c084fc;
+            font-style: italic;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2.2rem;
+            }
+            
+            .article-content {
+                padding: 25px;
+            }
+            
+            .poem-content {
+                font-size: 1.1rem;
+            }
+            
+            .author-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background decorations -->
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <a href="../index.html" class="logo"></a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../Physics/index.html">Physics</a></li>
+                    <li><a href="../Microelectronics/index.html">Microelectronics</a></li>
+                    <li><a href="../Computer-Science/index.html">Computer Science</a></li>
+                    <li><a href="index.html">Humanities</a></li>
+                    <li><a href="https://www.cnblogs.com/ghzhan/">Blog</a></li>
+                    <li><a href="../Relax/index.html">Relax</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <div class="container">
+        <div class="article-container">
+            <!-- Article Header -->
+            <div class="article-header">
+                <h1 class="article-title">春江花月夜</h1>
+                <div class="article-meta">初唐 · 张若虚</div>
+            </div>
+
+            <!-- Author Information -->
+            <div class="author-info">
+                <div class="author-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="author-details">
+                    <div class="author-name">张若虚</div>
+                    <div class="author-dynasty">初唐诗人（约660-720）</div>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content">
+                <p>《春江花月夜》是唐代诗人张若虚的代表作，被誉为"孤篇横绝，竟为大家"。此诗以春江花月夜为背景，描绘了壮丽的自然景色，抒发了对人生、宇宙的深刻思考，体现了初唐诗歌的雄浑气象和深邃哲理。</p>
+
+                <!-- 春江花月夜 -->
+                <div class="poem-section">
+                    <h3 class="poem-title">春江花月夜</h3>
+                    <div class="poem-content">
+                        <div class="poem-line">春江潮水连海平，海上明月共潮生。</div>
+                        <div class="poem-line">滟滟随波千万里，何处春江无月明！</div>
+                        <div class="poem-line">江流宛转绕芳甸，月照花林皆似霰；</div>
+                        <div class="poem-line">空里流霜不觉飞，汀上白沙看不见。</div>
+                        <div class="poem-line">江天一色无纤尘，皎皎空中孤月轮。</div>
+                        <div class="poem-line">江畔何人初见月？江月何年初照人？</div>
+                        <div class="poem-line">人生代代无穷已，江月年年望相似。</div>
+                        <div class="poem-line">不知江月待何人，但见长江送流水。</div>
+                        <div class="poem-line">白云一片去悠悠，青枫浦上不胜愁。</div>
+                        <div class="poem-line">谁家今夜扁舟子？何处相思明月楼？</div>
+                        <div class="poem-line">可怜楼上月徘徊，应照离人妆镜台。</div>
+                        <div class="poem-line">玉户帘中卷不去，捣衣砧上拂还来。</div>
+                        <div class="poem-line">此时相望不相闻，愿逐月华流照君。</div>
+                        <div class="poem-line">鸿雁长飞光不度，鱼龙潜跃水成文。</div>
+                        <div class="poem-line">昨夜闲潭梦落花，可怜春半不还家。</div>
+                        <div class="poem-line">江水流春去欲尽，江潭落月复西斜。</div>
+                        <div class="poem-line">斜月沉沉藏海雾，碣石潇湘无限路。</div>
+                        <div class="poem-line">不知乘月几人归，落月摇情满江树。</div>
+                    </div>
+                </div>
+
+                <p>《春江花月夜》以其宏大的意境、优美的语言和深刻的哲理，成为唐诗中的瑰宝。诗中"江畔何人初见月？江月何年初照人？"的追问，体现了诗人对宇宙永恒与人生短暂的深刻思考。</p>
+
+                <div class="reading-time">
+                    <i class="fas fa-clock"></i> 阅读时间约4分钟
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-icons">
+                    <a href="mailto:ghzphysics@163.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/ghzphy" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.cnblogs.com/ghzhan/" title="Blog"><i class="fas fa-blog"></i></a>
+                    <a href="https://www.zhihu.com/" title="Zhihu"><i class="fab fa-zhihu"></i></a>
+                    <a href="https://www.bilibili.com/" title="Bilibili"><i class="fab fa-bilibili"></i></a>
+                    <a href="https://www.douyin.com/" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.weibo.com/" title="Weibo"><i class="fab fa-weibo"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2021-2026 Ghz. All rights reserved.</p>
+                    <p>Design inspired by HTML5 UP and DeepSeek.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/scripts.js"></script>
+</body>
+</html>
