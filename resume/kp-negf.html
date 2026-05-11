@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>KP-NEGF | Simulation Results Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #7e22ce; /* vibrant purple */
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+            --text-color: #1e1e2f;
+            --light-text: #5a5a72;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.55;
+            color: var(--text-color);
+            background: #fafaff;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* header with glassmorphic purple */
+        header {
+            background: rgba(44, 15, 71, 0.92);
+            backdrop-filter: blur(14px);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(216, 180, 254, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #E9D5FF 0%, #C084FC 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+        }
+
+        .nav-links a {
+            color: #f1f1f9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.98rem;
+        }
+
+        .nav-links a:hover {
+            color: #d8b4fe;
+        }
+
+        /* section titles */
+        h2 {
+            font-size: 1.85rem;
+            font-weight: 600;
+            color: #1f1a3e;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 1rem;
+            margin-bottom: 1.8rem;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h2 i {
+            color: var(--secondary-color);
+            font-size: 1.7rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 1.2rem 0 1rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #e9d5ff;
+            display: inline-block;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem 1.8rem;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(126, 34, 206, 0.08);
+        }
+
+        .content-section:hover {
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* image gallery grid: 自适应网格，默认每行至少320px宽度 */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        /* 全宽图片样式 - 占满整个网格宽度 (单独一行) */
+        .results-grid .figure-card.full-width {
+            grid-column: 1 / -1;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* 双栏宽图样式: 占两列宽度 (在标准三列/多列布局中占据两个网格轨道) */
+        .results-grid .figure-card.double-width {
+            grid-column: span 2;
+        }
+
+        /* 响应式: 当屏幕变窄，确保双宽图在全宽移动端依然合理 */
+        @media (max-width: 768px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            .results-grid .figure-card.double-width {
+                grid-column: span 1; /* 手机屏幕下恢复单列，避免溢出 */
+            }
+            .results-grid .figure-card.full-width {
+                grid-column: 1;
+            }
+        }
+
+        /* 可选：全宽或双宽图片内部图片样式 */
+        .figure-card.full-width .figure-img img,
+        .figure-card.double-width .figure-img img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            background: #faf9fe;
+        }
+
+        .figure-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0eaff;
+        }
+
+        .figure-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 28px -12px rgba(126, 34, 206, 0.2);
+            border-color: #d9c6fc;
+        }
+
+        .figure-img {
+            width: 100%;
+            background: #f3f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 220px;
+            border-bottom: 1px solid #ede9fe;
+        }
+
+        .figure-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: 0.2s;
+        }
+
+        /* placeholder styling (simulated images) */
+        .placeholder-fig {
+            background: linear-gradient(145deg, #f1f0fe 0%, #e9e4fc 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            text-align: center;
+            min-height: 220px;
+            color: #4a3b7c;
+            font-weight: 500;
+        }
+
+        .placeholder-fig i {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            color: #8b5cf6;
+            opacity: 0.7;
+        }
+
+        figcaption {
+            padding: 1rem 1rem 1.2rem;
+            background: white;
+            font-size: 0.9rem;
+            color: #2d3c4b;
+            border-top: 1px solid #f5f0ff;
+            line-height: 1.45;
+        }
+
+        figcaption strong {
+            color: #6b21a5;
+            font-weight: 600;
+        }
+
+        .caption-title {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #1e293b;
+            font-size: 1rem;
+        }
+
+        /* 3d subsection style */
+        .sub-section {
+            margin-top: 2rem;
+        }
+
+        .badge {
+            background: #e9d5ff;
+            color: #5b21b6;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 1rem;
+            vertical-align: middle;
+        }
+
+        footer {
+            background: rgba(30, 12, 48, 0.95);
+            backdrop-filter: blur(8px);
+            color: #cfc3ff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .social-links a {
+            color: #c4b0ff;
+            font-size: 1.6rem;
+            margin: 0 0.6rem;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: #ede9fe;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .btn-research {
+            background: transparent;
+            border: 1px solid #c084fc;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            color: #c084fc;
+            transition: 0.2s;
+        }
+
+        /* responsive常规调整 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            .nav-links {
+                display: none;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .content-section {
+                padding: 1.2rem;
+            }
+            .logo {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(22, 10, 40, 0.97);
+                backdrop-filter: blur(15px);
+                z-index: 1000;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+                display: flex;
+            }
+            .mobile-menu.active {
+                transform: translateY(0);
+            }
+            .mobile-menu a {
+                color: #f0eaff;
+                font-size: 1.5rem;
+                margin: 1rem;
+                text-decoration: none;
+            }
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                right: 25px;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.8rem;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">⚡ KP‑NEGF <span style="font-size:0.8rem; font-weight: normal;">quantum transport</span></div>
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#2d-results">2D cross‑section</a>
+                <a href="#3d-results">3D simulations</a>
+            </div>
+            <button class="mobile-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+        </nav>
+    </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button>
+    <a href="#overview">Overview</a>
+    <a href="#2d-results">📊 2D cross‑section</a>
+    <a href="#3d-results">🧊 3D simulations</a>
+</div>
+
+<div class="container">
+    <section id="overview" class="content-section">
+        <h2><i class="fas fa-chart-line"></i> Overview</h2>
+        <p style="margin-bottom: 1.2rem; color: #4b5563;">The simulation framework. </p>
+        
+        <!-- 示例1: 全宽图片 (full-width) 展示2D能带全貌 -->
+        <div class="results-grid">
+            <figure class="figure-card full-width">
+                <div class="figure-img">
+                    <img src="./resume_files/negf/framework.png" alt="framwork." style="width:100%; max-height:450px; object-fit:contain; background:#f3efff;">
+                </div>
+                <figcaption>
+                    <div class="caption-title"><strong>The overview of our simulator KP-NEGF framework based on Finite Difference Method.</strong>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+
+    <!-- ========= 2D CROSS-SECTION RESULTS ========= -->
+    <section id="2d-results" class="content-section">
+        <h2><i class="fas fa-chart-line"></i> 2D cross‑section results</h2>
+        <p style="margin-bottom: 1.2rem; color: #4b5563;">Spatial profiles across the device cross‑section: band structure, carrier density, electrostatic potential, and local density of states.</p>
+        
+        <!-- 示例1: 全宽图片 (full-width) 展示2D能带全貌 -->
+        <div class="results-grid">
+            <figure class="figure-card full-width">
+                <div class="figure-img">
+                    <img src="./resume_files/negf/2D_100_6nm3nm_charge.png" alt="Full width 2D band structure" style="width:100%; max-height:450px; object-fit:contain; background:#f3efff;">
+                </div>
+                <figcaption>
+                    <div class="caption-title"><strong>Figure 1 :</strong> The charge density profile of 2D cross-section under different gate voltage.</div> The size of Si cross-section is 6nm * 3nm, the thickness of oxide is 1nm;
+                </figcaption>
+            </figure>
+        </div>
+
+        <!-- 常规网格图片 + 双栏宽图 (double-width) 展示重要载流子图 -->
+        <div class="results-grid">
+            <!-- 双栏宽图样例: Figure 2 占据两个卡片宽度，突出重点 carrier concentration 分析 -->
+            <figure class="figure-card double-width">
+                <div class="figure-img">
+                    <img src="./resume_files/negf/band.png" alt="double width carrier map">
+                </div>
+                <figcaption>
+                    <div class="caption-title"><strong>Figure 2 :</strong> The band structure of Si nanowires along [100], [110], [111] direction</div> The size of Si cross-section is 5nm * 5nm
+                </figcaption>
+            </figure>
+            
+            <!-- 普通卡片 Figure 3: 电势分布 -->
+            <figure class="figure-card">
+                <div class="figure-img">
+                    <img src="./resume_files/negf/CV.png" alt="electrostatic potential">
+                </div>
+                <figcaption>
+                    <div class="caption-title"><strong>Figure 3:</strong> CV of 2D cross-section</div> The black denote [100], blue denote [110], red denote [111].
+                    
+                </figcaption>
+            </figure>
+        </div>
+
+        <div style="margin-top: 1rem; font-size:0.85rem; background:#f8f4ff; padding: 0.7rem 1rem; border-radius: 16px;">
+            <i class="fas fa-microchip"></i> <strong>Methodology:</strong> 2D cross‑section simulations performed with in‑house KP‑NEGF framework (k·p Hamiltonian coupled with NEGF transport). Charge self‑consistency achieved up to 1e-5 tolerance.
+        </div>
+    </section>
+
+    <!-- ========= 3D SIMULATION RESULTS ========= -->
+    <section id="3d-results" class="content-section">
+        <h2><i class="fas fa-cube"></i> 3D simulation results <span class="badge">full‑device</span></h2>
+        <p style="margin-bottom: 1rem;">Quantum transport simulations in three‑dimensional real space: current‑voltage characteristics, PLDOS, volumetric carrier density, and potential landscapes.</p>
+        <div class="results-grid">
+                <figure class="figure-card full-width">
+                    <div class="figure-img">
+                        <img src="./resume_files/negf/GAA.png" alt="Full-width IV characteristics" style="width:100%; object-fit: contain;">
+                    </div>
+                    <figcaption>
+                        <div class="caption-title"><strong>Figure 5 :</strong> Gate-All-Around Nanowire device</div>
+                        H = W = 5nm, T<sub>ox</sub> = 1nm, L = 15nm.
+                    </figcaption>
+                </figure>
+            </div>
+        
+        <div class="sub-section">
+            <h3><i class="fas fa-charging-station"></i> Electrical & transport characteristics</h3>
+            <!-- 全宽 IV 曲线展示 (占满整行) -->
+            <div class="results-grid">
+                <figure class="figure-card full-width">
+                    <div class="figure-img">
+                        <img src="./resume_files/negf/IV.png" alt="Full-width IV characteristics" style="width:100%; object-fit: contain;">
+                    </div>
+                    <figcaption>
+                        <div class="caption-title"><strong>Figure 6 :</strong> Comprehensive  I<sub>D</sub>‑V<sub>GS</sub> characteristics (Linear and Log)</div>
+                        V<sub>DS</sub>=-0.05, V<sub>DS</sub> = -0.5V.
+                    </figcaption>
+                </figure>
+            </div>
+            
+            <!-- 混合布局：一个双栏宽图 (PLDOS spectrum) + 一个普通卡片 -->
+            <div class="results-grid">
+                <figure class="figure-card full-width">
+                    <div class="figure-img">
+                        <img src="./resume_files/negf/phi_si_3d.png" alt="full width PLDOS" style="width:100%; object-fit: contain;">
+                    </div>
+                    <figcaption>
+                        <div class="caption-title"><strong>Figure 7 :</strong> The potential profile under different bias.</div> only show the silicon region.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="results-grid">
+                <figure class="figure-card full-width">
+                    <div class="figure-img">
+                        <img src="./resume_files/negf/rho_si_3d.png" alt="full width rho" style="width:100%; object-fit: contain;">
+                    </div>
+                    <figcaption>
+                        <div class="caption-title"><strong>Figure 8:</strong> The Charge density profile under different bias.</div> only show the silicon region.
+                    </figcaption>
+                </figure>
+            </div>
+
+
+
+        </div>
+        
+        <div class="sub-section">
+            <h3><i class="fas fa-dice-d6"></i> 3D carrier & potential maps</h3>
+            <div class="results-grid">
+                <!-- 3D carrier concentration 常规卡片 -->
+                <!-- PLDOS 3D cross section: 展示为双栏宽图 (突出3D局域态) -->
+                <figure class="figure-card double-width">
+                    <div class="figure-img">
+                        <img src="./resume_files/negf/pldos.png" alt="PLDOS 3D double width">
+                    </div>
+                    <figcaption>
+                        <div class="caption-title"><strong>Figure 10 :</strong> PLDOS energy-resolved under different bias.</div>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- 额外全宽展示: 3D 电势流线或组合图 (又一个全宽示例) -->
+        <div class="results-grid" style="margin-top: 1rem;">
+            <figure class="figure-card full-width">
+                <div class="figure-img">
+                    <img src="./resume_files/negf/rho_slice.png" alt="3D full width visualization" style="width:100%; object-fit: contain;">
+                </div>
+                <figcaption>
+                    <div class="caption-title"><strong>Figure 11 :</strong> The slice charge density at X-Z plane.</div> log scale show.
+                </figcaption>
+            </figure>
+        </div>
+
+        <div style="background:#f5f0ff; border-radius: 20px; padding: 1rem; margin-top: 1rem; font-size:0.85rem;">
+            <i class="fas fa-flask"></i> <strong>3D simulation details:</strong> Full‑band k·p Hamiltonian solved via recursive Green’s function algorithm. MPI parallelization enabled large‑scale device simulations.
+        </div>
+    </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="mailto:ghzphysics@163.com" aria-label="email"><i class="fas fa-envelope"></i></a>
+            <a href="https://ghzphy.github.io/" aria-label="personal site"><i class="fas fa-globe"></i></a>
+            <a href="https://github.com/ghzphy" aria-label="github"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="linkedin"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="copyright">
+            © 2025 Guohui Zhan – KP‑NEGF project. All rights reserved.<br>
+            Simulation data available upon request.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // mobile menu toggling
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('closeMenuBtn');
+
+    if(menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+    }
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+    }
+    // smooth scroll for anchor links (including mobile)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+                if(mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                }
+            }
+        });
+    });
+    console.log("KP‑NEGF gallery: full-width & double-width figure classes implemented (grid-column: span 2 / 1/-1).");
+</script>
+</body>
+</html>
